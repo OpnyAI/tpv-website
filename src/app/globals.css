@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-tpv: "Stolzl", "Inter", system-ui, sans-serif;
+  --tpv-text-nav: clamp(0.875rem, 0.75vw, 1.05rem);
+  --tpv-text-small: clamp(0.95rem, 0.85vw, 1.125rem);
+  --tpv-text-body: clamp(1.05rem, 1vw, 1.375rem);
+  --tpv-text-lead: clamp(1.375rem, 1.6vw, 1.875rem);
+  --tpv-text-section: clamp(2.75rem, 4.3vw, 4.75rem);
+  --tpv-text-hero: clamp(3.5rem, 5vw, 5rem);
+  --tpv-text-display: clamp(5rem, 9vw, 9.5rem);
+  --tpv-text-mega: clamp(6rem, 12vw, 12.5rem);
+  --text-nav: var(--tpv-text-nav);
+  --text-body: var(--tpv-text-body);
+  --text-card: var(--tpv-text-lead);
+  --text-lead: var(--tpv-text-lead);
+  --text-section: var(--tpv-text-section);
+  --text-hero: var(--tpv-text-hero);
+  --text-display: var(--tpv-text-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: #0b002e;
+  color: #f8f7ff;
+}
+
+::selection {
+  background: rgba(249, 0, 255, 0.42);
+  color: #f8f7ff;
+}
+
+@layer components {
+  .tpv-container {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .tpv-section {
+    @apply scroll-mt-28 py-20 sm:py-24 md:scroll-mt-40 lg:py-32;
+  }
+
+  .tpv-section-tight {
+    @apply scroll-mt-28 py-12 sm:py-16 md:scroll-mt-40 lg:py-20;
+  }
+
+  .tpv-gradient-text {
+    @apply bg-gradient-to-r from-tpv-accent via-tpv-magenta to-tpv-violet bg-clip-text text-transparent;
+  }
+
+  .tpv-card {
+    @apply rounded-4xl border border-white/10 bg-tpv-card/70 shadow-card backdrop-blur-xl;
+  }
+
+  .tpv-glow-card {
+    @apply tpv-card shadow-glowSoft;
+  }
+
+  .tpv-gradient-border {
+    @apply relative rounded-4xl border border-white/10;
+  }
+
+  .tpv-gradient-border::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 54, 95, 0.78), rgba(163, 0, 255, 0.58));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .tpv-muted-text {
+    color: rgba(248, 247, 255, 0.7);
+  }
+
+  .tpv-kicker {
+    @apply text-[length:var(--text-nav)] font-semibold uppercase tracking-[0.22em] text-tpv-accent;
+  }
+
+  .tpv-display-heading {
+    @apply text-[length:var(--text-display)] font-semibold leading-none tracking-normal;
+  }
+
+  .tpv-section-heading {
+    @apply text-[length:var(--text-section)] font-semibold leading-[0.98] tracking-normal;
+  }
+
+  .tpv-body-text {
+    @apply text-[length:var(--text-body)] leading-7 tpv-muted-text;
+  }
+}
