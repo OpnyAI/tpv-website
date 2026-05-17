@@ -191,7 +191,7 @@ function CaseHero({
   caseStudy: ReferenceCaseStudy;
 }) {
   return (
-    <header className="relative mx-auto mt-4 max-w-[1320px] overflow-hidden rounded-[22px] border border-white/10 bg-[#081019] lg:mt-6 lg:rounded-[2px]">
+    <header className="relative mx-auto mt-4 max-w-[1320px] overflow-hidden rounded-[22px] border border-white/10 bg-[#081019] lg:mt-6 lg:rounded-[2rem]">
       <div className="relative h-[520px] w-full lg:h-[620px]">
         {caseStudy.heroImage ? (
           <Image
@@ -482,6 +482,7 @@ function RelatedReferences({ items }: { items: ReferenceItem[] }) {
           <Link
             key={item.slug}
             href={item.href}
+            scroll={true}
             className={cn(
               "group relative min-h-[260px] overflow-hidden rounded-[20px] border border-white/12 bg-[#101e25] shadow-[0_20px_62px_rgba(0,0,0,0.22)] transition duration-300 hover:border-[#ff3f68]/45 lg:min-h-0",
               index === 1 &&

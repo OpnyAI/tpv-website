@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState, type TouchEvent } from "react";
+import { useRef, useState, type MouseEvent, type TouchEvent } from "react";
 import { Icon } from "@/components/ui/Icon";
 import type { ReferenceItem } from "@/data/references";
 import { REFERENCE_CLICK } from "@/lib/tracking";
@@ -23,6 +23,7 @@ export function ReferencesMobileCarousel({
 }: ReferencesMobileCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const didSwipeRef = useRef(false);
   const activeReference = references[activeIndex];
 
   function goTo(index: number) {
@@ -58,7 +59,19 @@ export function ReferencesMobileCarousel({
       return;
     }
 
+    didSwipeRef.current = true;
     goTo(deltaX < 0 ? activeIndex + 1 : activeIndex - 1);
+    window.setTimeout(() => {
+      didSwipeRef.current = false;
+    }, 350);
+  }
+
+  function handleLinkClick(event: MouseEvent<HTMLAnchorElement>) {
+    if (!didSwipeRef.current) {
+      return;
+    }
+
+    event.preventDefault();
   }
 
   return (
@@ -73,8 +86,10 @@ export function ReferencesMobileCarousel({
         <Link
           key={activeReference.slug}
           href={activeReference.href}
+          scroll={true}
           className="group relative z-20 h-[400px] w-[min(82vw,360px)] shrink-0 overflow-hidden rounded-[1.9rem] border border-tpv-accent/75 bg-tpv-deep shadow-[0_0_45px_rgba(255,54,95,0.30),0_25px_80px_rgba(0,0,0,0.45)] pointer-events-auto touch-manipulation sm:h-[420px] sm:w-[min(82vw,420px)]"
           aria-label={`Projekt ${activeReference.title} ansehen`}
+          onClick={handleLinkClick}
           data-track-event={REFERENCE_CLICK}
           data-track-label={activeReference.title}
         >

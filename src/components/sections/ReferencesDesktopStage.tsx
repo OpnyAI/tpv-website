@@ -122,6 +122,7 @@ export function ReferencesDesktopStage() {
 
           <Link
             href={activeReference.href}
+            scroll={true}
             className="absolute bottom-7 right-7 flex h-14 w-14 items-center justify-center rounded-full border border-white/16 bg-[#0f0f19]/[0.72] text-white transition hover:scale-105 hover:border-tpv-accent hover:shadow-[0_0_22px_rgba(255,54,95,0.28)] hover:brightness-125 sm:h-16 sm:w-16"
             aria-label={`Projekt ${activeReference.title} ansehen`}
             data-track-event={REFERENCE_CLICK}
