@@ -24,21 +24,19 @@ export function AnimatedCounter({
   useEffect(() => {
     const element = elementRef.current;
 
-    if (!element || hasAnimatedRef.current) {
+    if (!element || hasAnimatedRef.current || to <= 0) {
       return;
-    }
-
-    const desktopQuery = window.matchMedia("(min-width: 1024px)");
-
-    if (!desktopQuery.matches) {
-      hasAnimatedRef.current = true;
-      const timeout = window.setTimeout(() => setCurrent(to), 0);
-      return () => window.clearTimeout(timeout);
     }
 
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const animationDuration = mobileQuery.matches ? 900 : Math.min(duration, 1200);
+
+    function easeOutCubic(progress: number) {
+      return 1 - Math.pow(1 - progress, 3);
+    }
 
     function animate(timestamp: number) {
       if (startTimeRef.current === null) {
@@ -46,10 +44,10 @@ export function AnimatedCounter({
       }
 
       const progress = Math.min(
-        (timestamp - startTimeRef.current) / duration,
+        (timestamp - startTimeRef.current) / animationDuration,
         1,
       );
-      const nextValue = Math.round(progress * to);
+      const nextValue = Math.round(easeOutCubic(progress) * to);
 
       setCurrent(nextValue);
 
@@ -64,23 +62,26 @@ export function AnimatedCounter({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry?.isIntersecting) {
+        if (
+          !entry?.isIntersecting ||
+          entry.intersectionRatio < 0.35 ||
+          hasAnimatedRef.current
+        ) {
           return;
         }
 
         hasAnimatedRef.current = true;
+        observer.disconnect();
 
         if (reducedMotion) {
           setCurrent(to);
-          observer.disconnect();
           return;
         }
 
         startTimeRef.current = null;
         animationFrameRef.current = requestAnimationFrame(animate);
-        observer.disconnect();
       },
-      { threshold: 0.35 },
+      { rootMargin: "0px 0px -15% 0px", threshold: [0, 0.35, 0.5] },
     );
 
     observer.observe(element);

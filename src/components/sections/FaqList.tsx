@@ -48,7 +48,7 @@ export function FaqList({ items, idPrefix = "faq" }: FaqListProps) {
                 id={panelId}
                 role="region"
                 className={cn(
-                  "grid transition-[grid-template-rows] duration-150 ease-out md:duration-200",
+                  "grid transition-[grid-template-rows] duration-100 ease-out md:duration-150",
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
               >

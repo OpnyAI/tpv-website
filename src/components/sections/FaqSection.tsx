@@ -26,7 +26,7 @@ export function FaqSection() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.24] mix-blend-screen saturate-[0.62] brightness-[0.78]"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.24] saturate-[0.62] brightness-[0.78] md:mix-blend-screen"
         aria-hidden="true"
       />
       <div
@@ -34,7 +34,7 @@ export function FaqSection() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-[-12rem] top-[32%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.065)_0%,rgba(141,77,255,0.04)_42%,transparent_72%)] blur-3xl"
+        className="pointer-events-none absolute right-[-12rem] top-[32%] hidden h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.065)_0%,rgba(141,77,255,0.04)_42%,transparent_72%)] blur-3xl md:block"
         aria-hidden="true"
       />
 

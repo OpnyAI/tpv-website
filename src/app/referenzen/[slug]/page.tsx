@@ -152,7 +152,7 @@ export default async function ReferencePage({ params }: ReferencePageProps) {
   return (
     <main className="relative isolate overflow-hidden bg-[rgba(5,0,21,0.86)] text-white">
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.24] mix-blend-screen saturate-[0.62] brightness-[0.78]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.24] saturate-[0.62] brightness-[0.78] md:mix-blend-screen"
         aria-hidden="true"
       />
       <div
@@ -160,11 +160,11 @@ export default async function ReferencePage({ params }: ReferencePageProps) {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute left-1/2 top-[16rem] -z-10 h-[42rem] w-[72rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.08)_0%,rgba(139,77,255,0.045)_38%,transparent_68%)] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-[16rem] -z-10 hidden h-[42rem] w-[72rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.08)_0%,rgba(139,77,255,0.045)_38%,transparent_68%)] blur-3xl md:block"
         aria-hidden="true"
       />
       <div className="relative z-10 mx-auto w-full max-w-[1536px]">
-        <article className="mx-auto max-w-[1360px] px-6 pb-24 pt-8 sm:px-8 lg:px-12 lg:pt-14">
+        <article className="mx-auto max-w-[1360px] px-5 pb-24 pt-8 sm:px-8 lg:px-12 lg:pt-14">
           <CaseHero reference={reference} caseStudy={caseStudy} />
           <ProjectMeta caseStudy={caseStudy} />
           <VisionSection caseStudy={caseStudy} />
@@ -191,7 +191,7 @@ function CaseHero({
   caseStudy: ReferenceCaseStudy;
 }) {
   return (
-    <header className="relative mx-auto mt-4 max-w-[1320px] overflow-hidden rounded-[2px] border border-white/10 bg-[#081019] lg:mt-6">
+    <header className="relative mx-auto mt-4 max-w-[1320px] overflow-hidden rounded-[22px] border border-white/10 bg-[#081019] lg:mt-6 lg:rounded-[2px]">
       <div className="relative h-[520px] w-full lg:h-[620px]">
         {caseStudy.heroImage ? (
           <Image
@@ -208,8 +208,8 @@ function CaseHero({
             subtitle="Platzhalter - Datei später ersetzen"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_88%,rgba(0,0,0,0.28)_0%,transparent_52%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_88%,rgba(0,0,0,0.28)_0%,transparent_52%)]" />
         <div className="absolute bottom-10 left-6 max-w-[820px] sm:left-10 lg:bottom-14 lg:left-16">
           <p className="text-[18px] font-normal leading-none text-white/85">
             {caseStudy.heroLabel}
@@ -259,9 +259,9 @@ function VisionSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-5 sm:gap-6">
-      <span className="block h-[2px] w-20 shrink-0 bg-[#ff3f68] sm:w-24" />
-      <h2 className="text-[clamp(46px,4.8vw,76px)] font-light leading-[1.05] tracking-[-0.035em] text-white">
+    <div className="flex min-w-0 items-center gap-4 sm:gap-6">
+      <span className="block h-[2px] w-14 shrink-0 bg-[#ff3f68] sm:w-24" />
+      <h2 className="min-w-0 break-words text-[clamp(2.25rem,10vw,3.25rem)] font-light leading-[1.05] tracking-[-0.035em] text-white lg:text-[clamp(46px,4.8vw,76px)]">
         {children}
       </h2>
     </div>
@@ -308,14 +308,14 @@ function SpecsCard({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
 
 function ProcessSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
   return (
-    <section className="mx-auto max-w-[1320px] py-20 scroll-mt-32 lg:py-24">
-      <div className="max-w-[980px] rounded-[18px] border border-[#ff3f68]/35 bg-[#090022]/35 p-8 shadow-[0_0_22px_rgba(255,54,95,0.08)] lg:p-12">
+    <section className="mx-auto max-w-[1320px] py-16 scroll-mt-32 lg:py-24">
+      <div className="min-w-0 max-w-full rounded-[18px] border border-[#ff3f68]/35 bg-[#090022]/35 p-5 shadow-[0_0_22px_rgba(255,54,95,0.08)] sm:p-8 lg:max-w-[980px] lg:p-12">
         <SectionHeading>{caseStudy.processTitle}</SectionHeading>
-        <p className="mt-10 text-[19px] font-normal leading-[1.55] text-white/90">
+        <p className="mt-8 min-w-0 break-words text-base font-normal leading-[1.55] text-white/90 sm:text-[18px] lg:mt-10 lg:text-[19px]">
           {caseStudy.processTextTop}
         </p>
         <ProcessGrid images={caseStudy.processImages} />
-        <p className="mt-10 text-[18px] font-normal leading-[1.55] text-white/90">
+        <p className="mt-8 min-w-0 break-words text-base font-normal leading-[1.55] text-white/90 sm:text-[17px] lg:mt-10 lg:text-[18px]">
           {caseStudy.processTextBottom}
         </p>
       </div>
@@ -327,14 +327,14 @@ function ProcessGrid({ images }: { images: ReferenceImageSlot[] }) {
   return (
     <div
       className={cn(
-        "mt-8 grid gap-2",
+        "mt-8 grid min-w-0 gap-2",
         images.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
       )}
     >
       {images.map((image, index) => (
         <div
           key={`${image.alt}-${index}`}
-        className="relative aspect-[4/3] overflow-hidden rounded-md border border-white/10 bg-white/[0.03]"
+          className="relative aspect-[4/3] overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03]"
         >
           {image.src ? (
             <Image

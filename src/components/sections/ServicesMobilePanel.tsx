@@ -12,22 +12,33 @@ type ServicesMobilePanelProps = {
 
 export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const tabsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const activeService = services[activeIndex];
 
   function setActiveService(index: number) {
     setActiveIndex(index);
-    tabsRef.current[index]?.scrollIntoView({
+
+    const scroller = scrollerRef.current;
+    const tab = tabsRef.current[index];
+
+    if (!scroller || !tab) {
+      return;
+    }
+
+    scroller.scrollTo({
+      left: tab.offsetLeft - (scroller.clientWidth - tab.clientWidth) / 2,
       behavior: "smooth",
-      block: "nearest",
-      inline: "center",
     });
   }
 
   return (
-    <div className="lg:hidden">
+    <div className="min-w-0 max-w-full overflow-hidden lg:hidden">
       <div className="relative mt-14">
-        <div className="relative flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 touch-pan-x [-webkit-overflow-scrolling:touch]">
+        <div
+          ref={scrollerRef}
+          className="relative flex max-w-full snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-1 pb-4 touch-pan-x [-webkit-overflow-scrolling:touch]"
+        >
           {services.map((service, index) => (
             <button
               key={service.number}
@@ -36,7 +47,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               }}
               type="button"
               className={cn(
-                "relative min-w-[17.5rem] shrink-0 snap-start rounded-[1.875rem] border px-6 py-5 text-left transition duration-150 pointer-events-auto touch-manipulation",
+                "relative w-[min(78vw,17.5rem)] shrink-0 snap-start rounded-[1.875rem] border px-6 py-5 text-left transition duration-150 pointer-events-auto touch-manipulation",
                 index === activeIndex
                   ? "border-tpv-accent/70 bg-[rgba(1,28,34,0.86)] text-tpv-accent shadow-[0_0_30px_rgba(255,54,95,0.14)]"
                   : "border-white/45 bg-[rgba(8,4,28,0.82)] text-white",
@@ -69,9 +80,9 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
         </div>
       </div>
 
-      <div className="relative mt-10 max-w-full">
+      <div className="relative mt-10 min-w-0 max-w-full overflow-hidden">
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative min-h-[520px] max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:p-8">
+          <article className="relative min-h-[520px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:p-8">
             <div className="grid min-h-[470px] gap-8">
               <div className="relative z-20 min-w-0 max-w-[720px] pt-16">
                 <h3 className="break-words text-[clamp(1.9rem,8vw,3rem)] font-medium uppercase leading-[1.1] tracking-[-0.025em] text-tpv-accent">
