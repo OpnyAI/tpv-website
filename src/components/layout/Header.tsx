@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-6 sm:pt-7">
-      <div className="mx-auto w-full max-w-[1320px] lg:w-[87vw]">
+      <div className="relative mx-auto w-full max-w-[1320px] lg:w-[87vw]">
         <div className="rounded-full border border-[rgba(163,0,255,0.24)] bg-[rgba(31,24,56,0.86)] shadow-[inset_0_1px_0_rgba(248,247,255,0.045),0_18px_52px_rgba(0,0,0,0.28)] backdrop-blur-2xl">
           <div className="flex h-[66px] items-center justify-between gap-4 px-4 sm:h-[70px] sm:px-9 lg:h-[72px] lg:px-10">
             <Link
@@ -52,7 +52,7 @@ export function Header() {
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="relative z-[110] flex items-center gap-3 pointer-events-auto">
               <a
                 href={siteConfig.phoneHref}
                 className="hidden h-11 items-center gap-3 rounded-full border border-tpv-magenta/42 bg-gradient-to-r from-tpv-accent/10 to-tpv-violet/12 py-1.5 pl-2 pr-5 text-[clamp(1rem,0.82vw,1.06rem)] font-medium text-tpv-white shadow-[0_0_22px_rgba(255,54,95,0.12)] transition hover:bg-white/[0.08] lg:inline-flex"
@@ -68,23 +68,27 @@ export function Header() {
 
               <a
                 href={siteConfig.phoneHref}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-tpv-magenta/50 bg-white/[0.04] text-white shadow-glowSoft lg:hidden"
+                className="relative z-[120] inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-tpv-magenta/50 bg-white/[0.04] text-white shadow-glowSoft pointer-events-auto lg:hidden"
                 aria-label="Telefon +49 911 25392 666"
                 data-track-event={PHONE_CLICK}
                 data-track-label="mobile-header-phone"
               >
-                <Icon name="phone" size={18} />
+                <span className="pointer-events-none">
+                  <Icon name="phone" size={18} />
+                </span>
               </a>
 
               <button
                 type="button"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white lg:hidden"
+                className="relative z-[120] inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-white pointer-events-auto lg:hidden"
                 aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
                 aria-expanded={isOpen}
                 aria-controls="mobile-navigation"
                 onClick={() => setIsOpen((current) => !current)}
               >
-                <Icon name={isOpen ? "close" : "menu"} size={21} />
+                <span className="pointer-events-none">
+                  <Icon name={isOpen ? "close" : "menu"} size={21} />
+                </span>
               </button>
             </div>
           </div>
@@ -93,10 +97,10 @@ export function Header() {
         <div
           id="mobile-navigation"
           className={cn(
-            "mt-3 rounded-[2rem] border border-tpv-magenta/35 bg-tpv-deep/94 p-4 shadow-card backdrop-blur-2xl transition lg:hidden",
+            "absolute left-0 right-0 top-full mt-3 rounded-[2rem] border border-tpv-magenta/35 bg-tpv-deep/94 p-4 shadow-card backdrop-blur-2xl transition lg:hidden",
             isOpen
-              ? "pointer-events-auto translate-y-0 opacity-100"
-              : "pointer-events-none -translate-y-2 opacity-0",
+              ? "visible pointer-events-auto translate-y-0 opacity-100"
+              : "invisible pointer-events-none -translate-y-2 opacity-0",
           )}
         >
           <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">

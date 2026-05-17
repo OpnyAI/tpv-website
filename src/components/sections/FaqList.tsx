@@ -22,12 +22,12 @@ export function FaqList({ items, idPrefix = "faq" }: FaqListProps) {
         return (
           <div
             key={faq.question}
-            className="rounded-[12px] border border-[#ff3f68]/60 bg-[#090022]/35 transition-colors duration-200 hover:bg-white/[0.03]"
+            className="relative rounded-[12px] border border-[#ff3f68]/60 bg-[#090022]/35 transition-colors duration-200 hover:bg-white/[0.03]"
           >
             <div className="overflow-hidden rounded-[11px]">
               <button
                 type="button"
-                className="group flex min-h-[62px] w-full items-center justify-between gap-5 px-7 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3f68]/80 focus-visible:ring-inset md:min-h-[70px]"
+                className="group relative z-20 flex min-h-[62px] w-full touch-manipulation cursor-pointer items-center justify-between gap-5 px-7 py-5 text-left pointer-events-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3f68]/80 focus-visible:ring-inset md:min-h-[70px]"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? -1 : index)}
@@ -37,7 +37,7 @@ export function FaqList({ items, idPrefix = "faq" }: FaqListProps) {
                 </span>
                 <span
                   className={cn(
-                    "flex h-7 w-7 shrink-0 items-center justify-center text-[#ff3f68] transition duration-200 group-hover:translate-x-0.5 md:h-8 md:w-8",
+                    "pointer-events-none flex h-7 w-7 shrink-0 items-center justify-center text-[#ff3f68] transition duration-200 group-hover:translate-x-0.5 md:h-8 md:w-8",
                     isOpen && "rotate-90",
                   )}
                 >
@@ -48,7 +48,7 @@ export function FaqList({ items, idPrefix = "faq" }: FaqListProps) {
                 id={panelId}
                 role="region"
                 className={cn(
-                  "grid transition-[grid-template-rows] duration-300 ease-out",
+                  "grid transition-[grid-template-rows] duration-150 ease-out md:duration-200",
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
               >

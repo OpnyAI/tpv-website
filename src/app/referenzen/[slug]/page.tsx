@@ -388,14 +388,22 @@ function VideoLoop({ src }: { src: string | null }) {
   }
 
   return (
-    <video
-      className="h-[260px] w-full rounded-[22px] border border-white/45 bg-[#101e25]/90 object-cover sm:h-[360px] lg:h-[420px]"
-      src={src}
-      autoPlay
-      muted
-      loop
-      playsInline
-    />
+    <>
+      <div className="flex h-[260px] items-center justify-center rounded-[22px] border border-white/45 bg-[#101e25]/90 md:hidden">
+        <span className="text-sm font-medium uppercase tracking-[0.35em] text-white/70">
+          VIDEO LOOP
+        </span>
+      </div>
+      <video
+        className="hidden h-[260px] w-full rounded-[22px] border border-white/45 bg-[#101e25]/90 object-cover sm:h-[360px] md:block lg:h-[420px]"
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+      />
+    </>
   );
 }
 

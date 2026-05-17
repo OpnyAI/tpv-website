@@ -28,6 +28,14 @@ export function AnimatedCounter({
       return;
     }
 
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+
+    if (!desktopQuery.matches) {
+      hasAnimatedRef.current = true;
+      const timeout = window.setTimeout(() => setCurrent(to), 0);
+      return () => window.clearTimeout(timeout);
+    }
+
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;

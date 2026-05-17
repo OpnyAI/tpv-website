@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="relative isolate min-h-[740px] overflow-hidden px-[5vw] pb-[5rem] pt-32 scroll-mt-28 sm:pt-36 md:scroll-mt-40 lg:min-h-[760px] lg:pb-[4.75rem] lg:pt-[9.1rem]">
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.26] mix-blend-screen saturate-[0.62] brightness-[0.78]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.26] saturate-[0.62] brightness-[0.78] md:mix-blend-screen"
         aria-hidden="true"
       />
       <div
@@ -40,21 +40,32 @@ export function HeroSection() {
         </div>
 
         <div className="relative min-w-0 w-full lg:justify-self-end">
-          <div className="absolute -inset-5 rounded-[2.25rem] bg-[radial-gradient(circle,rgba(255,54,95,0.16)_0%,rgba(156,77,255,0.11)_42%,transparent_72%)] blur-3xl" />
+          <div className="pointer-events-none absolute -inset-5 hidden rounded-[2.25rem] bg-[radial-gradient(circle,rgba(255,54,95,0.16)_0%,rgba(156,77,255,0.11)_42%,transparent_72%)] blur-3xl md:block" />
           <div className="relative w-full max-w-full overflow-hidden rounded-[2rem] border border-[#FF365F]/75 bg-tpv-deep shadow-[0_24px_80px_rgba(0,0,0,0.42),0_0_38px_rgba(255,54,95,0.16)] lg:h-[clamp(405px,31vw,470px)] lg:w-[clamp(540px,42vw,620px)]">
             <div className="relative min-h-[380px] sm:min-h-[430px] lg:h-full lg:min-h-0">
               <video
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-center md:hidden"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster="/images/video-posters/tpv-hero-poster-mobile.jpg"
+                aria-label="TPV Hero Mobile Video"
+                src="/videos/hero/tpv-hero-video-mobile.mp4"
+              />
+              <video
+                className="hidden h-full w-full object-cover object-center md:block"
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="metadata"
+                poster="/images/video-posters/tpv-hero-poster-desktop.jpg"
                 aria-label="TPV Hero Video"
-              >
-                <source src="/videos/hero/tpv-hero-video.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-tr from-tpv-deep/16 via-transparent to-[#9C4DFF]/5" />
+                src="/videos/hero/tpv-hero-video.mp4"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-tpv-deep/16 via-transparent to-[#9C4DFF]/5" />
             </div>
           </div>
         </div>
