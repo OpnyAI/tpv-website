@@ -26,7 +26,7 @@ const socialLinks: Array<{ label: string; href: string; icon: IconName }> = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-tpv-magenta/18 bg-tpv-deep px-[5vw] py-14 text-white lg:py-16">
+    <footer className="relative overflow-hidden border-t border-white/18 bg-tpv-deep px-[5vw] py-12 text-white lg:py-14">
       <div className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-cover bg-center opacity-[0.18] mix-blend-screen saturate-[0.52] brightness-[0.7]" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[rgba(5,0,21,0.72)] via-[rgba(11,2,40,0.78)] to-[rgba(5,0,21,0.86)]" />
       <div className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-tpv-magenta/12 blur-3xl" />
@@ -36,11 +36,11 @@ export function Footer() {
         <div>
           <Link
             href="/"
-            className="inline-block text-[clamp(3.25rem,5vw,6rem)] font-medium leading-none tracking-[-0.06em] text-white"
+            className="inline-block text-[clamp(3rem,4.4vw,5rem)] font-medium leading-none tracking-[-0.05em] text-white"
           >
             TPV.
           </Link>
-          <p className="mt-6 max-w-[560px] text-[clamp(1rem,1.05vw,1.16rem)] leading-7 text-white/70">
+          <p className="mt-5 max-w-[540px] text-[clamp(0.95rem,1vw,1.08rem)] font-normal leading-7 text-white/70">
             Ihr Partner für visionäre Medientechnik und integrierte AV Lösung.
             Qualität, Innovation und Menschlichkeit stehen bei uns an erster
             Stelle.

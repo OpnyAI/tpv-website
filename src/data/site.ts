@@ -44,7 +44,7 @@ export const siteConfig: SiteConfig = {
     "Medientechnik Unternehmen",
     "Medientechnik Deutschland",
   ],
-  phoneDisplay: "0911 25392 666",
+  phoneDisplay: "+49 911 25392 666",
   phoneHref: "tel:+4991125392666",
   email: "info@tpv-av.de",
   emailHref: "mailto:info@tpv-av.de",

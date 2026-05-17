@@ -15,13 +15,13 @@ export const contactCards: ContactCard[] = [
   },
   {
     title: "Anruf",
-    value: "0911 25392 666",
+    value: "+49 911 25392 666",
     href: "tel:+4991125392666",
     description: "Sprechen Sie direkt mit uns über Ihr Projekt.",
   },
   {
     title: "Chat",
-    value: "0911 25392 666",
+    value: "+49 911 25392 666",
     href: "tel:+4991125392666",
     description:
       "Platzhalter: finaler Chat- oder WhatsApp-Link wird noch ergänzt.",

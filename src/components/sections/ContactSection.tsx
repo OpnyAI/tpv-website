@@ -24,8 +24,8 @@ const labelByTitle: Record<string, string> = {
 
 const valueByTitle: Record<string, string> = {
   "E-Mail": "info@tpv-av.de",
-  Anruf: "091125392 666",
-  Chat: "091125392 666",
+  Anruf: "+49 911 25392 666",
+  Chat: "+49 911 25392 666",
   Videocall: "Hier vereinbaren",
 };
 
@@ -36,18 +36,25 @@ const eventByTitle: Record<string, string> = {
   Videocall: VIDEOCALL_CLICK,
 };
 
+const hrefByTitle: Record<string, string> = {
+  "E-Mail": "mailto:info@tpv-av.de",
+  Anruf: "tel:+4991125392666",
+  Chat: "https://wa.me/4991125392666",
+  Videocall: "mailto:info@tpv-av.de?subject=Videocall%20anfragen",
+};
+
 export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="relative overflow-hidden scroll-mt-28 px-6 py-20 md:scroll-mt-40 lg:px-10 lg:pb-[6.25rem] lg:pt-[5.625rem]"
+      className="relative overflow-hidden scroll-mt-28 px-6 py-20 md:scroll-mt-40 lg:px-10 lg:pb-[7rem] lg:pt-[8rem]"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,0,21,0.78)_0%,rgba(11,2,40,0.82)_48%,rgba(5,0,21,0.86)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,0,21,0.62)_0%,rgba(11,2,40,0.72)_48%,rgba(5,0,21,0.7)_100%)]"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-cover bg-center opacity-[0.22] mix-blend-screen saturate-[0.62] brightness-[0.74]"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-[38%_top] bg-cover opacity-[0.24] mix-blend-screen saturate-[0.62] brightness-[0.78]"
         aria-hidden="true"
       />
       <div
@@ -55,35 +62,32 @@ export function ContactSection() {
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[28rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.1)_0%,rgba(163,0,255,0.055)_42%,transparent_72%)] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[28rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.075)_0%,rgba(163,0,255,0.04)_42%,transparent_72%)] blur-3xl"
         aria-hidden="true"
       />
 
       <div className="relative z-10 mx-auto max-w-[1240px]">
-        <h2 className="text-center text-[clamp(2.375rem,9vw,2.875rem)] font-medium uppercase leading-none tracking-[0.032em] text-tpv-accent lg:text-[clamp(3rem,4.5vw,4.75rem)]">
+        <h2 className="text-center text-[clamp(3rem,4vw,4.75rem)] font-medium uppercase leading-[1.05] tracking-[0.03em] text-tpv-accent">
           JETZT KONTAKTIEREN
         </h2>
 
-        <div className="mx-auto mt-12 w-full max-w-[1120px] overflow-hidden rounded-[1.875rem] border border-white/70 bg-[rgba(8,2,32,0.38)] shadow-[0_22px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl lg:mt-14">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-11 w-full max-w-[1160px] overflow-hidden rounded-[1.75rem] border border-white/65 bg-[rgba(5,8,24,0.24)] shadow-[0_18px_64px_rgba(0,0,0,0.22)] backdrop-blur-[2px] lg:mt-14 lg:rounded-[2rem]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
             {contactCards.map((card, index) => {
               const icon = iconByTitle[card.title] ?? "arrow-up-right";
               const eventName = eventByTitle[card.title] ?? CTA_CLICK;
-              const href =
-                card.href === "#"
-                  ? "mailto:info@tpv-av.de?subject=Videocall%20vereinbaren"
-                  : card.href;
+              const href = hrefByTitle[card.title] ?? card.href;
               const content = (
                 <>
                   <Icon
                     name={icon}
-                    size={38}
+                    size={34}
                     className="mx-auto text-[#F4F1FA] transition-colors duration-200 group-hover:text-white"
                   />
-                  <span className="mt-4 block text-[clamp(0.9375rem,1vw,1.125rem)] font-semibold uppercase tracking-[0.18em] text-tpv-accent">
+                  <span className="mt-5 block text-[clamp(1rem,1vw,1.125rem)] font-medium uppercase tracking-[0.18em] text-tpv-accent">
                     {labelByTitle[card.title] ?? card.title}
                   </span>
-                  <span className="mt-2.5 block text-[clamp(1.25rem,1.55vw,1.6875rem)] font-medium leading-[1.15] text-[#F4F1FA]">
+                  <span className="mt-3 block text-[clamp(1.25rem,1.55vw,1.75rem)] font-normal leading-[1.15] text-[#F4F1FA]">
                     {valueByTitle[card.title] ?? card.value}
                   </span>
                 </>
@@ -93,22 +97,21 @@ export function ContactSection() {
                 <div
                   key={card.title}
                   className={cn(
-                    "relative border-white/60 text-center transition-colors duration-200",
-                    index === 0 && "bg-[rgba(0,38,45,0.45)]",
-                    index < contactCards.length - 1 &&
-                      "border-b md:border-r lg:border-b-0 lg:border-r-0",
+                    "relative text-center",
+                    index < contactCards.length - 1 && "border-b border-white/30 sm:border-b-0",
+                    index < contactCards.length - 2 && "sm:border-b sm:border-white/30 lg:border-b-0",
                   )}
                 >
                   {index < contactCards.length - 1 && (
                     <span
-                      className="pointer-events-none absolute right-0 top-1/2 hidden h-[100px] w-px -translate-y-1/2 bg-white/65 lg:block"
+                      className="pointer-events-none absolute right-0 top-1/2 hidden h-[68px] w-px -translate-y-1/2 bg-white/45 lg:block"
                       aria-hidden="true"
                     />
                   )}
                   <a
                     href={href}
                     aria-label={`${labelByTitle[card.title] ?? card.title} ${valueByTitle[card.title] ?? card.value}`}
-                    className="group flex min-h-[150px] w-full flex-col items-center justify-center px-6 py-7 text-white transition-colors duration-200 hover:bg-white/[0.035] focus-visible:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent/70 focus-visible:ring-inset lg:min-h-[180px]"
+                    className="group flex min-h-[142px] w-full flex-col items-center justify-center px-6 py-7 text-white transition-[background-color,box-shadow,color] duration-200 ease-out hover:bg-white/[0.045] hover:shadow-[inset_0_0_28px_rgba(255,255,255,0.035)] focus-visible:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent/70 focus-visible:ring-inset lg:min-h-[164px] lg:px-8 lg:py-8"
                     data-track-event={eventName}
                     data-track-label={`contact:${card.title}`}
                   >
