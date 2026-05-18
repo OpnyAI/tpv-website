@@ -66,8 +66,8 @@ export function ContactSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1240px]">
-        <h2 className="text-center text-[clamp(3rem,4vw,4.75rem)] font-medium uppercase leading-[1.05] tracking-[0.03em] text-tpv-accent">
+      <div className="relative z-10 mx-auto max-w-[1240px] min-w-0">
+        <h2 className="mx-auto max-w-[calc(100vw-2rem)] break-words text-center text-[clamp(2.35rem,10vw,3rem)] font-medium uppercase leading-[1.04] tracking-[0.02em] text-tpv-accent lg:text-[clamp(3rem,4vw,4.75rem)] lg:leading-[1.05] lg:tracking-[0.03em]">
           JETZT KONTAKTIEREN
         </h2>
 
@@ -84,10 +84,10 @@ export function ContactSection() {
                     size={34}
                     className="mx-auto text-[#F4F1FA] transition-colors duration-200 group-hover:text-white"
                   />
-                  <span className="mt-5 block text-[clamp(1rem,1vw,1.125rem)] font-medium uppercase tracking-[0.18em] text-tpv-accent">
+                  <span className="mt-5 block text-[clamp(0.9rem,4vw,1rem)] font-medium uppercase tracking-[0.16em] text-tpv-accent lg:text-[clamp(1rem,1vw,1.125rem)] lg:tracking-[0.18em]">
                     {labelByTitle[card.title] ?? card.title}
                   </span>
-                  <span className="mt-3 block text-[clamp(1.25rem,1.55vw,1.75rem)] font-normal leading-[1.15] text-[#F4F1FA]">
+                  <span className="mt-3 block max-w-full break-words text-[clamp(1.08rem,5vw,1.32rem)] font-normal leading-[1.15] text-[#F4F1FA] lg:text-[clamp(1.25rem,1.55vw,1.75rem)]">
                     {valueByTitle[card.title] ?? card.value}
                   </span>
                 </>

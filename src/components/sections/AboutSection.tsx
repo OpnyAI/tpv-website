@@ -25,7 +25,7 @@ export function AboutSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto grid min-h-[calc(720px-9rem)] max-w-[1440px] items-center gap-12 lg:min-h-[640px] lg:grid-cols-[0.92fr_1.08fr] lg:gap-[clamp(3.5rem,6vw,6rem)]">
+      <div className="relative z-10 mx-auto grid min-h-[calc(720px-9rem)] max-w-[1440px] min-w-0 items-center gap-12 lg:min-h-[640px] lg:grid-cols-[0.92fr_1.08fr] lg:gap-[clamp(3.5rem,6vw,6rem)]">
         <div className="flex justify-center lg:justify-start">
           <div className="relative aspect-square w-[min(82vw,380px)] lg:w-[clamp(460px,38vw,560px)]">
             <div className="pointer-events-none absolute inset-[-1.5rem] hidden rounded-full bg-[radial-gradient(circle,rgba(255,54,95,0.22)_0%,rgba(163,0,255,0.16)_34%,transparent_68%)] blur-3xl md:block" />
@@ -61,25 +61,25 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="text-center lg:text-left">
-          <p className="text-[clamp(2.5rem,3.6vw,3.5625rem)] font-medium uppercase leading-none tracking-[0.04em] text-tpv-accent">
+        <div className="min-w-0 text-center lg:text-left">
+          <p className="mx-auto max-w-[calc(100vw-2rem)] text-[clamp(2.15rem,9vw,2.75rem)] font-medium uppercase leading-none tracking-[0.04em] text-tpv-accent lg:mx-0 lg:text-[clamp(2.5rem,3.6vw,3.5625rem)]">
             WIR SIND
           </p>
-          <h2 className="mt-8 text-[clamp(4.3rem,18vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.04em] text-white lg:mt-9 lg:text-[clamp(6rem,9vw,9.375rem)]">
+          <h2 className="mx-auto mt-8 max-w-[calc(100vw-2rem)] break-words text-[clamp(3.8rem,17vw,6rem)] font-medium leading-[0.95] tracking-[-0.04em] text-white lg:mx-0 lg:mt-9 lg:text-[clamp(6rem,9vw,9.375rem)]">
             TPV-AV
           </h2>
-          <p className="mx-auto mt-11 max-w-[720px] text-[clamp(2.15rem,9vw,3.25rem)] font-medium leading-[1.12] tracking-[-0.035em] text-tpv-accent lg:mx-0 lg:mt-12 lg:text-[clamp(2.625rem,4vw,3.5625rem)]">
+          <p className="mx-auto mt-10 max-w-[calc(100vw-2rem)] break-words text-[clamp(1.9rem,8vw,2.85rem)] font-medium leading-[1.12] tracking-[-0.035em] text-tpv-accent lg:mx-0 lg:mt-12 lg:max-w-[720px] lg:text-[clamp(2.625rem,4vw,3.5625rem)]">
             Technologische Visionen
             <span className="block">menschlich vollendet</span>
           </p>
 
-          <div className="mt-10 grid grid-cols-3 gap-x-6 gap-y-8 lg:mt-12 lg:max-w-[640px] lg:gap-x-14">
+          <div className="mx-auto mt-10 grid max-w-[calc(100vw-2rem)] grid-cols-3 gap-x-3 gap-y-8 lg:mx-0 lg:mt-12 lg:max-w-[640px] lg:gap-x-14">
             {aboutStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-[clamp(2.625rem,3.4vw,3.25rem)] font-medium leading-none text-white">
+              <div key={stat.label} className="min-w-0">
+                <p className="text-[clamp(2.15rem,9vw,2.625rem)] font-medium leading-none text-white lg:text-[clamp(2.625rem,3.4vw,3.25rem)]">
                   <AnimatedCounter to={stat.value} suffix="+" />
                 </p>
-                <p className="mt-2 text-[clamp(1.1rem,1.7vw,1.75rem)] font-normal leading-[1.1] text-white">
+                <p className="mt-2 break-words text-[clamp(0.9rem,3.8vw,1.1rem)] font-normal leading-[1.1] text-white lg:text-[clamp(1.1rem,1.7vw,1.75rem)]">
                   {stat.label}
                 </p>
               </div>

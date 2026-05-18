@@ -37,7 +37,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
       <div className="relative mt-14">
         <div
           ref={scrollerRef}
-          className="relative flex max-w-full snap-x snap-mandatory gap-5 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-1 pb-4 touch-pan-x [-webkit-overflow-scrolling:touch]"
+          className="relative flex max-w-full snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-px-4 px-1 pb-4 touch-pan-x [-webkit-overflow-scrolling:touch]"
         >
           {services.map((service, index) => (
             <button
@@ -47,7 +47,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               }}
               type="button"
               className={cn(
-                "relative w-[min(78vw,17.5rem)] shrink-0 snap-start rounded-[1.875rem] border px-6 py-5 text-left transition duration-150 pointer-events-auto touch-manipulation",
+                "relative w-[min(72vw,20rem)] shrink-0 snap-start rounded-[1.875rem] border px-5 py-5 text-left transition duration-150 pointer-events-auto touch-manipulation",
                 index === activeIndex
                   ? "border-tpv-accent/70 bg-[rgba(1,28,34,0.86)] text-tpv-accent shadow-[0_0_30px_rgba(255,54,95,0.14)]"
                   : "border-white/45 bg-[rgba(8,4,28,0.82)] text-white",
@@ -55,10 +55,10 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               onClick={() => setActiveService(index)}
               aria-pressed={index === activeIndex}
             >
-              <span className="block text-[clamp(1rem,1.1vw,1.125rem)] font-medium leading-none">
+              <span className="block text-[clamp(0.95rem,4vw,1.125rem)] font-medium leading-none">
                 {service.number} {"//"}
               </span>
-              <span className="mt-2 block text-[clamp(1.125rem,1.25vw,1.4375rem)] font-medium uppercase leading-[1.18] tracking-[0.025em]">
+              <span className="mt-2 block min-w-0 break-words text-[clamp(0.95rem,4vw,1.18rem)] font-medium uppercase leading-[1.18] tracking-[0.025em]">
                 {service.title}
               </span>
             </button>

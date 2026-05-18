@@ -83,8 +83,26 @@ export function ServicesSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1400px]">
-        <h2 className="max-w-[1180px] text-[clamp(2.75rem,4vw,4.75rem)] font-medium leading-[1.1] tracking-[-0.025em] text-[#F7F4FF]">
+      <div className="relative z-10 mx-auto max-w-[1400px] min-w-0">
+        <h2 className="mx-auto block max-w-[calc(100vw-2rem)] overflow-visible break-words px-2 text-center text-[clamp(2.05rem,8.5vw,3.45rem)] font-medium leading-[1.07] tracking-[-0.025em] text-[#F7F4FF] lg:hidden">
+          <span className="block text-tpv-accent">
+            Herausragende Ergebnisse
+          </span>
+          <span className="block">
+            erfordern eine <span className="text-tpv-accent">klare</span>
+          </span>
+          <span className="block">
+            <span className="text-tpv-accent">Struktur.</span> Unsere
+          </span>
+          <span className="block">Expertise basiert auf</span>
+          <span className="block text-tpv-accent">vier</span>
+          <span className="block">
+            ineinandergreifenden
+          </span>
+          <span className="block text-tpv-accent">Leistungsbereichen.</span>
+        </h2>
+
+        <h2 className="hidden max-w-[1180px] text-left text-[clamp(2.75rem,4vw,4.75rem)] font-medium leading-[1.1] tracking-[-0.025em] text-[#F7F4FF] lg:block">
           <span className="text-tpv-accent">Herausragende Ergebnisse</span>{" "}
           erfordern
           <br />

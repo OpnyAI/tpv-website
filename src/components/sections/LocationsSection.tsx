@@ -31,15 +31,15 @@ export function LocationsSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-[1280px]">
-        <div className="max-w-[980px]">
-          <h2 className="text-[clamp(2.375rem,8vw,3rem)] font-medium uppercase leading-[1.05] tracking-[0.018em] text-[#F4F1FA] lg:text-[clamp(3rem,4.6vw,4.75rem)]">
+      <div className="relative z-10 mx-auto max-w-[1280px] min-w-0">
+        <div className="mx-auto max-w-[calc(100vw-2rem)] text-center lg:mx-0 lg:max-w-[980px] lg:text-left">
+          <h2 className="break-words text-[clamp(2.15rem,8vw,3rem)] font-medium uppercase leading-[1.05] tracking-[0.018em] text-[#F4F1FA] lg:text-[clamp(3rem,4.6vw,4.75rem)]">
             <span className="text-tpv-accent">STARTEN SIE</span>{" "}
             <span>NOCH HEUTE</span>{" "}
             <span className="text-tpv-accent">IHR PROJEKT</span>{" "}
             <span>MIT UNS</span>
           </h2>
-          <p className="mt-[1.125rem] max-w-[780px] text-[clamp(1.25rem,4vw,1.5rem)] font-normal leading-[1.35] text-[#F4F1FA]/90 lg:text-[clamp(1.375rem,2.1vw,2.25rem)] lg:leading-[1.25]">
+          <p className="mx-auto mt-[1.125rem] max-w-[calc(100vw-2rem)] text-[clamp(1.1rem,4vw,1.35rem)] font-normal leading-[1.35] text-[#F4F1FA]/90 lg:mx-0 lg:max-w-[780px] lg:text-[clamp(1.375rem,2.1vw,2.25rem)] lg:leading-[1.25]">
             Digital vernetzt. Bundesweit einsatzbereit. Immer in Ihrer Nähe
           </p>
         </div>
