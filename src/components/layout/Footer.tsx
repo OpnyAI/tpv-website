@@ -16,13 +16,13 @@ const legalLinks = [
   { label: "AGB", href: "/agb" },
 ];
 
-const socialLinks: Array<{ label: string; href: string; icon: IconName }> = [
-  { label: "X", href: "/#kontakt", icon: "x" },
-  { label: "Instagram", href: "/#kontakt", icon: "instagram" },
-  { label: "LinkedIn", href: "/#kontakt", icon: "linkedin" },
-  { label: "WhatsApp", href: "tel:+4991125392666", icon: "whatsapp" },
-  { label: "TikTok", href: "/#kontakt", icon: "tiktok" },
-];
+const iconBySocialLabel: Record<string, IconName> = {
+  X: "x",
+  Instagram: "instagram",
+  LinkedIn: "linkedin",
+  WhatsApp: "whatsapp",
+  TikTok: "tiktok",
+};
 
 export function Footer() {
   return (
@@ -47,16 +47,18 @@ export function Footer() {
           </p>
 
           <div className="mt-7 flex flex-wrap gap-4">
-            {socialLinks.map((item) => (
+            {siteConfig.socialLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-white transition hover:border-tpv-magenta/70 hover:text-tpv-accent hover:shadow-glowSoft"
                 aria-label={item.label}
                 data-track-event={CTA_CLICK}
                 data-track-label={`footer-social:${item.label}`}
               >
-                <Icon name={item.icon} size={23} />
+                <Icon name={iconBySocialLabel[item.label]} size={23} />
               </a>
             ))}
           </div>

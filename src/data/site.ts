@@ -25,7 +25,7 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   name: "TPV-AV",
-  legalName: "TPV-AV GmbH",
+  legalName: "Heinrich Obholz (Einzelunternehmer)",
   url: "https://www.tpv-av.de",
   baseUrl: "https://www.tpv-av.de",
   description:
@@ -48,13 +48,15 @@ export const siteConfig: SiteConfig = {
   phoneHref: "tel:+4991125392666",
   email: "info@tpv-av.de",
   emailHref: "mailto:info@tpv-av.de",
-  copyright: "2026 TPV-AV GmbH",
-  bookingUrl: "#",
+  copyright: "2026 TPV-AV",
+  bookingUrl: "https://calendly.com/tpv-av-info/30min?month=2026-05",
   socialLinks: [
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "YouTube", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/tpvav" },
+    { label: "Instagram", href: "https://www.instagram.com/tpv.av/" },
+    { label: "TikTok", href: "https://www.tiktok.com/@tpvavofficial" },
+    { label: "X", href: "https://x.com/TPV_AV" },
+    { label: "WhatsApp", href: "https://wa.me/4991125392666" },
   ],
   legalNotice:
-    "Platzhalter: Rechtliche Unternehmensdaten müssen vor Livegang ergänzt und geprüft werden.",
+    "Heinrich Obholz, Sulzbacherstraße 48, 90489 Nürnberg",
 };

@@ -22,14 +22,13 @@ export const contactCards: ContactCard[] = [
   {
     title: "Chat",
     value: "+49 911 25392 666",
-    href: "tel:+4991125392666",
-    description:
-      "Platzhalter: finaler Chat- oder WhatsApp-Link wird noch ergänzt.",
+    href: "https://wa.me/4991125392666",
+    description: "Kontaktieren Sie uns direkt per WhatsApp.",
   },
   {
     title: "Videocall",
     value: "Hier vereinbaren",
-    href: "#",
-    description: "Platzhalter: finaler Buchungslink wird noch ergänzt.",
+    href: "https://calendly.com/tpv-av-info/30min?month=2026-05",
+    description: "Vereinbaren Sie einen 30-minütigen Videocall.",
   },
 ];

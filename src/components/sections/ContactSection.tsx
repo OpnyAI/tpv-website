@@ -1,5 +1,6 @@
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { contactCards } from "@/data/contact";
+import { siteConfig } from "@/data/site";
 import {
   CTA_CLICK,
   EMAIL_CLICK,
@@ -40,7 +41,7 @@ const hrefByTitle: Record<string, string> = {
   "E-Mail": "mailto:info@tpv-av.de",
   Anruf: "tel:+4991125392666",
   Chat: "https://wa.me/4991125392666",
-  Videocall: "mailto:info@tpv-av.de?subject=Videocall%20anfragen",
+  Videocall: siteConfig.bookingUrl,
 };
 
 export function ContactSection() {
@@ -110,6 +111,10 @@ export function ContactSection() {
                   )}
                   <a
                     href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      href.startsWith("http") ? "noopener noreferrer" : undefined
+                    }
                     aria-label={`${labelByTitle[card.title] ?? card.title} ${valueByTitle[card.title] ?? card.value}`}
                     className="group flex min-h-[142px] w-full flex-col items-center justify-center px-6 py-7 text-white transition-[background-color,box-shadow,color] duration-200 ease-out hover:bg-white/[0.045] hover:shadow-[inset_0_0_28px_rgba(255,255,255,0.035)] focus-visible:bg-white/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent/70 focus-visible:ring-inset lg:min-h-[164px] lg:px-8 lg:py-8"
                     data-track-event={eventName}

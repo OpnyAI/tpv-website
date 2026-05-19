@@ -67,7 +67,7 @@ const contactActions: ContactAction[] = [
     title: "Videocall",
     label: "VIDEOCALL:",
     value: "Hier vereinbaren",
-    href: "mailto:info@tpv-av.de?subject=Videocall%20vereinbaren",
+    href: siteConfig.bookingUrl,
     icon: "video",
     eventName: VIDEOCALL_CLICK,
   },
@@ -366,7 +366,11 @@ function ResultSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
           {caseStudy.resultText}
         </p>
         <div className="mt-10">
-          <VideoLoop src={caseStudy.resultVideo ?? null} />
+          <VideoLoop
+            src={caseStudy.resultVideo ?? null}
+            image={caseStudy.resultImage ?? null}
+            images={caseStudy.resultImages ?? []}
+          />
         </div>
       </div>
       <div className="lg:pt-[9.25rem]">
@@ -376,8 +380,36 @@ function ResultSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
   );
 }
 
-function VideoLoop({ src }: { src: string | null }) {
+function VideoLoop({
+  src,
+  image,
+  images,
+}: {
+  src: string | null;
+  image: ReferenceImageSlot | null;
+  images: ReferenceImageSlot[];
+}) {
   if (!src) {
+    if (images.length > 1) {
+      return <ResultImageGrid images={images} />;
+    }
+
+    const resultImage = images[0] ?? image;
+
+    if (resultImage?.src) {
+      return (
+        <div className="relative h-[260px] overflow-hidden rounded-[22px] border border-white/45 bg-[#101e25]/90 sm:h-[360px] lg:h-[420px]">
+          <Image
+            src={resultImage.src}
+            alt={resultImage.alt}
+            fill
+            sizes="(min-width: 1024px) 900px, 94vw"
+            className="object-cover"
+          />
+        </div>
+      );
+    }
+
     return (
       <div className="flex h-[260px] items-center justify-center rounded-[22px] border border-white/45 bg-[#101e25]/90 sm:h-[360px] lg:h-[420px]">
         <span className="text-sm font-medium uppercase tracking-[0.35em] text-white/70">
@@ -407,6 +439,35 @@ function VideoLoop({ src }: { src: string | null }) {
   );
 }
 
+function ResultImageGrid({ images }: { images: ReferenceImageSlot[] }) {
+  return (
+    <div className="grid min-w-0 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {images.map((image, index) => (
+        <div
+          key={`${image.alt}-${index}`}
+          className="relative aspect-[4/3] overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03]"
+        >
+          {image.src ? (
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1024px) 300px, 90vw"
+              className="object-cover"
+            />
+          ) : (
+            <ImagePlaceholder
+              title="Bildmaterial ausstehend"
+              subtitle="Vom Kunden anfordern"
+              compact
+            />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ContactPersonCard({
   contactPerson,
 }: {
@@ -417,6 +478,7 @@ function ContactPersonCard({
     .map((part) => part[0])
     .join("")
     .slice(0, 2);
+  const emailHref = `mailto:${contactPerson.email}?subject=Kontaktanfrage%20Referenzprojekt`;
 
   return (
     <aside className="w-full rounded-[18px] border border-[#ff3f68]/45 bg-[#111d24]/95 p-6 lg:w-[320px]">
@@ -452,7 +514,7 @@ function ContactPersonCard({
         <p className="mt-4 text-sm font-normal text-white/48">Foto ausstehend</p>
       )}
       <a
-        href="mailto:info@tpv-av.de?subject=Kontaktanfrage%20Referenzprojekt"
+        href={emailHref}
         className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#ff3f68] transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3f68]"
         data-track-event={EMAIL_CLICK}
         data-track-label="reference-contact-person"
@@ -552,6 +614,12 @@ function ReferenceContactCta() {
               )}
               <a
                 href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  item.href.startsWith("http")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 aria-label={`${item.label} ${item.value}`}
                 className="group flex min-h-[144px] w-full flex-col items-center justify-center px-6 py-7 text-white transition-colors duration-200 ease-out hover:bg-[rgba(0,40,48,0.28)] focus-visible:bg-[rgba(0,40,48,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3f68]/70 focus-visible:ring-inset lg:min-h-[166px] lg:px-8"
                 data-track-event={item.eventName}

@@ -6,6 +6,7 @@ export type ProjectMetaItem = {
 export type ReferenceContactPerson = {
   name: string;
   role: string;
+  email: string;
   image?: string | null;
 };
 
@@ -41,6 +42,8 @@ export type ReferenceCaseStudy = {
   resultTitle: string;
   resultText: string;
   resultVideo?: string | null;
+  resultImage?: ReferenceImageSlot | null;
+  resultImages?: ReferenceImageSlot[];
   contactPerson: ReferenceContactPerson;
   faq: ReferenceFaqItem[];
 };
@@ -70,12 +73,6 @@ export type ReferenceItem = {
   result: string;
   contactPerson: ReferenceContactPerson;
   caseStudy: ReferenceCaseStudy;
-};
-
-const defaultContactPerson: ReferenceContactPerson = {
-  name: "Heinrich Ohbolz",
-  role: "Managing Director",
-  image: null,
 };
 
 const commonFaq: ReferenceFaqItem[] = [
@@ -111,6 +108,179 @@ function imageSlot(src: string | null, alt: string): ReferenceImageSlot {
   return { src, alt };
 }
 
+const heinrichObholz: ReferenceContactPerson = {
+  name: "Heinrich Obholz",
+  role: "Managing Director",
+  email: "info@tpv-av.de",
+  image: "/images/case-studies/Ansprechpartner/contact-heinrich-obholz.jpg",
+};
+
+const fabianDering: ReferenceContactPerson = {
+  name: "Fabian Dering",
+  role: "AV-Projektleiter",
+  email: "technik@tpv-av.de",
+  image: "/images/case-studies/Ansprechpartner/contact-fabian-dering.png",
+};
+
+const gabrielZidar: ReferenceContactPerson = {
+  name: "Gabriel Zidar",
+  role: "AV-Projektleiter",
+  email: "technik@tpv-av.de",
+  image: "/images/case-studies/Ansprechpartner/contact-gabriel-zidar.jpg",
+};
+
+const futrueHeroImage =
+  "/images/case-studies/futrue/01_Titelbild/futrue-hero.png";
+const futrueProcessImages = [
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-01.png",
+    "Futrue Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-02.jpg",
+    "Futrue Vorgehensweise 2",
+  ),
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-03.jpg",
+    "Futrue Vorgehensweise 3",
+  ),
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-04.jpg",
+    "Futrue Vorgehensweise 4",
+  ),
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-05.png",
+    "Futrue Vorgehensweise 5",
+  ),
+  imageSlot(
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-06.png",
+    "Futrue Vorgehensweise 6",
+  ),
+];
+
+const noxxHeroImage =
+  "/images/case-studies/noxx/01_Titelseite/noxx-hero.png";
+const noxxProcessImages = [
+  imageSlot(
+    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-01.png",
+    "Noxx Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-02.png",
+    "Noxx Vorgehensweise 2",
+  ),
+  imageSlot(
+    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-03.png",
+    "Noxx Vorgehensweise 3",
+  ),
+  imageSlot(
+    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-04.jpg",
+    "Noxx Vorgehensweise 4",
+  ),
+];
+const noxxResultImages = [
+  imageSlot("/images/case-studies/noxx/noxx-result-01.jpg", "Noxx Ergebnis 1"),
+  imageSlot(
+    "/images/case-studies/noxx/noxx-result-02.jpg",
+    "Noxx Ergebnis 2",
+  ),
+  imageSlot(
+    "/images/case-studies/noxx/noxx-result-03.jpg",
+    "Noxx Ergebnis 3",
+  ),
+];
+
+const huhtamakiHeroImage =
+  "/images/case-studies/huhtamaki/01_Titelbild/huhtamaki-hero.png";
+const huhtamakiProcessImages = [
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-01.jpg",
+    "Huhtamaki Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-02.jpg",
+    "Huhtamaki Vorgehensweise 2",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-03.jpg",
+    "Huhtamaki Vorgehensweise 3",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-04.jpg",
+    "Huhtamaki Vorgehensweise 4",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-05.jpg",
+    "Huhtamaki Vorgehensweise 5",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-06.jpg",
+    "Huhtamaki Vorgehensweise 6",
+  ),
+  imageSlot(
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-07.jpg",
+    "Huhtamaki Vorgehensweise 7",
+  ),
+];
+
+const orionHeroImage =
+  "/images/case-studies/orion/01_Titelbild/orion-hero.png";
+const orionProcessImages = [
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-process-01.jpg",
+    "Orion Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-process-02.jpg",
+    "Orion Vorgehensweise 2",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-process-03.jpg",
+    "Orion Vorgehensweise 3",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-process-04.jpg",
+    "Orion Vorgehensweise 4",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-process-05.jpg",
+    "Orion Vorgehensweise 5",
+  ),
+];
+const orionResultImages = [
+  imageSlot(
+    "/images/case-studies/orion/03_Ergebnis/orion-result-01.jpg",
+    "Orion Ergebnis 1",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/03_Ergebnis/orion-result-02.jpg",
+    "Orion Ergebnis 2",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/03_Ergebnis/orion-result-03.jpg",
+    "Orion Ergebnis 3",
+  ),
+];
+
+const relexaHeroImage =
+  "/images/case-studies/relexa/01_Titelseite/relexa-hero.png";
+const relexaProcessImages = [
+  imageSlot(
+    "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-01.png",
+    "Relexa Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-02.png",
+    "Relexa Vorgehensweise 2",
+  ),
+];
+const relexaResultImages = [
+  imageSlot(
+    "/images/case-studies/relexa/01_Titelseite/relexa-result-01.png",
+    "Relexa Titelbild 2",
+  ),
+];
+
 export const references: ReferenceItem[] = [
   {
     slug: "futrue",
@@ -123,16 +293,19 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "LED-Wall",
-    cardImage: "/images/references/futrue.webp",
+    cardImage: futrueHeroImage,
     cardImageAlt: "Futrue LED-Wall Referenz",
-    detailImages: ["/images/case-studies/futrue/futrue-card.webp"],
+    detailImages: [
+      futrueHeroImage,
+      ...futrueProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+    ],
     href: "/referenzen/futrue",
     featured: true,
     seoTitle: "Futrue Referenz - LED-Wall Planung & Installation in München",
     seoDescription:
       "TPV plante und installierte zwei LED-Walls für Futrue in München - mit 4K UltraHD, AV over IP und starker visueller Wirkung.",
     canonicalPath: "/referenzen/futrue",
-    ogImage: "/images/references/futrue.webp",
+    ogImage: futrueHeroImage,
     vision:
       "Für das innovative Pharma- und Gesundheitsunternehmen Futrue GmbH entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich.",
     approach:
@@ -146,13 +319,13 @@ export const references: ReferenceItem[] = [
       { label: "Helligkeit", value: "800 nits" },
       { label: "Gesamtauflösung", value: "4K ULTRAHD" },
     ],
-    contactPerson: defaultContactPerson,
+    contactPerson: heinrichObholz,
     caseStudy: {
       client: "Futrue GmbH",
       heroLabel: "Case Study",
       heroSubtitle:
         "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz in München.",
-      heroImage: "/images/references/futrue.webp",
+      heroImage: futrueHeroImage,
       meta: [
         { label: "Jahr", value: "2026" },
         { label: "Standort", value: "MÜNCHEN" },
@@ -172,21 +345,14 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Die Umsetzung begann mit einer detaillierten Bedarfsermittlung und einem technischen Audit, um die statischen Voraussetzungen für einen bündigen Wandeinbau zu schaffen. Mittels einer fotorealistischen 3D-Visualisierung in der Unreal Engine wurde die Wirkung der LED-Mosaike bereits vorab simuliert, wobei der Fokus auf einer nahtlosen architektonischen Integration lag. Dies ermöglichte eine präzise Planung, bei der die Technik optisch mit dem Raum verschmilzt und der Content als integraler Bestandteil der Architektur wahrgenommen wird.",
-      processImages: [
-        imageSlot("/images/case-studies/futrue/futrue-card.webp", "Futrue LED-Wall Detail"),
-        imageSlot("/images/references/futrue.webp", "Futrue Referenzbild"),
-        imageSlot(null, "Futrue Prozessbild ausstehend"),
-        imageSlot(null, "Futrue Prozessbild ausstehend"),
-        imageSlot(null, "Futrue Prozessbild ausstehend"),
-        imageSlot(null, "Futrue Prozessbild ausstehend"),
-      ],
+      processImages: futrueProcessImages,
       processTextBottom:
         "Technisch kamen zwei hochauflösende Absen-LED-Walls mit COB-Technologie und Novastar-Controllern zum Einsatz, die für exzellente Kontraste und höchste Farbtreue sorgen. Die Steuerung erfolgt über das cloudbasierte CMS Connect Signage, wodurch das Marketing-Team Inhalte ohne IT-Fachwissen flexibel verwalten kann. Den Abschluss bildete die präzise Abstimmung mit den Trockenbau-Gewerken, um durch minimale Spaltmaße einen kantenfreien Übergang zwischen Wand und Displayfläche zu garantieren.",
       resultTitle: "Das Ergebnis",
       resultText:
         "Das Ergebnis ist eine nahtlose architektonische Integration, bei der die digitale Fläche durch präzises Schnittstellenmanagement zu einem hochwertigen Designelement verschmilzt. Dank robuster COB-Technik und intuitiver Cloud-Steuerung wird höchste Betriebssicherheit mit maximaler Flexibilität für das Marketing kombiniert. Das Resultat ist ein innovatives Markenerlebnis, das durch Millimeterarbeit und eine moderne Mosaik-Optik langfristig überzeugt.",
       resultVideo: null,
-      contactPerson: defaultContactPerson,
+      contactPerson: heinrichObholz,
       faq: [
         ...commonFaq,
         {
@@ -209,15 +375,12 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation", "Support"],
     sector: "Gastgewerbe",
     technology: "Medientechnik",
-    cardImage: "/images/references/noxx.png",
+    cardImage: noxxHeroImage,
     cardImageAlt: "Noxx Medientechnik Referenz",
     detailImages: [
-      "/images/case-studies/noxx/noxx-card.png",
-      "/images/case-studies/noxx/noxx-asset-01.png",
-      "/images/case-studies/noxx/noxx-asset-02.png",
-      "/images/case-studies/noxx/noxx-asset-03.jpg",
-      "/images/case-studies/noxx/noxx-asset-04.jpg",
-      "/images/case-studies/noxx/noxx-asset-05.jpg",
+      noxxHeroImage,
+      ...noxxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      ...noxxResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/noxx",
     featured: true,
@@ -225,7 +388,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "High-End Medientechnik für Noxx in Marburg: TPV verband moderne AV-Technik mit hochwertigem Raumdesign.",
     canonicalPath: "/referenzen/noxx",
-    ogImage: "/images/references/noxx.png",
+    ogImage: noxxHeroImage,
     vision:
       "Die Vision für das Hotel NOXX war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur.",
     approach:
@@ -239,13 +402,13 @@ export const references: ReferenceItem[] = [
       { label: "Helligkeit", value: "800 nits" },
       { label: "Gesamtauflösung", value: "4K ULTRAHD" },
     ],
-    contactPerson: defaultContactPerson,
+    contactPerson: heinrichObholz,
     caseStudy: {
       client: "Noxx",
       heroLabel: "Case Study",
       heroSubtitle:
         "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept in Marburg.",
-      heroImage: "/images/references/noxx.png",
+      heroImage: noxxHeroImage,
       meta: [
         { label: "Jahr", value: "2024" },
         { label: "Standort", value: "MARBURG" },
@@ -265,19 +428,15 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Der Prozess startete mit einer fundierten Rohbau-Analyse, bei der bauliche Störfaktoren wie akustisch anspruchsvolle Materialien und Lichtverhältnisse frühzeitig identifiziert wurden. Durch den Abgleich der Ist-Maße mit den Bauplänen und die Erstellung detaillierter Systemskizzen wurde eine präzise Fachplanung sichergestellt, die die Medientechnik bereits in der Entwurfsphase unsichtbar in das minimalistische Design integrierte.",
-      processImages: [
-        imageSlot("/images/case-studies/noxx/noxx-card.png", "Noxx Prozessbild"),
-        imageSlot("/images/case-studies/noxx/noxx-asset-01.png", "Noxx Detailbild 1"),
-        imageSlot("/images/case-studies/noxx/noxx-asset-02.png", "Noxx Detailbild 2"),
-        imageSlot("/images/case-studies/noxx/noxx-asset-03.jpg", "Noxx Detailbild 3"),
-      ],
+      processImages: noxxProcessImages,
       processTextBottom:
         "In der Umsetzungsphase lag der Fokus auf einem aktiven Schnittstellenmanagement zwischen Architektur, Möbelbau und Marketing. Dies ermöglichte die technische Maßarbeit an kritischen Punkten - von bündigen Aufzug-Displays bis hin zu maßgeschneiderten User-Interfaces -, während eine enge Verzahnung der Gewerke sicherstellte, dass komplexe Systeme wie die trennbaren Konferenzzonen oder die unsichtbare Audiotechnik im Fitnessbereich perfekt mit der Inneneinrichtung harmonieren.",
       resultTitle: "Das Ergebnis",
       resultText:
         "Das Ergebnis ist eine nahtlose Symbiose aus High-End-Technik und minimalistischem Design, bei der die AV-Infrastruktur durch millimetergenaue Fachplanung optisch vollständig im Interieur verschwindet. Dank eines präzisen Schnittstellenmanagements zwischen Architektur und Möbelbau wurden technische Highlights wie bündige Aufzug-Displays und unsichtbare Audiosysteme realisiert, die den innovativen Charakter des Lifestyle-Hotels unterstreichen. Das Resultat ist ein ganzheitliches, intuitives Gästeerlebnis, das durch maßgeschneiderte User-Interfaces und hochfunktionale Konferenzlösungen langfristig Maßstäbe setzt.",
       resultVideo: null,
-      contactPerson: defaultContactPerson,
+      resultImages: noxxResultImages,
+      contactPerson: heinrichObholz,
       faq: [
         ...commonFaq,
         {
@@ -299,16 +458,19 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "Showroom",
-    cardImage: "/images/references/huhtamaki.webp",
+    cardImage: huhtamakiHeroImage,
     cardImageAlt: "Huhtamaki Showroom Referenz",
-    detailImages: ["/images/case-studies/huhtamaki/huhtamaki-card.webp"],
+    detailImages: [
+      huhtamakiHeroImage,
+      ...huhtamakiProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+    ],
     href: "/referenzen/huhtamaki",
     featured: true,
     seoTitle: "Huhtamaki Referenz - Showroom Medientechnik für Markenwirkung",
     seoDescription:
       "TPV realisierte eine Showroom-Lösung für Huhtamaki in Ronsberg - geplant für starke Markenwirkung und professionelle Präsentation.",
     canonicalPath: "/referenzen/huhtamaki",
-    ogImage: "/images/references/huhtamaki.webp",
+    ogImage: huhtamakiHeroImage,
     vision:
       "Die Vision für den Huhtamaki Flagship-Showroom war die Schaffung einer immersiven Markenwelt.",
     approach:
@@ -322,13 +484,13 @@ export const references: ReferenceItem[] = [
       { label: "Helligkeit", value: "800 nits" },
       { label: "Gesamtauflösung", value: "4K ULTRAHD" },
     ],
-    contactPerson: defaultContactPerson,
+    contactPerson: fabianDering,
     caseStudy: {
       client: "Huhtamaki",
       heroLabel: "Case Study",
       heroSubtitle:
         "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung in Ronsberg.",
-      heroImage: "/images/references/huhtamaki.webp",
+      heroImage: huhtamakiHeroImage,
       meta: [
         { label: "Jahr", value: "2025" },
         { label: "Standort", value: "RONSBERG" },
@@ -348,21 +510,14 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Die Umsetzung startete mit einer detaillierten Analyse im Rohbauzustand, um frühzeitig bauliche Störfaktoren zu identifizieren und die exakten Maße für die spätere Integration zu sichern. Ein wesentlicher Bestandteil dieser Phase war die enge Koordination mit dem Möbelbau, um präzise Aussparungen für eine vollkommen unsichtbare Technikintegration zu definieren und die Nutzerführung (Presenter-Journey) in einem immersiven Konzept festzulegen.",
-      processImages: [
-        imageSlot("/images/case-studies/huhtamaki/huhtamaki-card.webp", "Huhtamaki Showroom Detail"),
-        imageSlot("/images/references/huhtamaki.webp", "Huhtamaki Referenzbild"),
-        imageSlot(null, "Huhtamaki Prozessbild ausstehend"),
-        imageSlot(null, "Huhtamaki Prozessbild ausstehend"),
-        imageSlot(null, "Huhtamaki Prozessbild ausstehend"),
-        imageSlot(null, "Huhtamaki Prozessbild ausstehend"),
-      ],
+      processImages: huhtamakiProcessImages,
       processTextBottom:
         "In der Ausführungsphase lag der Fokus auf der Implementierung einer Invisible Tech-Strategie, bei der hochmoderne AV-over-IP-Lösungen und interaktive 4K-Displays formschlüssig in maßgefertigte Möbel integriert wurden. Durch die konsequente Anwendung einer intuitiven 2-Klick-Logik bei der Raumsteuerung und eine engmaschige Verzahnung der Gewerke wurde sichergestellt, dass die komplexe Technologie im Hintergrund bleibt und eine fehlerfreie, emotionalisierende Produktpräsentation ermöglicht.",
       resultTitle: "Das Ergebnis",
       resultText:
         "Das Ergebnis ist ein hochmoderner Flagship-Showroom, in dem High-End-Medientechnik durch millimetergenaue Möbelintegration und eine Clean Desk Policy vollständig unsichtbar als Enabler im Hintergrund agiert. Dank einer intuitiven 2-Klick-Logik und verlustfreier AV-over-IP-Signalübertragung entstand eine hybride Erlebniswelt, die eine fehlerfreie, emotionale Produktinszenierung ohne technische Hürden ermöglicht. Das Resultat ist eine perfekte Symbiose aus technischer Innovationskraft und architektonischer Ästhetik, die den uneingeschränkten Fokus auf die Markenbotschaft von Huhtamaki lenkt.",
       resultVideo: null,
-      contactPerson: defaultContactPerson,
+      contactPerson: fabianDering,
       faq: [
         ...commonFaq,
         {
@@ -384,16 +539,20 @@ export const references: ReferenceItem[] = [
     services: ["Videokonferenz", "Systemintegration"],
     sector: "Pharma / Corporate",
     technology: "Videokonferenz",
-    cardImage: "/images/references/orion.png",
+    cardImage: orionHeroImage,
     cardImageAlt: "Orion Videokonferenz Referenz",
-    detailImages: ["/images/references/orion.png"],
+    detailImages: [
+      orionHeroImage,
+      ...orionProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      ...orionResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+    ].filter((src): src is string => Boolean(src)),
     href: "/referenzen/orion",
     featured: false,
     seoTitle: "Orion Referenz - Videokonferenztechnik für Hybrid Work",
     seoDescription:
       "TPV integrierte eine Videokonferenzlösung für Orion Pharma in Hamburg - flexibel, schlüsselfertig und für moderne Zusammenarbeit ausgelegt.",
     canonicalPath: "/referenzen/orion",
-    ogImage: "/images/references/orion.png",
+    ogImage: orionHeroImage,
     vision:
       "Platzhaltertext: Die finale Projektbeschreibung für Orion Pharma GmbH wird nachgeliefert.",
     approach:
@@ -406,13 +565,13 @@ export const references: ReferenceItem[] = [
       { label: "Status", value: "Detaildaten vom Kunden ausstehend" },
       { label: "Weitere technische Daten", value: "Platzhalter" },
     ],
-    contactPerson: defaultContactPerson,
+    contactPerson: gabrielZidar,
     caseStudy: {
       client: "Orion Pharma GmbH",
       heroLabel: "Case Study",
       heroSubtitle:
         "Mobile Videokonferenzlösung, schlüsselfertig integriert für flexible Arbeitsumgebungen.",
-      heroImage: "/images/references/orion.png",
+      heroImage: orionHeroImage,
       meta: [
         { label: "Jahr", value: "Noch zu bestätigen" },
         { label: "Standort", value: "HAMBURG" },
@@ -439,19 +598,15 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Platzhaltertext: Die finale Beschreibung der Vorgehensweise wird nachgeliefert. Hier soll später beschrieben werden, wie TPV die Anforderungen aufgenommen, die Systemintegration geplant und die Lösung vor Ort umgesetzt hat.",
-      processImages: [
-        imageSlot("/images/references/orion.png", "Orion Referenzbild"),
-        imageSlot(null, "Orion Prozessbild ausstehend"),
-        imageSlot(null, "Orion Prozessbild ausstehend"),
-        imageSlot(null, "Orion Prozessbild ausstehend"),
-      ],
+      processImages: orionProcessImages,
       processTextBottom:
         "Platzhaltertext: Ergänzung durch Kundenmaterial erforderlich. Hier werden später technische Details, Projektablauf, Abstimmungen mit Gewerken und Besonderheiten der Umsetzung ergänzt.",
       resultTitle: "Das Ergebnis",
       resultText:
         "Platzhaltertext: Die finale Ergebnisbeschreibung wird nachgeliefert. Hier soll später beschrieben werden, welchen konkreten Mehrwert die umgesetzte Lösung für Meetings, Zusammenarbeit und Nutzerfreundlichkeit gebracht hat.",
       resultVideo: null,
-      contactPerson: defaultContactPerson,
+      resultImages: orionResultImages,
+      contactPerson: gabrielZidar,
       faq: [
         ...commonFaq,
         {
@@ -474,16 +629,20 @@ export const references: ReferenceItem[] = [
     services: ["Wayfinding", "Digital Signage"],
     sector: "Hotel / Gastgewerbe",
     technology: "Digital Signage",
-    cardImage: "/images/references/relexa.png",
+    cardImage: relexaHeroImage,
     cardImageAlt: "Relexa Digital Signage Referenz",
-    detailImages: ["/images/references/relexa.png"],
+    detailImages: [
+      relexaHeroImage,
+      ...relexaProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      ...relexaResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+    ],
     href: "/referenzen/relexa",
     featured: false,
     seoTitle: "Relexa Referenz - Wayfinding und Digital Signage im Hotel",
     seoDescription:
       "TPV plante eine Wayfinding- und Digital-Signage-Lösung für Relexa Hotels mit Fokus auf Orientierung, Gästekomfort und digitale Kommunikation.",
     canonicalPath: "/referenzen/relexa",
-    ogImage: "/images/references/relexa.png",
+    ogImage: relexaHeroImage,
     vision:
       "Platzhaltertext: Die finale Projektbeschreibung für Relexa Hotels wird nachgeliefert.",
     approach:
@@ -496,13 +655,13 @@ export const references: ReferenceItem[] = [
       { label: "Status", value: "Detaildaten vom Kunden ausstehend" },
       { label: "Weitere technische Daten", value: "Platzhalter" },
     ],
-    contactPerson: defaultContactPerson,
+    contactPerson: fabianDering,
     caseStudy: {
       client: "Relexa Hotels",
       heroLabel: "Case Study",
       heroSubtitle:
         "Digitale Orientierung und Beschilderung für professionelle Hotelabläufe.",
-      heroImage: "/images/references/relexa.png",
+      heroImage: relexaHeroImage,
       meta: [
         { label: "Jahr", value: "Noch zu bestätigen" },
         { label: "Standort", value: "BERLIN" },
@@ -529,19 +688,15 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Platzhaltertext: Die finale Beschreibung der Vorgehensweise wird nachgeliefert. Hier soll später beschrieben werden, wie TPV die Orientierungslösung geplant, mit Bestandssystemen abgestimmt und für den Hotelbetrieb nutzbar gemacht hat.",
-      processImages: [
-        imageSlot("/images/references/relexa.png", "Relexa Referenzbild"),
-        imageSlot(null, "Relexa Prozessbild ausstehend"),
-        imageSlot(null, "Relexa Prozessbild ausstehend"),
-        imageSlot(null, "Relexa Prozessbild ausstehend"),
-      ],
+      processImages: relexaProcessImages,
       processTextBottom:
         "Platzhaltertext: Ergänzung durch Kundenmaterial erforderlich. Hier werden später technische Details, Projektablauf, Abstimmungen mit Gewerken und Besonderheiten der Umsetzung ergänzt.",
       resultTitle: "Das Ergebnis",
       resultText:
         "Platzhaltertext: Die finale Ergebnisbeschreibung wird nachgeliefert. Hier soll später beschrieben werden, wie die Lösung Orientierung, Gästekomfort und digitale Kommunikation im Hotel verbessert hat.",
       resultVideo: null,
-      contactPerson: defaultContactPerson,
+      resultImages: relexaResultImages,
+      contactPerson: fabianDering,
       faq: [
         ...commonFaq,
         {
