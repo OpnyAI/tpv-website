@@ -485,23 +485,23 @@ function ContactPersonCard({
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
         Ansprechpartner
       </p>
-      <div className="mt-5 flex items-center gap-4">
+      <div className="mt-5 flex items-center gap-5 lg:gap-6">
         {contactPerson.image ? (
-          <div className="relative h-16 w-16 overflow-hidden rounded-full border border-white/20">
+          <div className="relative h-[88px] w-[88px] shrink-0 overflow-hidden rounded-[18px] border border-white/20 lg:h-28 lg:w-28">
             <Image
               src={contactPerson.image}
               alt={contactPerson.name}
               fill
-              sizes="64px"
+              sizes="(min-width: 1024px) 112px, 88px"
               className="object-cover"
             />
           </div>
         ) : (
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-white/16 bg-white/[0.04] text-base font-normal text-white/80">
+          <div className="flex h-[88px] w-[88px] shrink-0 items-center justify-center rounded-[18px] border border-white/16 bg-white/[0.04] text-xl font-normal text-white/80 lg:h-28 lg:w-28">
             {initials || "HO"}
           </div>
         )}
-        <div>
+        <div className="min-w-0">
           <h3 className="text-[clamp(1.375rem,1.5vw,1.625rem)] font-normal leading-tight text-[#F4F0FF]">
             {contactPerson.name}
           </h3>
