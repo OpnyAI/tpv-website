@@ -68,7 +68,7 @@ export function ServicesSection() {
   return (
     <section
       id="service"
-      className="relative overflow-hidden px-[5vw] py-20 scroll-mt-28 md:scroll-mt-40 lg:pb-40 lg:pt-32"
+      className="relative overflow-hidden px-[5vw] py-20 scroll-mt-48 md:scroll-mt-52 lg:scroll-mt-48 lg:pb-40 lg:pt-32"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-cover bg-center opacity-[0.24] saturate-[0.62] brightness-[0.76] md:mix-blend-screen"

@@ -6,7 +6,7 @@ export function ReferencesSection() {
   return (
     <section
       id="referenzen"
-      className="relative min-h-[760px] overflow-hidden px-[5vw] py-[4.5rem] scroll-mt-28 md:scroll-mt-40 lg:min-h-[880px] lg:pb-[105px] lg:pt-[115px]"
+      className="relative min-h-[760px] overflow-hidden px-[5vw] py-[4.5rem] scroll-mt-48 md:scroll-mt-52 lg:scroll-mt-48 lg:min-h-[880px] lg:pb-[105px] lg:pt-[115px]"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[rgba(5,0,21,0.72)]"

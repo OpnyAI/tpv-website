@@ -48,7 +48,7 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="relative overflow-hidden scroll-mt-28 px-6 py-20 md:scroll-mt-40 lg:px-10 lg:pb-[7rem] lg:pt-[8rem]"
+      className="relative overflow-hidden scroll-mt-48 px-6 py-20 md:scroll-mt-52 lg:scroll-mt-48 lg:px-10 lg:pb-[7rem] lg:pt-[8rem]"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,0,21,0.62)_0%,rgba(11,2,40,0.72)_48%,rgba(5,0,21,0.7)_100%)]"
