@@ -143,7 +143,7 @@ export function ServicesDesktopPanel({
 
                 <a
                   href={activeService.href}
-                  className="mt-11 inline-flex rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
+                  className="mt-11 inline-flex w-fit max-w-max self-start rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
                   data-track-event={SERVICE_CLICK}
                   data-track-label={activeService.title}
                 >
