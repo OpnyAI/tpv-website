@@ -118,8 +118,8 @@ export function ServicesDesktopPanel({
               </button>
             </div>
 
-            <div className="grid min-h-[500px] gap-10 lg:grid-cols-[0.48fr_0.52fr] lg:items-end">
-              <div className="relative z-20 max-w-[720px] pt-24 lg:pt-0">
+            <div className="grid min-h-[500px] min-w-0 gap-10 lg:min-h-[462px] lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-stretch">
+              <div className="relative z-20 min-w-0 max-w-[720px] pt-24 lg:flex lg:flex-col lg:justify-end lg:pt-0">
                 <h3 className="text-[clamp(2.125rem,3vw,4rem)] font-medium uppercase leading-[1.1] tracking-[-0.025em] text-tpv-accent">
                   {activeService.title}
                 </h3>
@@ -153,14 +153,14 @@ export function ServicesDesktopPanel({
                 </a>
               </div>
 
-              <div className="relative z-10 min-h-[280px] self-end lg:min-h-[390px]">
-                <div className="absolute bottom-0 right-0 h-[min(72vw,330px)] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] lg:h-[clamp(300px,25vw,360px)] lg:w-[clamp(520px,42vw,640px)]">
+              <div className="relative z-10 flex min-h-[280px] min-w-0 items-end justify-end lg:min-h-[390px] lg:self-end">
+                <div className="relative h-[min(72vw,330px)] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] lg:h-[clamp(320px,24vw,360px)] lg:w-full lg:max-w-[640px]">
                   <Image
                     src={activeService.image}
                     alt={activeService.imageAlt}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover saturate-[0.78] [object-position:center]"
+                    className="object-cover object-center saturate-[0.78]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[rgba(3,18,35,0.42)]" />
                 </div>

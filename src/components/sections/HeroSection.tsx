@@ -13,11 +13,11 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-14 lg:w-[87vw] lg:grid-cols-[minmax(0,1fr)_minmax(500px,1fr)] lg:gap-[3.25rem] xl:gap-[3.75rem]">
-        <div className="min-w-0 max-w-[600px]">
-          <h1 className="text-[clamp(2.75rem,3.55vw,3.625rem)] font-normal leading-[1.13] tracking-[-0.01em] text-white">
+      <div className="mx-auto grid w-full max-w-[1320px] min-w-0 items-center gap-14 lg:w-[87vw] lg:grid-cols-[minmax(0,660px)_minmax(500px,1fr)] lg:gap-[3.25rem] xl:gap-[3.75rem]">
+        <div className="min-w-0 max-w-[660px]">
+          <h1 className="max-w-full min-w-0 text-[clamp(2.75rem,3.55vw,3.625rem)] font-normal leading-[1.13] tracking-[-0.01em] text-white">
             <span className="block">Professionelle</span>
-            <span className="block bg-gradient-to-r from-[#FF5A66] via-[#FF3F7A] to-[#B84DFF] bg-clip-text text-transparent lg:whitespace-nowrap">
+            <span className="block max-w-full break-words bg-gradient-to-r from-[#FF5A66] via-[#FF3F7A] to-[#B84DFF] bg-clip-text text-transparent min-[1440px]:whitespace-nowrap">
               Audio-/Video Lösungen
             </span>
             <span className="block">für Ihren Erfolg</span>
