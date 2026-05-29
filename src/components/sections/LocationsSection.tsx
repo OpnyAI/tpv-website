@@ -1,12 +1,6 @@
 import Image from "next/image";
-
-const cities = [
-  { label: "HAMBURG", name: "Hamburg", email: "hamburg@tpv-av.de" },
-  { label: "FRANKFURT", name: "Frankfurt", email: "frankfurt@tpv-av.de" },
-  { label: "STUTTGART", name: "Stuttgart", email: "stuttgart@tpv-av.de" },
-  { label: "NÜRNBERG", name: "Nürnberg", email: "nuernberg@tpv-av.de" },
-  { label: "MÜNCHEN", name: "München", email: "muenchen@tpv-av.de" },
-];
+import Link from "next/link";
+import { locations } from "@/data/locations";
 
 export function LocationsSection() {
   return (
@@ -32,14 +26,18 @@ export function LocationsSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1280px] min-w-0">
-        <div className="mx-auto max-w-[calc(100vw-2rem)] text-center lg:mx-0 lg:max-w-[980px] lg:text-left">
+        <div className="mx-auto max-w-[calc(100vw-2rem)] text-center lg:mx-0 lg:max-w-[1040px] lg:text-left">
           <h2 className="break-words text-[clamp(2.15rem,8vw,3rem)] font-medium uppercase leading-[1.05] tracking-[0.018em] text-[#F4F1FA] lg:text-[clamp(3rem,4.6vw,4.75rem)]">
-            <span className="text-tpv-accent">STARTEN SIE</span>{" "}
-            <span>NOCH HEUTE</span>{" "}
-            <span className="text-tpv-accent">IHR PROJEKT</span>{" "}
-            <span>MIT UNS</span>
+            <span className="block">
+              <span className="text-tpv-accent">STARTEN SIE</span>{" "}
+              <span>NOCH HEUTE</span>
+            </span>
+            <span className="block">
+              <span className="text-tpv-accent">IHR PROJEKT</span>{" "}
+              <span>MIT UNS</span>
+            </span>
           </h2>
-          <p className="mx-auto mt-[1.125rem] max-w-[calc(100vw-2rem)] text-[clamp(1.1rem,4vw,1.35rem)] font-normal leading-[1.35] text-[#F4F1FA]/90 lg:mx-0 lg:max-w-[780px] lg:text-[clamp(1.375rem,2.1vw,2.25rem)] lg:leading-[1.25]">
+          <p className="mx-auto mt-[1.125rem] max-w-[calc(100vw-2rem)] text-[clamp(1.1rem,4vw,1.35rem)] font-normal leading-[1.35] text-[#F4F1FA]/90 lg:mx-0 lg:max-w-none lg:whitespace-nowrap lg:text-[clamp(1.375rem,1.9vw,2rem)] lg:leading-[1.25]">
             Digital vernetzt. Bundesweit einsatzbereit. Immer in Ihrer Nähe
           </p>
         </div>
@@ -58,15 +56,15 @@ export function LocationsSection() {
           </div>
 
           <ul className="space-y-4 text-left lg:space-y-[1.125rem]">
-            {cities.map((city) => (
+            {locations.map((city) => (
               <li key={city.label}>
-                <a
-                  href={`mailto:${city.email}`}
-                  aria-label={`E-Mail an Standort ${city.name} schreiben`}
+                <Link
+                  href={city.href}
+                  aria-label={`Standortseite ${city.city} öffnen`}
                   className="inline-block origin-left text-[clamp(2.5rem,9vw,3.25rem)] font-medium uppercase leading-[1.16] tracking-[0.04em] text-tpv-accent transition duration-[180ms] ease-out hover:scale-[1.025] hover:text-[#F4F1FA] hover:drop-shadow-[0_0_18px_rgba(255,255,255,0.6),0_0_34px_rgba(160,110,255,0.35)] focus-visible:scale-[1.025] focus-visible:text-[#F4F1FA] focus-visible:drop-shadow-[0_0_18px_rgba(255,255,255,0.6),0_0_34px_rgba(160,110,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent/70 focus-visible:ring-offset-4 focus-visible:ring-offset-tpv-midnight motion-reduce:transform-none lg:text-[clamp(3rem,4.5vw,4.75rem)]"
                 >
                   {city.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

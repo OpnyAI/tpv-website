@@ -190,6 +190,9 @@ function CaseHero({
   reference: ReferenceItem;
   caseStudy: ReferenceCaseStudy;
 }) {
+  const heroObjectPosition =
+    caseStudy.heroImagePositionMobile ?? caseStudy.heroImagePosition;
+
   return (
     <header className="relative mx-auto mt-4 max-w-[1320px] overflow-hidden rounded-[22px] border border-white/10 bg-[#081019] lg:mt-6 lg:rounded-[2rem]">
       <div className="relative h-[520px] w-full lg:h-[620px]">
@@ -201,6 +204,11 @@ function CaseHero({
             priority
             sizes="(min-width: 1024px) 1280px, 100vw"
             className="object-cover object-center"
+            style={
+              heroObjectPosition
+                ? { objectPosition: heroObjectPosition }
+                : undefined
+            }
           />
         ) : (
           <ImagePlaceholder
@@ -331,28 +339,38 @@ function ProcessGrid({ images }: { images: ReferenceImageSlot[] }) {
         images.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
       )}
     >
-      {images.map((image, index) => (
-        <div
-          key={`${image.alt}-${index}`}
-          className="relative aspect-[4/3] overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03]"
-        >
-          {image.src ? (
+      {images.map((image, index) => {
+        const imageObjectPosition =
+          image.objectPositionMobile ?? image.objectPosition;
+
+        return (
+          <div
+            key={`${image.alt}-${index}`}
+            className="relative aspect-[4/3] overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03]"
+          >
+            {image.src ? (
             <Image
               src={image.src}
               alt={image.alt}
               fill
               sizes="(min-width: 1024px) 300px, 90vw"
               className="object-cover"
+              style={
+                imageObjectPosition
+                  ? { objectPosition: imageObjectPosition }
+                  : undefined
+              }
             />
-          ) : (
-            <ImagePlaceholder
-              title="Bildmaterial ausstehend"
-              subtitle="Vom Kunden anfordern"
-              compact
-            />
-          )}
-        </div>
-      ))}
+            ) : (
+              <ImagePlaceholder
+                title="Bildmaterial ausstehend"
+                subtitle="Vom Kunden anfordern"
+                compact
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -5,8 +5,7 @@ import { references } from "@/data/references";
 export function ReferencesSection() {
   return (
     <section
-      id="referenzen"
-      className="relative min-h-[760px] overflow-hidden px-[5vw] py-[4.5rem] scroll-mt-48 md:scroll-mt-52 lg:scroll-mt-48 lg:min-h-[880px] lg:pb-[105px] lg:pt-[115px]"
+      className="relative min-h-[760px] overflow-hidden px-[5vw] py-[4.5rem] lg:min-h-[880px] lg:pb-[105px] lg:pt-[115px]"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[rgba(5,0,21,0.72)]"
@@ -27,6 +26,11 @@ export function ReferencesSection() {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-[clamp(2rem,5vw,5rem)]">
         <div className="max-w-[1260px] lg:pl-4">
+          <span
+            id="referenzen"
+            className="block scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
+            aria-hidden="true"
+          />
           <h2 className="mb-4 text-[clamp(2.375rem,9vw,2.75rem)] font-medium uppercase leading-[1.05] tracking-[0.03em] text-tpv-accent lg:text-[clamp(2.875rem,4vw,3.5625rem)]">
             WIR REALISIEREN
           </h2>

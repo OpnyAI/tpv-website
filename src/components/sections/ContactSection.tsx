@@ -47,8 +47,7 @@ const hrefByTitle: Record<string, string> = {
 export function ContactSection() {
   return (
     <section
-      id="kontakt"
-      className="relative overflow-hidden scroll-mt-48 px-6 py-20 md:scroll-mt-52 lg:scroll-mt-48 lg:px-10 lg:pb-[7rem] lg:pt-[8rem]"
+      className="relative overflow-hidden px-6 py-20 lg:px-10 lg:pb-[7rem] lg:pt-[8rem]"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,0,21,0.62)_0%,rgba(11,2,40,0.72)_48%,rgba(5,0,21,0.7)_100%)]"
@@ -68,6 +67,11 @@ export function ContactSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1240px] min-w-0">
+        <span
+          id="kontakt"
+          className="block scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
+          aria-hidden="true"
+        />
         <h2 className="mx-auto max-w-[calc(100vw-2rem)] break-words text-center text-[clamp(2.35rem,10vw,3rem)] font-medium uppercase leading-[1.04] tracking-[0.02em] text-tpv-accent lg:text-[clamp(3rem,4vw,4.75rem)] lg:leading-[1.05] lg:tracking-[0.03em]">
           JETZT KONTAKTIEREN
         </h2>

@@ -105,13 +105,7 @@ export function ReferencesMobileCarousel({
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-tpv-deep/36 via-transparent to-transparent" />
 
           <div className="pointer-events-none absolute bottom-8 left-7 right-20 sm:bottom-10 sm:left-10 sm:right-24">
-            <p className="flex items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-tpv-accent sm:text-[0.78rem]">
-              <Icon name="map-pin" size={14} />
-              {activeReference.location}
-              <span className="text-white/38">·</span>
-              {activeReference.year}
-            </p>
-            <h3 className="mt-2.5 text-[clamp(1.875rem,8vw,2.625rem)] font-medium leading-none tracking-[-0.02em] text-white">
+            <h3 className="text-[clamp(1.875rem,8vw,2.625rem)] font-medium leading-none tracking-[-0.02em] text-white">
               {activeReference.title}
             </h3>
             <p className="mt-3 text-[1rem] font-medium text-tpv-accent sm:text-[1.2rem]">

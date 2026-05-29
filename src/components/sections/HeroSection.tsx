@@ -52,7 +52,7 @@ export function HeroSection() {
                 preload="auto"
                 poster="/images/video-posters/tpv-hero-poster-mobile.jpg"
                 aria-label="TPV Hero Mobile Video"
-                src="/videos/hero/tpv-hero-video-mobile.mp4"
+                src="/videos/hero/tpv-hero-video.mp4"
               />
               <video
                 className="hidden h-full w-full object-cover object-center md:block"

@@ -9,8 +9,7 @@ const aboutStats = [
 export function AboutSection() {
   return (
     <section
-      id="ueber-uns"
-      className="relative min-h-[720px] overflow-hidden px-[5vw] py-[4.5rem] scroll-mt-48 md:scroll-mt-52 lg:scroll-mt-48 lg:min-h-[800px] lg:py-20"
+      className="relative min-h-[720px] overflow-hidden px-[5vw] py-[4.5rem] lg:min-h-[800px] lg:py-20"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[url('/images/backgrounds/tpv-background-lines.png')] bg-cover bg-center opacity-[0.24] saturate-[0.62] brightness-[0.76] md:mix-blend-screen"
@@ -62,6 +61,11 @@ export function AboutSection() {
         </div>
 
         <div className="min-w-0 text-center lg:text-left">
+          <span
+            id="ueber-uns"
+            className="block scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
+            aria-hidden="true"
+          />
           <p className="mx-auto max-w-[calc(100vw-2rem)] text-[clamp(2.15rem,9vw,2.75rem)] font-medium uppercase leading-none tracking-[0.04em] text-tpv-accent lg:mx-0 lg:text-[clamp(2.5rem,3.6vw,3.5625rem)]">
             WIR SIND
           </p>

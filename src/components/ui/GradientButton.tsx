@@ -30,17 +30,24 @@ export function GradientButton({
   trackingLabel,
 }: GradientButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full font-semibold text-white transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent focus-visible:ring-offset-2 focus-visible:ring-offset-tpv-dark",
+    "inline-flex rounded-full transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent focus-visible:ring-offset-2 focus-visible:ring-offset-tpv-dark",
     "hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]",
-    size === "sm" && "px-4 py-2 text-sm",
-    size === "md" && "px-5 py-3 text-[length:var(--text-nav)]",
-    size === "lg" && "px-7 py-4 text-[length:var(--text-body)]",
     variant === "primary" &&
-      "bg-gradient-to-r from-tpv-violet via-tpv-magenta to-tpv-accent shadow-glowSoft",
+      "bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] shadow-glowSoft",
     variant === "outline" &&
       "border border-tpv-magenta/60 bg-white/[0.03] shadow-glowSoft backdrop-blur-xl",
     variant === "ghost" && "bg-white/[0.04] hover:bg-white/[0.08]",
     className,
+  );
+  const contentClasses = cn(
+    "inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-white",
+    size === "sm" && "px-4 py-2 text-sm",
+    size === "md" && "px-5 py-3 text-[length:var(--text-nav)]",
+    size === "lg" &&
+      "px-7 py-3 text-[clamp(1rem,1.05vw,1.375rem)]",
+    variant === "primary" && "bg-[#0A0618]/55 backdrop-blur-sm",
+    variant === "outline" && "bg-transparent",
+    variant === "ghost" && "bg-transparent",
   );
 
   const trackingAttributes = {
@@ -57,7 +64,7 @@ export function GradientButton({
           className={classes}
           {...trackingAttributes}
         >
-          {children}
+          <span className={contentClasses}>{children}</span>
         </Link>
       );
     }
@@ -69,7 +76,7 @@ export function GradientButton({
         className={classes}
         {...trackingAttributes}
       >
-        {children}
+        <span className={contentClasses}>{children}</span>
       </a>
     );
   }
@@ -82,7 +89,7 @@ export function GradientButton({
       onClick={onClick}
       {...trackingAttributes}
     >
-      {children}
+      <span className={contentClasses}>{children}</span>
     </button>
   );
 }

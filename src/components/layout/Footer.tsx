@@ -1,14 +1,8 @@
 import Link from "next/link";
+import { locations } from "@/data/locations";
 import { siteConfig } from "@/data/site";
 import { CTA_CLICK } from "@/lib/tracking";
 import { Icon, type IconName } from "@/components/ui/Icon";
-
-const servicesLinks = [
-  { label: "Projektierung & Kalkulation", href: "/#service" },
-  { label: "Systemintegration & Projektleitung", href: "/#service" },
-  { label: "Content Creation & Digital Media", href: "/#service" },
-  { label: "Premium Service & Support", href: "/#service" },
-];
 
 const legalLinks = [
   { label: "Impressum", href: "/impressum" },
@@ -65,17 +59,17 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-xl font-medium text-white">Leistungen</h2>
+          <h2 className="text-xl font-medium text-white">Standorte</h2>
           <ul className="mt-6 space-y-4">
-            {servicesLinks.map((item) => (
-              <li key={item.label}>
+            {locations.map((item) => (
+              <li key={item.slug}>
                 <Link
                   href={item.href}
                   className="text-white/68 transition hover:text-tpv-accent"
                   data-track-event={CTA_CLICK}
-                  data-track-label={`footer:${item.label}`}
+                  data-track-label={`footer:${item.city}`}
                 >
-                  {item.label}
+                  {item.city}
                 </Link>
               </li>
             ))}
@@ -97,16 +91,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <button
-                type="button"
-                className="text-left text-white/68 transition hover:text-tpv-accent"
-                data-track-event={CTA_CLICK}
-                data-track-label="footer:Cookie Einstellungen"
-              >
-                Cookie Einstellungen
-              </button>
-            </li>
           </ul>
         </div>
       </div>

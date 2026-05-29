@@ -19,6 +19,8 @@ export type ReferenceSpecItem = {
 export type ReferenceImageSlot = {
   src: string | null;
   alt: string;
+  objectPosition?: string;
+  objectPositionMobile?: string;
 };
 
 export type ReferenceFaqItem = {
@@ -31,6 +33,8 @@ export type ReferenceCaseStudy = {
   heroLabel: string;
   heroSubtitle: string;
   heroImage: string | null;
+  heroImagePosition?: string;
+  heroImagePositionMobile?: string;
   meta: ProjectMetaItem[];
   visionText: string;
   specsTitle: string;
@@ -104,8 +108,15 @@ const commonFaq: ReferenceFaqItem[] = [
   },
 ];
 
-function imageSlot(src: string | null, alt: string): ReferenceImageSlot {
-  return { src, alt };
+function imageSlot(
+  src: string | null,
+  alt: string,
+  options: Pick<
+    ReferenceImageSlot,
+    "objectPosition" | "objectPositionMobile"
+  > = {},
+): ReferenceImageSlot {
+  return { src, alt, ...options };
 }
 
 const heinrichObholz: ReferenceContactPerson = {
@@ -268,6 +279,7 @@ const relexaProcessImages = [
   imageSlot(
     "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-01.png",
     "Relexa Vorgehensweise 1",
+    { objectPosition: "center 22%" },
   ),
   imageSlot(
     "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-02.png",
@@ -654,6 +666,7 @@ export const references: ReferenceItem[] = [
       heroSubtitle:
         "Intuitives Wayfinding & Digital Guest Communication",
       heroImage: relexaHeroImage,
+      heroImagePosition: "center 34%",
       meta: [
         { label: "Jahr", value: "2025" },
         { label: "Standort", value: "BERLIN" },

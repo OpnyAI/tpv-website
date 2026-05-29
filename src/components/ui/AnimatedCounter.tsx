@@ -28,11 +28,14 @@ export function AnimatedCounter({
       return;
     }
 
+    const observedElement = element;
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const mobileQuery = window.matchMedia("(max-width: 767px)");
-    const animationDuration = mobileQuery.matches ? 900 : Math.min(duration, 1200);
+    const animationDuration = mobileQuery.matches
+      ? 1080
+      : Math.min(duration * 1.2, 1440);
 
     function easeOutCubic(progress: number) {
       return 1 - Math.pow(1 - progress, 3);
@@ -60,34 +63,51 @@ export function AnimatedCounter({
       animationFrameRef.current = null;
     }
 
+    function startAnimation() {
+      if (hasAnimatedRef.current) {
+        return;
+      }
+
+      hasAnimatedRef.current = true;
+
+      if (reducedMotion) {
+        setCurrent(to);
+        return;
+      }
+
+      startTimeRef.current = null;
+      animationFrameRef.current = requestAnimationFrame(animate);
+    }
+
+    function isElementVisible() {
+      const rect = observedElement.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (
-          !entry?.isIntersecting ||
-          entry.intersectionRatio < 0.35 ||
-          hasAnimatedRef.current
-        ) {
+        if (!entry?.isIntersecting || hasAnimatedRef.current) {
           return;
         }
 
-        hasAnimatedRef.current = true;
         observer.disconnect();
-
-        if (reducedMotion) {
-          setCurrent(to);
-          return;
-        }
-
-        startTimeRef.current = null;
-        animationFrameRef.current = requestAnimationFrame(animate);
+        startAnimation();
       },
-      { rootMargin: "0px 0px -15% 0px", threshold: [0, 0.35, 0.5] },
+      { rootMargin: "0px 0px -10% 0px", threshold: [0, 0.1, 0.2] },
     );
 
-    observer.observe(element);
+    observer.observe(observedElement);
+
+    const visibilityCheckFrame = requestAnimationFrame(() => {
+      if (!hasAnimatedRef.current && isElementVisible()) {
+        observer.disconnect();
+        startAnimation();
+      }
+    });
 
     return () => {
       observer.disconnect();
+      cancelAnimationFrame(visibilityCheckFrame);
       if (animationFrameRef.current !== null) {
         cancelAnimationFrame(animationFrameRef.current);
       }

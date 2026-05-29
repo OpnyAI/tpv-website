@@ -29,3 +29,4 @@ pnpm-debug.log*
 
 # Local video backups
 _video-backup/
+.env*

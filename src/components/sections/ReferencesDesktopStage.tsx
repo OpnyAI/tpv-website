@@ -72,11 +72,8 @@ export function ReferencesDesktopStage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/[0.9] via-black/[0.62] to-[#050019]/35" />
-              <div className="absolute bottom-6 left-6 right-6 text-left opacity-80">
-                <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-tpv-accent/80">
-                  {reference.location} · {reference.year}
-                </p>
-                <p className="mt-2 text-[clamp(1.375rem,1.8vw,1.625rem)] font-medium leading-[1.05] text-white">
+              <div className="absolute bottom-7 left-6 right-6 text-left opacity-80">
+                <p className="text-[clamp(1.375rem,1.8vw,1.625rem)] font-medium leading-[1.05] text-white">
                   {reference.title}
                 </p>
                 <p className="mt-2 text-sm font-medium text-tpv-accent/85">
@@ -103,13 +100,7 @@ export function ReferencesDesktopStage() {
           <div className="absolute inset-0 bg-gradient-to-r from-tpv-deep/36 via-transparent to-transparent" />
 
           <div className="absolute bottom-8 left-7 right-24 sm:bottom-10 sm:left-10 sm:right-28">
-            <p className="flex items-center gap-2 text-[0.78rem] font-medium uppercase tracking-[0.18em] text-tpv-accent">
-              <Icon name="map-pin" size={14} />
-              {activeReference.location}
-              <span className="text-white/38">·</span>
-              {activeReference.year}
-            </p>
-            <h3 className="mt-2.5 text-[clamp(2.125rem,2.8vw,2.625rem)] font-medium leading-none tracking-[-0.02em] text-white">
+            <h3 className="text-[clamp(2.125rem,2.8vw,2.625rem)] font-medium leading-none tracking-[-0.02em] text-white">
               {activeReference.title}
             </h3>
             <p className="mt-3 text-[1.1rem] font-medium text-tpv-accent sm:text-[1.2rem]">
