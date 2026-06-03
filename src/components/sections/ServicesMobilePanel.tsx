@@ -72,58 +72,38 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-4">
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
-            onClick={() => setActiveService(activeIndex - 1)}
-            aria-label="Vorherigen Service anzeigen"
-          >
-            <Icon name="chevron-left" size={18} />
-          </button>
-
-          <div className="flex items-center justify-center gap-2" aria-hidden="true">
-            {services.map((service, index) => (
-              <span
-                key={service.number}
-                className={cn(
-                  "rounded-full transition duration-150",
-                  index === activeIndex
-                    ? "h-2.5 w-6 bg-tpv-accent"
-                    : "h-2.5 w-2.5 bg-white/40",
-                )}
-              />
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
-            onClick={() => setActiveService(activeIndex + 1)}
-            aria-label="Nächsten Service anzeigen"
-          >
-            <Icon name="chevron-right" size={18} />
-          </button>
+        <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
+          {services.map((service, index) => (
+            <span
+              key={service.number}
+              className={cn(
+                "rounded-full transition duration-150",
+                index === activeIndex
+                  ? "h-2.5 w-6 bg-tpv-accent"
+                  : "h-2.5 w-2.5 bg-white/40",
+              )}
+            />
+          ))}
         </div>
       </div>
 
       <div className="relative mt-10 min-w-0 max-w-full overflow-hidden">
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative min-h-[520px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:p-8">
-            <div className="grid min-h-[470px] gap-8">
-              <div className="relative z-20 min-w-0 max-w-[720px] pt-16">
-                <h3 className="break-words text-[clamp(1.9rem,8vw,3rem)] font-medium uppercase leading-[1.1] tracking-[-0.025em] text-tpv-accent">
+          <article className="relative h-[900px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:h-[920px] sm:p-8">
+            <div className="flex h-full min-w-0 flex-col gap-7">
+              <div className="relative z-20 flex min-w-0 max-w-[720px] flex-1 flex-col pt-14">
+                <h3 className="break-words text-[clamp(1.85rem,7.6vw,2.55rem)] font-medium uppercase leading-[1.08] tracking-[-0.015em] text-tpv-accent">
                   {activeService.title}
                 </h3>
-                <p className="mt-6 max-w-[720px] text-[clamp(1.125rem,5vw,1.625rem)] font-normal leading-[1.28] text-[#F7F4FF]">
+                <p className="mt-5 max-w-[720px] break-words text-[clamp(1.05rem,4.55vw,1.42rem)] font-normal leading-[1.35] text-[#F7F4FF]">
                   {activeService.description}
                 </p>
 
-                <ul className="mt-8 space-y-5">
+                <ul className="mt-7 space-y-4">
                   {activeService.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="flex min-w-0 items-center gap-4 text-[clamp(1rem,4.5vw,1.35rem)] leading-[1.35] text-white"
+                      className="flex min-w-0 items-center gap-4 text-[clamp(0.98rem,4.2vw,1.2rem)] leading-[1.35] text-white"
                     >
                       <span className="shrink-0 text-[1.45rem] font-medium leading-none text-tpv-accent">
                         ✓
@@ -135,7 +115,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
 
                 <a
                   href={activeService.href}
-                  className="mt-9 inline-flex touch-manipulation rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
+                  className="mt-8 inline-flex w-fit touch-manipulation rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
                   data-track-event={SERVICE_CLICK}
                   data-track-label={activeService.title}
                 >
@@ -145,8 +125,8 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
                 </a>
               </div>
 
-              <div className="relative z-10 min-h-[250px] self-end">
-                <div className="absolute bottom-0 right-0 h-[min(66vw,300px)] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)]">
+              <div className="relative z-10 h-[min(62vw,265px)] shrink-0">
+                <div className="absolute bottom-0 right-0 h-full w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)]">
                   <Image
                     src={activeService.image}
                     alt={activeService.imageAlt}
@@ -159,6 +139,26 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               </div>
             </div>
           </article>
+        </div>
+
+        <div className="mt-5 flex items-center justify-center gap-8">
+          <button
+            type="button"
+            className="inline-flex h-12 w-12 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex - 1)}
+            aria-label="Vorherigen Service anzeigen"
+          >
+            <Icon name="chevron-left" size={20} />
+          </button>
+
+          <button
+            type="button"
+            className="inline-flex h-12 w-12 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex + 1)}
+            aria-label="Nächsten Service anzeigen"
+          >
+            <Icon name="chevron-right" size={20} />
+          </button>
         </div>
       </div>
     </div>

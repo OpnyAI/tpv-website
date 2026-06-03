@@ -80,7 +80,7 @@ const sections = [
 export default function DatenschutzPage() {
   return (
     <main className="tpv-section-tight text-white">
-      <div className="tpv-container max-w-3xl">
+      <div className="tpv-container max-w-3xl break-words hyphens-auto">
         <p className="text-sm uppercase tracking-wide text-white/60">
           Rechtliches
         </p>
@@ -89,10 +89,15 @@ export default function DatenschutzPage() {
         <div className="mt-6 space-y-7 rounded border border-white/15 bg-white/[0.03] p-5 text-white/72">
           {sections.map((section) => (
             <section key={section.title}>
-              <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+              <h2 className="text-xl font-semibold leading-snug text-white">
+                {section.title}
+              </h2>
               <div className="mt-3 space-y-3 leading-7">
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="whitespace-pre-line">
+                  <p
+                    key={paragraph}
+                    className="whitespace-pre-line [overflow-wrap:anywhere] sm:[overflow-wrap:normal]"
+                  >
                     {paragraph}
                   </p>
                 ))}

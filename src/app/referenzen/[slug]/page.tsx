@@ -166,7 +166,7 @@ export default async function ReferencePage({ params }: ReferencePageProps) {
       <div className="relative z-10 mx-auto w-full max-w-[1536px]">
         <article className="mx-auto max-w-[1360px] px-5 pb-24 pt-8 sm:px-8 lg:px-12 lg:pt-14">
           <CaseHero reference={reference} caseStudy={caseStudy} />
-          <ProjectMeta caseStudy={caseStudy} />
+          <ProjectMeta reference={reference} />
           <VisionSection caseStudy={caseStudy} />
           <ProcessSection caseStudy={caseStudy} />
           <ResultSection caseStudy={caseStudy} />
@@ -234,28 +234,73 @@ function CaseHero({
   );
 }
 
-function ProjectMeta({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
-  const visibleMeta = caseStudy.meta.filter(
-    (item) => item.label !== "Jahr" && item.label !== "Standort",
-  );
+function ProjectMeta({ reference }: { reference: ReferenceItem }) {
+  const services = reference.services.filter(Boolean);
+  const locationBySlug: Partial<Record<string, string>> = {
+    noxx: "Frankfurt",
+    huhtamaki: "Frankfurt",
+  };
+  const location = locationBySlug[reference.slug] ?? reference.location;
+  const year = reference.year;
+  const sector = reference.sector;
 
-  if (visibleMeta.length === 0) {
+  if (!year && !location && services.length === 0 && !sector) {
     return null;
   }
 
   return (
-    <dl className="mx-auto grid max-w-[1320px] gap-8 border-b border-white/45 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:py-16">
-      {visibleMeta.map((item) => (
-        <div key={item.label}>
-          <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
-            {item.label}
-          </dt>
-          <dd className="mt-3 text-[24px] font-medium uppercase leading-[1.22] text-white lg:text-[28px]">
-            {item.value}
-          </dd>
-        </div>
-      ))}
-    </dl>
+    <div className="mx-auto max-w-[1320px]">
+      <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-12">
+        {year && (
+          <div>
+            <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
+              Jahr
+            </dt>
+            <dd className="mt-3 text-[24px] font-medium uppercase leading-[1.22] text-white lg:text-[28px]">
+              {year}
+            </dd>
+          </div>
+        )}
+
+        {location && (
+          <div>
+            <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
+              Standort
+            </dt>
+            <dd className="mt-3 text-[24px] font-medium uppercase leading-[1.22] text-white lg:text-[28px]">
+              {location}
+            </dd>
+          </div>
+        )}
+
+        {services.length > 0 && (
+          <div>
+            <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
+              Leistungen
+            </dt>
+            <dd className="mt-3 space-y-1 text-[24px] font-medium uppercase leading-[1.22] text-white lg:text-[28px]">
+              {services.map((service) => (
+                <span key={service} className="block">
+                  {service}
+                </span>
+              ))}
+            </dd>
+          </div>
+        )}
+
+        {sector && (
+          <div>
+            <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
+              Sektor
+            </dt>
+            <dd className="mt-3 text-[24px] font-medium uppercase leading-[1.22] text-white lg:text-[28px]">
+              {sector}
+            </dd>
+          </div>
+        )}
+      </dl>
+      <div className="mt-12 h-px w-full bg-white/45 lg:mt-16" />
+    </div>
   );
 }
 
@@ -264,7 +309,7 @@ function VisionSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
     <section className="mx-auto grid max-w-[1320px] gap-12 py-20 scroll-mt-32 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-24 lg:py-24">
       <div>
         <SectionHeading>Die Vision</SectionHeading>
-        <p className="mt-10 max-w-[920px] text-[20px] font-normal leading-[1.55] text-white/90">
+        <p className="mt-10 max-w-[920px] break-words text-[18px] font-normal leading-[1.6] text-white/90 sm:text-[20px]">
           {caseStudy.visionText}
         </p>
       </div>
@@ -275,9 +320,9 @@ function VisionSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-w-0 items-center gap-4 sm:gap-6">
-      <span className="block h-[2px] w-14 shrink-0 bg-[#ff3f68] sm:w-24" />
-      <h2 className="min-w-0 break-words text-[clamp(2.25rem,10vw,3.25rem)] font-light leading-[1.05] tracking-[-0.035em] text-white lg:text-[clamp(46px,4.8vw,76px)]">
+    <div className="flex min-w-0 items-center gap-3 sm:gap-6">
+      <span className="block h-[2px] w-10 shrink-0 bg-[#ff3f68] sm:w-24" />
+      <h2 className="min-w-0 break-words hyphens-none text-[clamp(2rem,8.6vw,3rem)] font-light leading-[1.06] tracking-[-0.015em] text-white [overflow-wrap:normal] lg:text-[clamp(46px,4.8vw,76px)] lg:tracking-[-0.035em]">
         {children}
       </h2>
     </div>
@@ -388,7 +433,7 @@ function ResultSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
     <section className="mx-auto grid max-w-[1320px] gap-10 py-20 scroll-mt-32 lg:grid-cols-[minmax(0,900px)_320px] lg:items-start lg:gap-16 lg:py-24">
       <div>
         <SectionHeading>{caseStudy.resultTitle}</SectionHeading>
-        <p className="mt-10 max-w-[900px] text-[19px] font-normal leading-[1.55] text-white/90">
+        <p className="mt-10 max-w-[900px] break-words text-[18px] font-normal leading-[1.6] text-white/90 sm:text-[19px]">
           {caseStudy.resultText}
         </p>
         <div className="mt-10">

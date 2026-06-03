@@ -41,11 +41,10 @@ export function HeroSection() {
 
         <div className="relative min-w-0 w-full lg:justify-self-end">
           <div className="pointer-events-none absolute -inset-5 hidden rounded-[2.25rem] bg-[radial-gradient(circle,rgba(255,54,95,0.16)_0%,rgba(156,77,255,0.11)_42%,transparent_72%)] blur-3xl md:block" />
-          <div className="relative w-full max-w-full overflow-hidden rounded-[2rem] border border-[#FF365F]/75 bg-tpv-deep shadow-[0_24px_80px_rgba(0,0,0,0.42),0_0_38px_rgba(255,54,95,0.16)] lg:h-[clamp(405px,31vw,470px)] lg:w-[clamp(540px,42vw,620px)]">
-            <div className="relative aspect-[900/506] lg:h-full lg:min-h-0">
+          <div className="relative aspect-video w-full max-w-full overflow-hidden rounded-[2rem] border border-[#FF365F]/75 bg-tpv-deep shadow-[0_24px_80px_rgba(0,0,0,0.42),0_0_38px_rgba(255,54,95,0.16)] lg:w-[clamp(540px,42vw,620px)]">
+            <div className="relative h-full w-full">
               <video
-                className="h-full w-full object-cover object-center md:hidden"
-                style={{ objectPosition: "center center" }}
+                className="absolute inset-0 h-full w-full object-cover object-center md:hidden"
                 autoPlay
                 muted
                 loop
@@ -56,8 +55,7 @@ export function HeroSection() {
                 src="/videos/hero/tpv-hero-video.mp4"
               />
               <video
-                className="hidden h-full w-full object-cover object-center md:block"
-                style={{ objectPosition: "center center" }}
+                className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
                 autoPlay
                 muted
                 loop

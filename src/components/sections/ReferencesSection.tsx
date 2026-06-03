@@ -35,8 +35,16 @@ export function ReferencesSection() {
             WIR REALISIEREN
           </h2>
           <p className="max-w-[1180px] text-[clamp(1.125rem,4.8vw,1.25rem)] font-normal leading-[1.35] text-white lg:text-[clamp(1.375rem,1.9vw,1.6875rem)] lg:leading-[1.25]">
-            Audiovisuelle Erlebnisse der Spitzenklasse. Maßgeschneidert für
-            unsere Kunden.
+            <span className="lg:hidden">
+              <span className="block">Audiovisuelle Erlebnisse</span>
+              <span className="block">der Spitzenklasse.</span>
+              <span className="block">Maßgeschneidert für</span>
+              <span className="block">unsere Kunden.</span>
+            </span>
+            <span className="hidden lg:inline">
+              Audiovisuelle Erlebnisse der Spitzenklasse. Maßgeschneidert für
+              unsere Kunden.
+            </span>
           </p>
         </div>
 

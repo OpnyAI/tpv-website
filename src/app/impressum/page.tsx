@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <main className="tpv-section-tight text-white">
-      <div className="tpv-container max-w-3xl">
+      <div className="tpv-container max-w-3xl break-words hyphens-auto">
         <p className="text-sm uppercase tracking-wide text-white/60">
           Rechtliches
         </p>
@@ -17,7 +17,9 @@ export default function ImpressumPage() {
 
         <div className="mt-6 space-y-7 rounded border border-white/15 bg-white/[0.03] p-5 text-white/72">
           <section>
-            <h2 className="text-xl font-semibold text-white">Angaben gemäß § 5 TMG</h2>
+            <h2 className="text-xl font-semibold leading-snug text-white">
+              Angaben gemäß § 5 TMG
+            </h2>
             <p className="mt-3 leading-7">
               Heinrich Obholz
               <br />
@@ -30,7 +32,9 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white">Kontakt</h2>
+            <h2 className="text-xl font-semibold leading-snug text-white">
+              Kontakt
+            </h2>
             <p className="mt-3 leading-7">
               Telefon: +49 (0) 911 25392 666
               <br />
@@ -39,7 +43,9 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white">Umsatzsteuer-ID</h2>
+            <h2 className="text-xl font-semibold leading-snug text-white">
+              Umsatzsteuer-ID
+            </h2>
             <p className="mt-3 leading-7">
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
               <br />
@@ -48,7 +54,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold leading-snug text-white">
               Angaben zur Berufshaftpflichtversicherung
             </h2>
             <p className="mt-3 leading-7">
@@ -68,7 +74,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold leading-snug text-white">
               Redaktionell verantwortlich
             </h2>
             <p className="mt-3 leading-7">
@@ -81,7 +87,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold leading-snug text-white [overflow-wrap:anywhere] sm:[overflow-wrap:normal]">
               Verbraucherstreitbeilegung/Universalschlichtungsstelle
             </h2>
             <p className="mt-3 leading-7">
@@ -91,7 +97,9 @@ export default function ImpressumPage() {
           </section>
         </div>
 
-        <p className="mt-4 text-sm text-white/60">Quelle: https://www.e-recht24.de</p>
+        <p className="mt-4 text-sm text-white/60 [overflow-wrap:anywhere]">
+          Quelle: https://www.e-recht24.de
+        </p>
       </div>
     </main>
   );

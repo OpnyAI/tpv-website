@@ -114,25 +114,25 @@ const agbSections: AgbSection[] = [
 export default function AgbPage() {
   return (
     <main className="tpv-section-tight text-white">
-      <div className="tpv-container max-w-4xl">
+      <div className="tpv-container max-w-4xl break-words hyphens-auto">
         <p className="text-sm uppercase tracking-wide text-white/60">
           Rechtliches
         </p>
-        <h1 className="mt-3 text-3xl font-semibold">
+        <h1 className="mt-3 break-words hyphens-none text-[clamp(1.55rem,6.1vw,2rem)] font-semibold leading-tight lg:text-3xl">
           Allgemeine Geschäftsbedingungen (AGB)
         </h1>
-        <div className="mt-8 rounded-[1rem] border border-white/15 bg-white/[0.03] p-5 text-white/72 sm:p-7">
-          <p className="text-lg font-medium leading-8 text-white">
+        <div className="mt-8 min-w-0 max-w-full overflow-hidden rounded-[1rem] border border-white/15 bg-white/[0.03] p-5 text-white/72 [overflow-wrap:anywhere] sm:p-7 sm:[overflow-wrap:normal]">
+          <p className="text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">
             Allgemeine Geschäftsbedingungen (AGB) der Firma TPV-AV – Inhaber
             Heinrich Obholz
           </p>
           <div className="mt-8 space-y-9">
             {agbSections.map((section) => (
-              <section key={section.title}>
-                <h2 className="text-xl font-medium leading-tight text-white">
+              <section key={section.title} className="min-w-0">
+                <h2 className="text-lg font-medium leading-tight text-white sm:text-xl">
                   {section.title}
                 </h2>
-                <div className="mt-4 space-y-4 text-base leading-7">
+                <div className="mt-4 space-y-4 text-[0.98rem] leading-7 sm:text-base">
                   {section.paragraphs.map((paragraph, index) => (
                     <div key={paragraph} className="space-y-3">
                       <p>

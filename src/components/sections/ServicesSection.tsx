@@ -86,7 +86,7 @@ export function ServicesSection() {
         <span
           id="service"
           aria-hidden="true"
-          className="pointer-events-none relative block h-0 scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
+          className="pointer-events-none relative block h-0 scroll-mt-44 md:scroll-mt-40 lg:scroll-mt-36"
         />
         <h2 className="mx-auto block max-w-[calc(100vw-2rem)] overflow-visible break-words px-2 text-center text-[clamp(2.05rem,8.5vw,3.45rem)] font-medium leading-[1.07] tracking-[-0.025em] text-[#F7F4FF] lg:hidden">
           <span className="block">Unsere Expertise basiert auf</span>
