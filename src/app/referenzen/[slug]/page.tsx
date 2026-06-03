@@ -235,9 +235,17 @@ function CaseHero({
 }
 
 function ProjectMeta({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
+  const visibleMeta = caseStudy.meta.filter(
+    (item) => item.label !== "Jahr" && item.label !== "Standort",
+  );
+
+  if (visibleMeta.length === 0) {
+    return null;
+  }
+
   return (
     <dl className="mx-auto grid max-w-[1320px] gap-8 border-b border-white/45 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:py-16">
-      {caseStudy.meta.map((item) => (
+      {visibleMeta.map((item) => (
         <div key={item.label}>
           <dt className="text-[14px] font-medium uppercase tracking-[0.2em] text-[#ff3f68]">
             {item.label}
@@ -386,8 +394,10 @@ function ResultSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
         <div className="mt-10">
           <VideoLoop
             src={caseStudy.resultVideo ?? null}
+            youtubeEmbedUrl={caseStudy.youtubeEmbedUrl ?? null}
             image={caseStudy.resultImage ?? null}
             images={caseStudy.resultImages ?? []}
+            title={`${caseStudy.client} Ergebnisvideo`}
           />
         </div>
       </div>
@@ -400,13 +410,33 @@ function ResultSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
 
 function VideoLoop({
   src,
+  youtubeEmbedUrl,
   image,
   images,
+  title,
 }: {
   src: string | null;
+  youtubeEmbedUrl: string | null;
   image: ReferenceImageSlot | null;
   images: ReferenceImageSlot[];
+  title: string;
 }) {
+  if (youtubeEmbedUrl) {
+    return (
+      <div className="relative aspect-video w-full overflow-hidden rounded-[22px] border border-white/35 bg-[#101e25]/90 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={youtubeEmbedUrl}
+          title={title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+    );
+  }
+
   if (!src) {
     if (images.length > 1) {
       return <ResultImageGrid images={images} />;
@@ -431,7 +461,7 @@ function VideoLoop({
     return (
       <div className="flex h-[260px] items-center justify-center rounded-[22px] border border-white/45 bg-[#101e25]/90 sm:h-[360px] lg:h-[420px]">
         <span className="text-sm font-medium uppercase tracking-[0.35em] text-white/70">
-          VIDEO LOOP
+          Video ausstehend
         </span>
       </div>
     );
@@ -441,7 +471,7 @@ function VideoLoop({
     <>
       <div className="flex h-[260px] items-center justify-center rounded-[22px] border border-white/45 bg-[#101e25]/90 md:hidden">
         <span className="text-sm font-medium uppercase tracking-[0.35em] text-white/70">
-          VIDEO LOOP
+          Video ausstehend
         </span>
       </div>
       <video
@@ -585,10 +615,7 @@ function RelatedReferences({ items }: { items: ReferenceItem[] }) {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-[#050019]/86 via-[#050019]/34 to-[#050019]/6" />
             <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-7">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#ff3f68]">
-                {item.location} / {item.year}
-              </p>
-              <h3 className="mt-3 text-[clamp(1.75rem,2.4vw,2.5rem)] font-normal leading-[1.05] text-[#F4F0FF]">
+              <h3 className="text-[clamp(1.75rem,2.4vw,2.5rem)] font-normal leading-[1.05] text-[#F4F0FF]">
                 {item.title}
               </h3>
               <p className="mt-2 text-base font-normal leading-snug text-white/82">

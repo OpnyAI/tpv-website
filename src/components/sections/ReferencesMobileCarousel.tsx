@@ -104,7 +104,7 @@ export function ReferencesMobileCarousel({
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#050019]/[0.18] via-[#050019]/[0.2] to-black/[0.82]" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-tpv-deep/36 via-transparent to-transparent" />
 
-          <div className="pointer-events-none absolute bottom-8 left-7 right-20 sm:bottom-10 sm:left-10 sm:right-24">
+          <div className="pointer-events-none absolute bottom-6 left-7 right-20 sm:bottom-8 sm:left-10 sm:right-24">
             <h3 className="text-[clamp(1.875rem,8vw,2.625rem)] font-medium leading-none tracking-[-0.02em] text-white">
               {activeReference.title}
             </h3>
@@ -116,7 +116,7 @@ export function ReferencesMobileCarousel({
             </p>
           </div>
 
-          <span className="pointer-events-none absolute bottom-7 right-7 flex h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-[#0f0f19]/[0.72] text-white sm:h-16 sm:w-16">
+          <span className="pointer-events-none absolute bottom-5 right-7 flex h-12 w-12 items-center justify-center rounded-full border border-white/16 bg-[#0f0f19]/[0.72] text-white sm:bottom-7 sm:h-16 sm:w-16">
             <Icon name="arrow-up-right" size={22} />
           </span>
         </Link>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import type { FigmaService } from "@/components/sections/ServicesDesktopPanel";
+import { Icon } from "@/components/ui/Icon";
 import { SERVICE_CLICK } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
@@ -16,11 +17,17 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
   const tabsRef = useRef<Array<HTMLButtonElement | null>>([]);
   const activeService = services[activeIndex];
 
+  function getWrappedIndex(index: number) {
+    return (index + services.length) % services.length;
+  }
+
   function setActiveService(index: number) {
-    setActiveIndex(index);
+    const nextIndex = getWrappedIndex(index);
+
+    setActiveIndex(nextIndex);
 
     const scroller = scrollerRef.current;
-    const tab = tabsRef.current[index];
+    const tab = tabsRef.current[nextIndex];
 
     if (!scroller || !tab) {
       return;
@@ -65,18 +72,38 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
           ))}
         </div>
 
-        <div className="mt-4 flex justify-center gap-2" aria-hidden="true">
-          {services.map((service, index) => (
-            <span
-              key={service.number}
-              className={cn(
-                "rounded-full transition duration-150",
-                index === activeIndex
-                  ? "h-2.5 w-6 bg-tpv-accent"
-                  : "h-2.5 w-2.5 bg-white/40",
-              )}
-            />
-          ))}
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex - 1)}
+            aria-label="Vorherigen Service anzeigen"
+          >
+            <Icon name="chevron-left" size={18} />
+          </button>
+
+          <div className="flex items-center justify-center gap-2" aria-hidden="true">
+            {services.map((service, index) => (
+              <span
+                key={service.number}
+                className={cn(
+                  "rounded-full transition duration-150",
+                  index === activeIndex
+                    ? "h-2.5 w-6 bg-tpv-accent"
+                    : "h-2.5 w-2.5 bg-white/40",
+                )}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex + 1)}
+            aria-label="Nächsten Service anzeigen"
+          >
+            <Icon name="chevron-right" size={18} />
+          </button>
         </div>
       </div>
 

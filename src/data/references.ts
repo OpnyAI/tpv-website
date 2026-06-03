@@ -46,6 +46,7 @@ export type ReferenceCaseStudy = {
   resultTitle: string;
   resultText: string;
   resultVideo?: string | null;
+  youtubeEmbedUrl?: string | null;
   resultImage?: ReferenceImageSlot | null;
   resultImages?: ReferenceImageSlot[];
   contactPerson: ReferenceContactPerson;
@@ -145,27 +146,27 @@ const futrueHeroImage =
 const futrueProcessImages = [
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-01.png",
-    "Futrue Vorgehensweise 1",
+    "Futura Vorgehensweise 1",
   ),
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-02.jpg",
-    "Futrue Vorgehensweise 2",
+    "Futura Vorgehensweise 2",
   ),
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-03.jpg",
-    "Futrue Vorgehensweise 3",
+    "Futura Vorgehensweise 3",
   ),
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-04.jpg",
-    "Futrue Vorgehensweise 4",
+    "Futura Vorgehensweise 4",
   ),
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-05.png",
-    "Futrue Vorgehensweise 5",
+    "Futura Vorgehensweise 5",
   ),
   imageSlot(
     "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-06.png",
-    "Futrue Vorgehensweise 6",
+    "Futura Vorgehensweise 6",
   ),
 ];
 
@@ -174,30 +175,30 @@ const noxxHeroImage =
 const noxxProcessImages = [
   imageSlot(
     "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-01.png",
-    "Noxx Vorgehensweise 1",
+    "Nexx Vorgehensweise 1",
   ),
   imageSlot(
     "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-02.png",
-    "Noxx Vorgehensweise 2",
+    "Nexx Vorgehensweise 2",
   ),
   imageSlot(
     "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-03.png",
-    "Noxx Vorgehensweise 3",
+    "Nexx Vorgehensweise 3",
   ),
   imageSlot(
     "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-04.jpg",
-    "Noxx Vorgehensweise 4",
+    "Nexx Vorgehensweise 4",
   ),
 ];
 const noxxResultImages = [
-  imageSlot("/images/case-studies/noxx/noxx-result-01.jpg", "Noxx Ergebnis 1"),
+  imageSlot("/images/case-studies/noxx/noxx-result-01.jpg", "Nexx Ergebnis 1"),
   imageSlot(
     "/images/case-studies/noxx/noxx-result-02.jpg",
-    "Noxx Ergebnis 2",
+    "Nexx Ergebnis 2",
   ),
   imageSlot(
     "/images/case-studies/noxx/noxx-result-03.jpg",
-    "Noxx Ergebnis 3",
+    "Nexx Ergebnis 3",
   ),
 ];
 
@@ -206,31 +207,31 @@ const huhtamakiHeroImage =
 const huhtamakiProcessImages = [
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-01.jpg",
-    "Huhtamaki Vorgehensweise 1",
+    "Hutacell Vorgehensweise 1",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-02.jpg",
-    "Huhtamaki Vorgehensweise 2",
+    "Hutacell Vorgehensweise 2",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-03.jpg",
-    "Huhtamaki Vorgehensweise 3",
+    "Hutacell Vorgehensweise 3",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-04.jpg",
-    "Huhtamaki Vorgehensweise 4",
+    "Hutacell Vorgehensweise 4",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-05.jpg",
-    "Huhtamaki Vorgehensweise 5",
+    "Hutacell Vorgehensweise 5",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-06.jpg",
-    "Huhtamaki Vorgehensweise 6",
+    "Hutacell Vorgehensweise 6",
   ),
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-07.jpg",
-    "Huhtamaki Vorgehensweise 7",
+    "Hutacell Vorgehensweise 7",
   ),
 ];
 
@@ -239,37 +240,37 @@ const orionHeroImage =
 const orionProcessImages = [
   imageSlot(
     "/images/case-studies/orion/02_Vorgehensweise/orion-process-01.jpg",
-    "Orion Vorgehensweise 1",
+    "Oreon Vorgehensweise 1",
   ),
   imageSlot(
     "/images/case-studies/orion/02_Vorgehensweise/orion-process-02.jpg",
-    "Orion Vorgehensweise 2",
+    "Oreon Vorgehensweise 2",
   ),
   imageSlot(
     "/images/case-studies/orion/02_Vorgehensweise/orion-process-03.jpg",
-    "Orion Vorgehensweise 3",
+    "Oreon Vorgehensweise 3",
   ),
   imageSlot(
     "/images/case-studies/orion/02_Vorgehensweise/orion-process-04.jpg",
-    "Orion Vorgehensweise 4",
+    "Oreon Vorgehensweise 4",
   ),
   imageSlot(
     "/images/case-studies/orion/02_Vorgehensweise/orion-process-05.jpg",
-    "Orion Vorgehensweise 5",
+    "Oreon Vorgehensweise 5",
   ),
 ];
 const orionResultImages = [
   imageSlot(
     "/images/case-studies/orion/03_Ergebnis/orion-result-01.jpg",
-    "Orion Ergebnis 1",
+    "Oreon Ergebnis 1",
   ),
   imageSlot(
     "/images/case-studies/orion/03_Ergebnis/orion-result-02.jpg",
-    "Orion Ergebnis 2",
+    "Oreon Ergebnis 2",
   ),
   imageSlot(
     "/images/case-studies/orion/03_Ergebnis/orion-result-03.jpg",
-    "Orion Ergebnis 3",
+    "Oreon Ergebnis 3",
   ),
 ];
 
@@ -278,48 +279,48 @@ const relexaHeroImage =
 const relexaProcessImages = [
   imageSlot(
     "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-01.png",
-    "Relexa Vorgehensweise 1",
+    "Revita Vorgehensweise 1",
     { objectPosition: "center 22%" },
   ),
   imageSlot(
     "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-02.png",
-    "Relexa Vorgehensweise 2",
+    "Revita Vorgehensweise 2",
   ),
 ];
 const relexaResultImages = [
   imageSlot(
     "/images/case-studies/relexa/01_Titelseite/relexa-result-01.png",
-    "Relexa Titelbild 2",
+    "Revita Titelbild 2",
   ),
 ];
 
 export const references: ReferenceItem[] = [
   {
     slug: "futrue",
-    title: "Futrue GmbH",
+    title: "Futura",
     teaserTitle: "Pixel-Power im Doppelpack",
     description:
-      "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz in München.",
+      "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz.",
     location: "München",
     year: "2026",
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "LED-Wall",
     cardImage: futrueHeroImage,
-    cardImageAlt: "Futrue LED-Wall Referenz",
+    cardImageAlt: "Futura LED-Wall Referenz",
     detailImages: [
       futrueHeroImage,
       ...futrueProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/futrue",
     featured: true,
-    seoTitle: "Futrue Referenz - LED-Wall Planung & Installation in München",
+    seoTitle: "Futura Referenz - LED-Wall Planung & Installation",
     seoDescription:
-      "TPV plante und installierte zwei LED-Walls für Futrue in München - mit 4K UltraHD, AV over IP und starker visueller Wirkung.",
+      "TPV plante und installierte zwei LED-Walls für Futura - mit 4K UltraHD, AV over IP und starker visueller Wirkung.",
     canonicalPath: "/referenzen/futrue",
     ogImage: futrueHeroImage,
     vision:
-      "Für das innovative Pharma- und Gesundheitsunternehmen Futrue GmbH entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich.",
+      "Für das innovative Pharma- und Gesundheitsunternehmen Futura entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich.",
     approach:
       "Die Umsetzung begann mit einer detaillierten Bedarfsermittlung und einem technischen Audit.",
     result:
@@ -333,19 +334,17 @@ export const references: ReferenceItem[] = [
     ],
     contactPerson: heinrichObholz,
     caseStudy: {
-      client: "Futrue GmbH",
+      client: "Futura",
       heroLabel: "Case Study",
       heroSubtitle:
-        "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz in München.",
+        "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz.",
       heroImage: futrueHeroImage,
       meta: [
-        { label: "Jahr", value: "2026" },
-        { label: "Standort", value: "MÜNCHEN" },
         { label: "Leistungen", value: "PLANUNG & INSTALLATION" },
         { label: "Technologie", value: "LED-WALL" },
       ],
       visionText:
-        "Für das innovative Pharma- und Gesundheitsunternehmen Futrue GmbH entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich. Kern des Projekts war die Installation von zwei individuell konfigurierten LED-Walls in Mosaik-Form (Abweichung vom Standard-16:9-Format), die bündig in die Wandstruktur integriert wurden. Ziel war es, eine immersive Plattform für das Branding und die Produktpräsentation zu schaffen, bei der die Technik vollständig hinter der Botschaft und dem digitalen Content zurücktritt.",
+        "Für das innovative Pharma- und Gesundheitsunternehmen Futura entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich. Kern des Projekts war die Installation von zwei individuell konfigurierten LED-Walls in Mosaik-Form (Abweichung vom Standard-16:9-Format), die bündig in die Wandstruktur integriert wurden. Ziel war es, eine immersive Plattform für das Branding und die Produktpräsentation zu schaffen, bei der die Technik vollständig hinter der Botschaft und dem digitalen Content zurücktritt.",
       specsTitle: "Technische Spezifikationen",
       specs: [
         { label: "Pixelpitch", value: "1,25mm" },
@@ -364,6 +363,7 @@ export const references: ReferenceItem[] = [
       resultText:
         "Das Ergebnis ist eine nahtlose architektonische Integration, bei der die digitale Fläche durch präzises Schnittstellenmanagement zu einem hochwertigen Designelement verschmilzt. Dank robuster COB-Technik und intuitiver Cloud-Steuerung wird höchste Betriebssicherheit mit maximaler Flexibilität für das Marketing kombiniert. Das Resultat ist ein innovatives Markenerlebnis, das durch Millimeterarbeit und eine moderne Mosaik-Optik langfristig überzeugt.",
       resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/2HahMntG268",
       contactPerson: heinrichObholz,
       faq: [
         ...commonFaq,
@@ -378,17 +378,17 @@ export const references: ReferenceItem[] = [
   },
   {
     slug: "noxx",
-    title: "Noxx",
+    title: "Nexx",
     teaserTitle: "Symbiose aus High-End Medientechnik & modernem Design",
     description:
-      "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept in Marburg.",
+      "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept.",
     location: "Marburg",
     year: "2024",
     services: ["Planung", "Installation", "Support"],
     sector: "Gastgewerbe",
     technology: "Medientechnik",
     cardImage: noxxHeroImage,
-    cardImageAlt: "Noxx Medientechnik Referenz",
+    cardImageAlt: "Nexx Medientechnik Referenz",
     detailImages: [
       noxxHeroImage,
       ...noxxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
@@ -396,13 +396,13 @@ export const references: ReferenceItem[] = [
     ],
     href: "/referenzen/noxx",
     featured: true,
-    seoTitle: "Noxx Referenz - High-End Medientechnik für Gastgewerbe",
+    seoTitle: "Nexx Referenz - High-End Medientechnik für Gastgewerbe",
     seoDescription:
-      "High-End Medientechnik für Noxx in Marburg: TPV verband moderne AV-Technik mit hochwertigem Raumdesign.",
+      "High-End Medientechnik für Nexx: TPV verband moderne AV-Technik mit hochwertigem Raumdesign.",
     canonicalPath: "/referenzen/noxx",
     ogImage: noxxHeroImage,
     vision:
-      "Die Vision für das Hotel NOXX war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur.",
+      "Die Vision für das Hotel Nexx war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur.",
     approach:
       "Der Prozess startete mit einer fundierten Rohbau-Analyse und präziser Fachplanung.",
     result:
@@ -416,19 +416,17 @@ export const references: ReferenceItem[] = [
     ],
     contactPerson: heinrichObholz,
     caseStudy: {
-      client: "Noxx",
+      client: "Nexx",
       heroLabel: "Case Study",
       heroSubtitle:
-        "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept in Marburg.",
+        "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept.",
       heroImage: noxxHeroImage,
       meta: [
-        { label: "Jahr", value: "2024" },
-        { label: "Standort", value: "MARBURG" },
         { label: "Leistungen", value: "PLANUNG / INSTALLATION / SUPPORT" },
         { label: "Sektor", value: "GASTGEWERBE" },
       ],
       visionText:
-        "Die Vision für das Hotel NOXX war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur, die durch präzise Fachplanung nahtlos mit dem minimalistischen Design verschmilzt. Das Ergebnis ist eine Symbiose aus High-End-Funktionalität und architektonischer Ästhetik, die das Gästeerlebnis intuitiv aufwertet.",
+        "Die Vision für das Hotel Nexx war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur, die durch präzise Fachplanung nahtlos mit dem minimalistischen Design verschmilzt. Das Ergebnis ist eine Symbiose aus High-End-Funktionalität und architektonischer Ästhetik, die das Gästeerlebnis intuitiv aufwertet.",
       specsTitle: "Interesting Facts",
       specs: [
         { label: "Zimmeranzahl", value: "82" },
@@ -447,6 +445,7 @@ export const references: ReferenceItem[] = [
       resultText:
         "Das Ergebnis ist eine nahtlose Symbiose aus High-End-Technik und minimalistischem Design, bei der die AV-Infrastruktur durch millimetergenaue Fachplanung optisch vollständig im Interieur verschwindet. Dank eines präzisen Schnittstellenmanagements zwischen Architektur und Möbelbau wurden technische Highlights wie bündige Aufzug-Displays und unsichtbare Audiosysteme realisiert, die den innovativen Charakter des Lifestyle-Hotels unterstreichen. Das Resultat ist ein ganzheitliches, intuitives Gästeerlebnis, das durch maßgeschneiderte User-Interfaces und hochfunktionale Konferenzlösungen langfristig Maßstäbe setzt.",
       resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/Gl7_PJJTNLU",
       resultImages: noxxResultImages,
       contactPerson: heinrichObholz,
       faq: [
@@ -461,30 +460,30 @@ export const references: ReferenceItem[] = [
   },
   {
     slug: "huhtamaki",
-    title: "Huhtamaki",
+    title: "Hutacell",
     teaserTitle: "Innovativer Showroom für maximale Markenwirkung",
     description:
-      "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung in Ronsberg.",
+      "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung.",
     location: "Ronsberg",
     year: "2025",
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "Showroom",
     cardImage: huhtamakiHeroImage,
-    cardImageAlt: "Huhtamaki Showroom Referenz",
+    cardImageAlt: "Hutacell Showroom Referenz",
     detailImages: [
       huhtamakiHeroImage,
       ...huhtamakiProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/huhtamaki",
     featured: true,
-    seoTitle: "Huhtamaki Referenz - Showroom Medientechnik für Markenwirkung",
+    seoTitle: "Hutacell Referenz - Showroom Medientechnik für Markenwirkung",
     seoDescription:
-      "TPV realisierte eine Showroom-Lösung für Huhtamaki in Ronsberg - geplant für starke Markenwirkung und professionelle Präsentation.",
+      "TPV realisierte eine Showroom-Lösung für Hutacell - geplant für starke Markenwirkung und professionelle Präsentation.",
     canonicalPath: "/referenzen/huhtamaki",
     ogImage: huhtamakiHeroImage,
     vision:
-      "Die Vision für den Huhtamaki Flagship-Showroom war die Schaffung einer immersiven Markenwelt.",
+      "Die Vision für den Hutacell Flagship-Showroom war die Schaffung einer immersiven Markenwelt.",
     approach:
       "Die Umsetzung startete mit einer detaillierten Analyse im Rohbauzustand.",
     result:
@@ -498,19 +497,17 @@ export const references: ReferenceItem[] = [
     ],
     contactPerson: fabianDering,
     caseStudy: {
-      client: "Huhtamaki",
+      client: "Hutacell",
       heroLabel: "Case Study",
       heroSubtitle:
-        "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung in Ronsberg.",
+        "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung.",
       heroImage: huhtamakiHeroImage,
       meta: [
-        { label: "Jahr", value: "2025" },
-        { label: "Standort", value: "RONSBERG" },
         { label: "Leistungen", value: "PLANUNG / INSTALLATION" },
         { label: "Sektor", value: "CORPORATE" },
       ],
       visionText:
-        "Die Vision für den Huhtamaki Flagship-Showroom war die Schaffung einer immersiven Markenwelt, in der High-End-Medientechnik als unsichtbarer Enabler fungiert. Durch eine ganzheitliche Systemintegration tritt die Hardware vollständig in den Hintergrund, um den uneingeschränkten Fokus auf die Inszenierung der Produkte und die Kernbotschaften des Weltmarktführers zu lenken. Das Ergebnis ist ein moderner Ausstellungsraum, der technologische Perfektion mit einem klaren, markenzentrierten Kundenerlebnis verbindet.",
+        "Die Vision für den Hutacell Flagship-Showroom war die Schaffung einer immersiven Markenwelt, in der High-End-Medientechnik als unsichtbarer Enabler fungiert. Durch eine ganzheitliche Systemintegration tritt die Hardware vollständig in den Hintergrund, um den uneingeschränkten Fokus auf die Inszenierung der Produkte und die Kernbotschaften des Weltmarktführers zu lenken. Das Ergebnis ist ein moderner Ausstellungsraum, der technologische Perfektion mit einem klaren, markenzentrierten Kundenerlebnis verbindet.",
       specsTitle: "Technische Spezifikationen",
       specs: [
         { label: "Pixelpitch", value: "1,25mm" },
@@ -527,8 +524,9 @@ export const references: ReferenceItem[] = [
         "In der Ausführungsphase lag der Fokus auf der Implementierung einer Invisible Tech-Strategie, bei der hochmoderne AV-over-IP-Lösungen und interaktive 4K-Displays formschlüssig in maßgefertigte Möbel integriert wurden. Durch die konsequente Anwendung einer intuitiven 2-Klick-Logik bei der Raumsteuerung und eine engmaschige Verzahnung der Gewerke wurde sichergestellt, dass die komplexe Technologie im Hintergrund bleibt und eine fehlerfreie, emotionalisierende Produktpräsentation ermöglicht.",
       resultTitle: "Das Ergebnis",
       resultText:
-        "Das Ergebnis ist ein hochmoderner Flagship-Showroom, in dem High-End-Medientechnik durch millimetergenaue Möbelintegration und eine Clean Desk Policy vollständig unsichtbar als Enabler im Hintergrund agiert. Dank einer intuitiven 2-Klick-Logik und verlustfreier AV-over-IP-Signalübertragung entstand eine hybride Erlebniswelt, die eine fehlerfreie, emotionale Produktinszenierung ohne technische Hürden ermöglicht. Das Resultat ist eine perfekte Symbiose aus technischer Innovationskraft und architektonischer Ästhetik, die den uneingeschränkten Fokus auf die Markenbotschaft von Huhtamaki lenkt.",
+        "Das Ergebnis ist ein hochmoderner Flagship-Showroom, in dem High-End-Medientechnik durch millimetergenaue Möbelintegration und eine Clean Desk Policy vollständig unsichtbar als Enabler im Hintergrund agiert. Dank einer intuitiven 2-Klick-Logik und verlustfreier AV-over-IP-Signalübertragung entstand eine hybride Erlebniswelt, die eine fehlerfreie, emotionale Produktinszenierung ohne technische Hürden ermöglicht. Das Resultat ist eine perfekte Symbiose aus technischer Innovationskraft und architektonischer Ästhetik, die den uneingeschränkten Fokus auf die Markenbotschaft von Hutacell lenkt.",
       resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/pbYotQFJX1s",
       contactPerson: fabianDering,
       faq: [
         ...commonFaq,
@@ -542,7 +540,7 @@ export const references: ReferenceItem[] = [
   },
   {
     slug: "orion",
-    title: "Orion Pharma",
+    title: "Oreon",
     teaserTitle: "Hybrid-Work: Mobil & flexibel",
     description: "Mobile Videokonferenzlösung schlüsselfertig integriert",
     location: "Hamburg",
@@ -551,7 +549,7 @@ export const references: ReferenceItem[] = [
     sector: "Corporate",
     technology: "Videokonferenz",
     cardImage: orionHeroImage,
-    cardImageAlt: "Orion Videokonferenz Referenz",
+    cardImageAlt: "Oreon Videokonferenz Referenz",
     detailImages: [
       orionHeroImage,
       ...orionProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
@@ -559,13 +557,13 @@ export const references: ReferenceItem[] = [
     ].filter((src): src is string => Boolean(src)),
     href: "/referenzen/orion",
     featured: false,
-    seoTitle: "Orion Referenz - Videokonferenztechnik für Hybrid Work",
+    seoTitle: "Oreon Referenz - Videokonferenztechnik für Hybrid Work",
     seoDescription:
-      "TPV integrierte eine Videokonferenzlösung für Orion Pharma in Hamburg - flexibel, schlüsselfertig und für moderne Zusammenarbeit ausgelegt.",
+      "TPV integrierte eine Videokonferenzlösung für Oreon - flexibel, schlüsselfertig und für moderne Zusammenarbeit ausgelegt.",
     canonicalPath: "/referenzen/orion",
     ogImage: orionHeroImage,
     vision:
-      "Die Vision für das Projekt Orion Pharma war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht.",
+      "Die Vision für das Projekt Oreon war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht.",
     approach:
       "In enger Kooperation mit der NCS GmbH startete das Projekt mit einer partnergestützten Bedarfsanalyse.",
     result:
@@ -579,18 +577,16 @@ export const references: ReferenceItem[] = [
     ],
     contactPerson: gabrielZidar,
     caseStudy: {
-      client: "Orion Pharma",
+      client: "Oreon",
       heroLabel: "Case Study",
       heroSubtitle: "Mobile Videokonferenzlösung schlüsselfertig integriert",
       heroImage: orionHeroImage,
       meta: [
-        { label: "Jahr", value: "2026" },
-        { label: "Standort", value: "HAMBURG" },
         { label: "Leistungen", value: "PLANUNG & INSTALLATION" },
         { label: "Sektor", value: "CORPORATE" },
       ],
       visionText:
-        "Die Vision für das Projekt Orion Pharma war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht. Durch ein hochflexibles, mobiles Collaboration-Design wurde ein Meetingraum auf Rädern realisiert, der starre Raumstrukturen aufbricht und spontane Videokonferenzen in jedem Bürobereich ermöglicht. Das Ziel war die perfekte Verschmelzung von Hardware-Exzellenz und maximaler Portabilität, um dem Team eine intuitive, kabellose Zusammenarbeit auf höchstem technologischen Niveau zu bieten.",
+        "Die Vision für das Projekt Oreon war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht. Durch ein hochflexibles, mobiles Collaboration-Design wurde ein Meetingraum auf Rädern realisiert, der starre Raumstrukturen aufbricht und spontane Videokonferenzen in jedem Bürobereich ermöglicht. Das Ziel war die perfekte Verschmelzung von Hardware-Exzellenz und maximaler Portabilität, um dem Team eine intuitive, kabellose Zusammenarbeit auf höchstem technologischen Niveau zu bieten.",
       specsTitle: "Technische Spezifikationen",
       specs: [
         { label: "Pixelpitch", value: "1,25mm" },
@@ -601,14 +597,15 @@ export const references: ReferenceItem[] = [
       ],
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
-        "In enger Kooperation mit der NCS GmbH startete das Projekt mit einer partnergestützten Bedarfsanalyse, um die logistischen Abläufe am Standort Hamburg präzise zu koordinieren und die Anforderungen an maximale Flexibilität exakt zu definieren. Auf dieser Basis wurde die physische Fachplanung direkt in ein agiles Installationskonzept übersetzt, das die logistische Bereitstellung und Vorbereitung der Flächen für eine reibungslose Implementierung vor Ort sicherstellte.",
+        "In enger Kooperation mit der NCS GmbH startete das Projekt mit einer partnergestützten Bedarfsanalyse, um die logistischen Abläufe präzise zu koordinieren und die Anforderungen an maximale Flexibilität exakt zu definieren. Auf dieser Basis wurde die physische Fachplanung direkt in ein agiles Installationskonzept übersetzt, das die logistische Bereitstellung und Vorbereitung der Flächen für eine reibungslose Implementierung vor Ort sicherstellte.",
       processImages: orionProcessImages,
       processTextBottom:
         "In der Umsetzungsphase lag der Fokus auf der präzisionsgenauen Installation und der schlüsselfertigen Konfiguration des mobilen Trägersystems samt 75-Zoll MeetingBoard. Durch die gezielte Implementierung kabelloser Audio-Komponenten und eines zentralen Touchpanels wurde eine kompromisslose „Plug & Play“-Infrastruktur geschaffen, die alle störenden Kabelwege eliminiert und eine sofortige, intuitive Inbetriebnahme im gesamten Büro ermöglicht.",
       resultTitle: "Das Ergebnis",
       resultText:
-        "Das Ergebnis ist ein hochflexibler, mobiler Konferenzbereich auf Rädern, der eine barrierefreie und standortunabhängige hybride Zusammenarbeit bei Orion Pharma ermöglicht. Dank des formschön integrierten 75-Zoll-MeetingBoards und kabelloser Mikrofonie wurde eine kabelgebundene Infrastruktur am Boden komplett überflüssig, was maximale Portabilität im gesamten Office garantiert. Das Resultat ist eine schlüsselfertige „Plug & Play“-Lösung, die starre Raumstrukturen aufbricht und durch intuitive Bedienung schnelle, effiziente Ad-hoc-Meetings auf höchstem Niveau erlaubt.",
+        "Das Ergebnis ist ein hochflexibler, mobiler Konferenzbereich auf Rädern, der eine barrierefreie und standortunabhängige hybride Zusammenarbeit bei Oreon ermöglicht. Dank des formschön integrierten 75-Zoll-MeetingBoards und kabelloser Mikrofonie wurde eine kabelgebundene Infrastruktur am Boden komplett überflüssig, was maximale Portabilität im gesamten Office garantiert. Das Resultat ist eine schlüsselfertige „Plug & Play“-Lösung, die starre Raumstrukturen aufbricht und durch intuitive Bedienung schnelle, effiziente Ad-hoc-Meetings auf höchstem Niveau erlaubt.",
       resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/usBxs-dl_Go",
       contactPerson: gabrielZidar,
       faq: [
         ...commonFaq,
@@ -623,7 +620,7 @@ export const references: ReferenceItem[] = [
   },
   {
     slug: "relexa",
-    title: "Relexa Hotels",
+    title: "Revita",
     teaserTitle: "Wayfinding und Digital Signage",
     description: "Intuitive Besucherlenkung und digitale Gästekommunikation",
     location: "Berlin",
@@ -632,7 +629,7 @@ export const references: ReferenceItem[] = [
     sector: "Hospitality",
     technology: "Digital Signage",
     cardImage: relexaHeroImage,
-    cardImageAlt: "Relexa Digital Signage Referenz",
+    cardImageAlt: "Revita Digital Signage Referenz",
     detailImages: [
       relexaHeroImage,
       ...relexaProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
@@ -640,13 +637,13 @@ export const references: ReferenceItem[] = [
     ],
     href: "/referenzen/relexa",
     featured: false,
-    seoTitle: "Relexa Referenz - Wayfinding und Digital Signage im Hotel",
+    seoTitle: "Revita Referenz - Wayfinding und Digital Signage im Hotel",
     seoDescription:
-      "TPV plante eine Wayfinding- und Digital-Signage-Lösung für Relexa Hotels mit Fokus auf Orientierung, Gästekomfort und digitale Kommunikation.",
+      "TPV plante eine Wayfinding- und Digital-Signage-Lösung für Revita mit Fokus auf Orientierung, Gästekomfort und digitale Kommunikation.",
     canonicalPath: "/referenzen/relexa",
     ogImage: relexaHeroImage,
     vision:
-      "Die Vision für das relexa hotel Berlin war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems.",
+      "Die Vision für Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems.",
     approach:
       "Der Prozess begann mit einer umfassenden digitalen Bedarfsanalyse.",
     result:
@@ -661,15 +658,13 @@ export const references: ReferenceItem[] = [
     ],
     contactPerson: fabianDering,
     caseStudy: {
-      client: "Relexa Hotels",
+      client: "Revita",
       heroLabel: "Case Study",
       heroSubtitle:
         "Intuitives Wayfinding & Digital Guest Communication",
       heroImage: relexaHeroImage,
       heroImagePosition: "center 34%",
       meta: [
-        { label: "Jahr", value: "2025" },
-        { label: "Standort", value: "BERLIN" },
         {
           label: "Leistungen",
           value: "PLANUNG / INSTALLATION / CONTENT CREATION",
@@ -677,7 +672,7 @@ export const references: ReferenceItem[] = [
         { label: "Sektor", value: "HOSPITALITY" },
       ],
       visionText:
-        "Die Vision für das relexa hotel Berlin war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems, das intuitives Wayfinding und dynamische Gästekommunikation im Herzen der Lobby vereint. Ziel war es, starre Leitsysteme durch eine hochflexible Plattform für Infotainment und Medien-Upselling zu ersetzen, die sich dank maßgeschneidertem UI/UX-Design nahtlos in die Markenidentität des Hotels einfügt. Diese Symbiose aus Mobilität und digitaler Besucherlenkung wertet das Gästeerlebnis nachhaltig auf und optimiert gleichzeitig die operativen Prozesse des Hotelmanagements im Alltag.",
+        "Die Vision für Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems, das intuitives Wayfinding und dynamische Gästekommunikation im Herzen der Lobby vereint. Ziel war es, starre Leitsysteme durch eine hochflexible Plattform für Infotainment und Medien-Upselling zu ersetzen, die sich dank maßgeschneidertem UI/UX-Design nahtlos in die Markenidentität des Hotels einfügt. Diese Symbiose aus Mobilität und digitaler Besucherlenkung wertet das Gästeerlebnis nachhaltig auf und optimiert gleichzeitig die operativen Prozesse des Hotelmanagements im Alltag.",
       specsTitle: "Technische Spezifikationen",
       specs: [
         { label: "Pixelpitch", value: "1,25mm" },
@@ -697,6 +692,7 @@ export const references: ReferenceItem[] = [
       resultText:
         "Das Ergebnis ist ein hochflexibles, mobiles Digital-Signage-Ökosystem, das als intelligentes Leitsystem und dynamische Kommunikationsplattform im Herzen der Lobby agiert. Dank des rollbaren Setups und der diskret verbauten Hardware lässt sich die Besucherlenkung agil an wechselnde Event-Situationen anpassen, während Konferenzteilnehmer und Gäste völlig autark zu ihren Zielen geführt werden. Das Resultat ist eine cloudbasierte, DSGVO-konforme Gesamtlösung, die durch ein maßgeschneidertes UI/UX-Design das Gästeerlebnis nachhaltig aufwertet und gleichzeitig durch gezieltes Infotainment neue Potenziale für das hoteleigene Medien-Upselling eröffnet.",
       resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/w2GJ1cus_3E",
       contactPerson: fabianDering,
       faq: [
         ...commonFaq,

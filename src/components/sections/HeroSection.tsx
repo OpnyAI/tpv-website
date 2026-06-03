@@ -45,6 +45,7 @@ export function HeroSection() {
             <div className="relative aspect-[900/506] lg:h-full lg:min-h-0">
               <video
                 className="h-full w-full object-cover object-center md:hidden"
+                style={{ objectPosition: "center center" }}
                 autoPlay
                 muted
                 loop
@@ -56,6 +57,7 @@ export function HeroSection() {
               />
               <video
                 className="hidden h-full w-full object-cover object-center md:block"
+                style={{ objectPosition: "center center" }}
                 autoPlay
                 muted
                 loop

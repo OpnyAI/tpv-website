@@ -28,8 +28,8 @@ export function ReferencesSection() {
         <div className="max-w-[1260px] lg:pl-4">
           <span
             id="referenzen"
-            className="block scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
             aria-hidden="true"
+            className="pointer-events-none relative block h-0 scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
           />
           <h2 className="mb-4 text-[clamp(2.375rem,9vw,2.75rem)] font-medium uppercase leading-[1.05] tracking-[0.03em] text-tpv-accent lg:text-[clamp(2.875rem,4vw,3.5625rem)]">
             WIR REALISIEREN

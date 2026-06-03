@@ -69,8 +69,8 @@ export function ContactSection() {
       <div className="relative z-10 mx-auto max-w-[1240px] min-w-0">
         <span
           id="kontakt"
-          className="block scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
           aria-hidden="true"
+          className="pointer-events-none relative block h-0 scroll-mt-36 md:scroll-mt-40 lg:scroll-mt-36"
         />
         <h2 className="mx-auto max-w-[calc(100vw-2rem)] break-words text-center text-[clamp(2.35rem,10vw,3rem)] font-medium uppercase leading-[1.04] tracking-[0.02em] text-tpv-accent lg:text-[clamp(3rem,4vw,4.75rem)] lg:leading-[1.05] lg:tracking-[0.03em]">
           JETZT KONTAKTIEREN

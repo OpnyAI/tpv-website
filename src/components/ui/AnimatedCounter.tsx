@@ -28,7 +28,9 @@ export function AnimatedCounter({
       return;
     }
 
-    const observedElement = element;
+    const observedElement =
+      element.closest<HTMLElement>("[data-counter-root]") ?? element;
+    const timeoutIds: number[] = [];
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -81,7 +83,21 @@ export function AnimatedCounter({
 
     function isElementVisible() {
       const rect = observedElement.getBoundingClientRect();
-      return rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      return rect.top < viewportHeight * 0.95 && rect.bottom > 0;
+    }
+
+    function checkVisibility() {
+      if (hasAnimatedRef.current || !isElementVisible()) {
+        return;
+      }
+
+      observer.disconnect();
+      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener("resize", checkVisibility);
+      startAnimation();
     }
 
     const observer = new IntersectionObserver(
@@ -91,23 +107,28 @@ export function AnimatedCounter({
         }
 
         observer.disconnect();
+        window.removeEventListener("scroll", checkVisibility);
+        window.removeEventListener("resize", checkVisibility);
         startAnimation();
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: [0, 0.1, 0.2] },
+      { rootMargin: "0px 0px -5% 0px", threshold: [0, 0.01, 0.1] },
     );
 
     observer.observe(observedElement);
 
-    const visibilityCheckFrame = requestAnimationFrame(() => {
-      if (!hasAnimatedRef.current && isElementVisible()) {
-        observer.disconnect();
-        startAnimation();
-      }
-    });
+    const visibilityCheckFrame = requestAnimationFrame(checkVisibility);
+    timeoutIds.push(window.setTimeout(checkVisibility, 120));
+    timeoutIds.push(window.setTimeout(checkVisibility, 420));
+    timeoutIds.push(window.setTimeout(checkVisibility, 900));
+    window.addEventListener("scroll", checkVisibility, { passive: true });
+    window.addEventListener("resize", checkVisibility);
 
     return () => {
       observer.disconnect();
       cancelAnimationFrame(visibilityCheckFrame);
+      timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
+      window.removeEventListener("scroll", checkVisibility);
+      window.removeEventListener("resize", checkVisibility);
       if (animationFrameRef.current !== null) {
         cancelAnimationFrame(animationFrameRef.current);
       }
