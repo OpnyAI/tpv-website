@@ -96,7 +96,7 @@ export function ServicesDesktopPanel({
 
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
           <article className="relative rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:h-[700px] lg:p-14 xl:h-[680px] xl:p-16 2xl:h-[680px]">
-            <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-16 lg:top-14">
+            <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-16 lg:top-20">
               <button
                 type="button"
                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-tpv-accent/70 bg-transparent text-white transition hover:bg-white/[0.04] lg:h-16 lg:w-16"
@@ -115,8 +115,8 @@ export function ServicesDesktopPanel({
               </button>
             </div>
 
-            <div className="grid h-full min-w-0 gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] lg:items-end xl:gap-14">
-              <div className="relative z-20 flex h-full min-w-0 max-w-[560px] flex-col justify-end">
+            <div className="grid h-full min-w-0 gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] lg:items-stretch xl:gap-14">
+              <div className="relative z-20 flex h-full min-w-0 max-w-[560px] flex-col justify-start">
                 <div>
                   <h3 className="max-w-[540px] text-[42px] font-medium uppercase leading-[1.04] tracking-[-0.02em] text-tpv-accent xl:text-[46px]">
                     {activeService.title}
@@ -152,7 +152,7 @@ export function ServicesDesktopPanel({
                 </a>
               </div>
 
-              <div className="relative z-10 flex min-w-0 items-end justify-end">
+              <div className="relative z-10 flex min-w-0 items-center justify-end">
                 <div className="relative h-[320px] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] xl:h-[340px] 2xl:h-[350px]">
                   <Image
                     src={activeService.image}
