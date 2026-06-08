@@ -227,10 +227,6 @@ const huhtamakiProcessImages = [
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-06.jpg",
     "Hutacell Vorgehensweise 6",
   ),
-  imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-07.jpg",
-    "Hutacell Vorgehensweise 7",
-  ),
 ];
 
 const orionHeroImage =
@@ -298,7 +294,7 @@ const relexaResultImages = [
 
 export const references: ReferenceItem[] = [
   {
-    slug: "futrue",
+    slug: "futura",
     title: "Futura",
     teaserTitle: "Pixel-Power im Doppelpack",
     description:
@@ -314,12 +310,12 @@ export const references: ReferenceItem[] = [
       futrueHeroImage,
       ...futrueProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
-    href: "/referenzen/futrue",
+    href: "/referenzen/futura",
     featured: true,
     seoTitle: "Futura Referenz - LED-Wall Planung & Installation",
     seoDescription:
       "TPV plante und installierte zwei LED-Walls für Futura - mit 4K UltraHD, AV over IP und starker visueller Wirkung.",
-    canonicalPath: "/referenzen/futrue",
+    canonicalPath: "/referenzen/futura",
     ogImage: futrueHeroImage,
     vision:
       "Für das innovative Pharma- und Gesundheitsunternehmen Futura entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich.",
@@ -383,7 +379,7 @@ export const references: ReferenceItem[] = [
     },
   },
   {
-    slug: "noxx",
+    slug: "nexx",
     title: "Nexx",
     teaserTitle: "Symbiose aus High-End Medientechnik & modernem Design",
     description:
@@ -399,12 +395,12 @@ export const references: ReferenceItem[] = [
       noxxHeroImage,
       ...noxxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
-    href: "/referenzen/noxx",
+    href: "/referenzen/nexx",
     featured: true,
     seoTitle: "Nexx Referenz - High-End Medientechnik für Gastgewerbe",
     seoDescription:
       "High-End Medientechnik für Nexx: TPV verband moderne AV-Technik mit hochwertigem Raumdesign.",
-    canonicalPath: "/referenzen/noxx",
+    canonicalPath: "/referenzen/nexx",
     ogImage: noxxHeroImage,
     vision:
       "Die Vision für das Hotel Nexx war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur.",
@@ -470,7 +466,7 @@ export const references: ReferenceItem[] = [
     },
   },
   {
-    slug: "huhtamaki",
+    slug: "hutacell",
     title: "Hutacell",
     teaserTitle: "Innovativer Showroom für maximale Markenwirkung",
     description:
@@ -486,12 +482,12 @@ export const references: ReferenceItem[] = [
       huhtamakiHeroImage,
       ...huhtamakiProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
-    href: "/referenzen/huhtamaki",
+    href: "/referenzen/hutacell",
     featured: true,
     seoTitle: "Hutacell Referenz - Showroom Medientechnik für Markenwirkung",
     seoDescription:
       "TPV realisierte eine Showroom-Lösung für Hutacell - geplant für starke Markenwirkung und professionelle Präsentation.",
-    canonicalPath: "/referenzen/huhtamaki",
+    canonicalPath: "/referenzen/hutacell",
     ogImage: huhtamakiHeroImage,
     vision:
       "Die Vision für den Hutacell Flagship-Showroom war die Schaffung einer immersiven Markenwelt.",
@@ -560,7 +556,7 @@ export const references: ReferenceItem[] = [
     },
   },
   {
-    slug: "orion",
+    slug: "oreon",
     title: "Oreon",
     teaserTitle: "Hybrid-Work: Mobil & flexibel",
     description: "Mobile Videokonferenzlösung schlüsselfertig integriert",
@@ -576,12 +572,12 @@ export const references: ReferenceItem[] = [
       ...orionProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
       ...orionResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ].filter((src): src is string => Boolean(src)),
-    href: "/referenzen/orion",
+    href: "/referenzen/oreon",
     featured: false,
     seoTitle: "Oreon Referenz - Videokonferenztechnik für Hybrid Work",
     seoDescription:
       "TPV integrierte eine Videokonferenzlösung für Oreon - flexibel, schlüsselfertig und für moderne Zusammenarbeit ausgelegt.",
-    canonicalPath: "/referenzen/orion",
+    canonicalPath: "/referenzen/oreon",
     ogImage: orionHeroImage,
     vision:
       "Die Vision für das Projekt Oreon war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht.",
@@ -638,7 +634,7 @@ export const references: ReferenceItem[] = [
     },
   },
   {
-    slug: "relexa",
+    slug: "revita",
     title: "Revita",
     teaserTitle: "Wayfinding und Digital Signage",
     description: "Intuitive Besucherlenkung und digitale Gästekommunikation",
@@ -654,12 +650,12 @@ export const references: ReferenceItem[] = [
       ...relexaProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
       ...relexaResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
-    href: "/referenzen/relexa",
+    href: "/referenzen/revita",
     featured: false,
     seoTitle: "Revita Referenz - Wayfinding und Digital Signage im Hotel",
     seoDescription:
       "TPV plante eine Wayfinding- und Digital-Signage-Lösung für Revita mit Fokus auf Orientierung, Gästekomfort und digitale Kommunikation.",
-    canonicalPath: "/referenzen/relexa",
+    canonicalPath: "/referenzen/revita",
     ogImage: relexaHeroImage,
     vision:
       "Die Vision für Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems.",

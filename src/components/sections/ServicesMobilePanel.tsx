@@ -72,25 +72,49 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
           ))}
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-2" aria-hidden="true">
-          {services.map((service, index) => (
-            <span
-              key={service.number}
-              className={cn(
-                "rounded-full transition duration-150",
-                index === activeIndex
-                  ? "h-2.5 w-6 bg-tpv-accent"
-                  : "h-2.5 w-2.5 bg-white/40",
-              )}
-            />
-          ))}
+        <div className="mt-4 flex items-center justify-center gap-5">
+          <button
+            type="button"
+            className="inline-flex h-12 w-12 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex - 1)}
+            aria-label="Vorherigen Service anzeigen"
+          >
+            <Icon name="chevron-left" size={20} />
+          </button>
+
+          <div className="flex items-center justify-center gap-2">
+            {services.map((service, index) => (
+              <button
+                key={service.number}
+                type="button"
+                className={cn(
+                  "rounded-full transition duration-150",
+                  index === activeIndex
+                    ? "h-2.5 w-6 bg-tpv-accent"
+                    : "h-2.5 w-2.5 bg-white/40",
+                )}
+                onClick={() => setActiveService(index)}
+                aria-label={`Service ${index + 1} anzeigen`}
+                aria-current={index === activeIndex ? "true" : undefined}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="inline-flex h-12 w-12 shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
+            onClick={() => setActiveService(activeIndex + 1)}
+            aria-label="Nächsten Service anzeigen"
+          >
+            <Icon name="chevron-right" size={20} />
+          </button>
         </div>
       </div>
 
       <div className="relative mt-10 min-w-0 max-w-full overflow-hidden">
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative h-[900px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:h-[920px] sm:p-8">
-            <div className="flex h-full min-w-0 flex-col gap-7">
+          <article className="relative min-h-[900px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:min-h-[920px] sm:p-8">
+            <div className="flex min-h-[858px] min-w-0 flex-col gap-7 sm:min-h-[854px]">
               <div className="relative z-20 flex min-w-0 max-w-[720px] flex-1 flex-col pt-14">
                 <h3 className="break-words text-[clamp(1.85rem,7.6vw,2.55rem)] font-medium uppercase leading-[1.08] tracking-[-0.015em] text-tpv-accent">
                   {activeService.title}
@@ -139,26 +163,6 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               </div>
             </div>
           </article>
-        </div>
-
-        <div className="mt-5 flex items-center justify-center gap-8">
-          <button
-            type="button"
-            className="inline-flex h-12 w-12 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
-            onClick={() => setActiveService(activeIndex - 1)}
-            aria-label="Vorherigen Service anzeigen"
-          >
-            <Icon name="chevron-left" size={20} />
-          </button>
-
-          <button
-            type="button"
-            className="inline-flex h-12 w-12 touch-manipulation items-center justify-center rounded-full border border-white/18 bg-white/[0.04] text-white transition hover:border-tpv-accent hover:text-tpv-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tpv-accent"
-            onClick={() => setActiveService(activeIndex + 1)}
-            aria-label="Nächsten Service anzeigen"
-          >
-            <Icon name="chevron-right" size={20} />
-          </button>
         </div>
       </div>
     </div>

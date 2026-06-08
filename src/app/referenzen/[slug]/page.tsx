@@ -249,8 +249,8 @@ function CaseHero({
 function ProjectMeta({ reference }: { reference: ReferenceItem }) {
   const services = reference.services.filter(Boolean);
   const locationBySlug: Partial<Record<string, string>> = {
-    noxx: "Frankfurt",
-    huhtamaki: "Frankfurt",
+    nexx: "Frankfurt",
+    hutacell: "Frankfurt",
   };
   const location = locationBySlug[reference.slug] ?? reference.location;
   const year = reference.year;
@@ -493,11 +493,15 @@ function VideoLoop({
             allowFullScreen
           />
         </div>
-        <p className="mt-4 text-left text-xs leading-relaxed text-white/60 sm:text-sm">
-          Hinweis: Zum Schutz unserer Kunden wurden Unternehmensnamen und
-          spezifische Standorte in dieser Case Study pseudonymisiert. Für eine
-          optimale und übersichtliche Aufbereitung der Projektergebnisse setzen
-          wir ergänzend KI-Technologien ein.
+        <p className="mt-4 max-w-[900px] text-left text-xs leading-[1.6] text-white/60 sm:text-[13px]">
+          <span className="lg:block">
+            Hinweis: Zum Schutz unserer Kunden wurden Unternehmensnamen und
+            spezifische Standorte in dieser Case Study pseudonymisiert.
+          </span>{" "}
+          <span className="lg:block">
+            Für eine optimale und übersichtliche Aufbereitung der
+            Projektergebnisse setzen wir ergänzend KI-Technologien ein.
+          </span>
         </p>
       </>
     );
