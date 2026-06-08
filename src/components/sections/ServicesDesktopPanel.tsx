@@ -95,7 +95,7 @@ export function ServicesDesktopPanel({
         />
 
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative min-h-[680px] overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:p-16 xl:min-h-[640px] 2xl:min-h-[620px]">
+          <article className="relative rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:h-[700px] lg:p-14 xl:h-[680px] xl:p-16 2xl:h-[680px]">
             <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-16 lg:top-14">
               <button
                 type="button"
@@ -115,49 +115,51 @@ export function ServicesDesktopPanel({
               </button>
             </div>
 
-            <div className="grid min-h-[548px] min-w-0 gap-10 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-stretch xl:min-h-[508px] 2xl:min-h-[488px]">
-              <div className="relative z-20 min-w-0 max-w-[720px] pt-24 lg:flex lg:flex-col lg:justify-end lg:pt-0">
-                <h3 className="text-[clamp(2.125rem,3vw,4rem)] font-medium uppercase leading-[1.1] tracking-[-0.025em] text-tpv-accent">
-                  {activeService.title}
-                </h3>
-                <p className="mt-7 max-w-[720px] text-[clamp(1.375rem,1.7vw,2.25rem)] font-normal leading-[1.26] text-[#F7F4FF]">
-                  {activeService.description}
-                </p>
+            <div className="grid h-full min-w-0 gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] lg:items-end xl:gap-14">
+              <div className="relative z-20 flex h-full min-w-0 max-w-[560px] flex-col justify-end">
+                <div>
+                  <h3 className="max-w-[540px] text-[42px] font-medium uppercase leading-[1.04] tracking-[-0.02em] text-tpv-accent xl:text-[46px]">
+                    {activeService.title}
+                  </h3>
+                  <p className="mt-6 max-w-[540px] text-[21px] font-normal leading-[1.32] tracking-[-0.005em] text-[#F7F4FF] xl:text-[22px]">
+                    {activeService.description}
+                  </p>
 
-                <ul className="mt-10 space-y-6">
-                  {activeService.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-center gap-4 text-[clamp(1.125rem,1.25vw,1.8125rem)] leading-[1.35] text-white"
-                    >
-                      <span className="text-[1.65rem] font-medium leading-none text-tpv-accent">
-                        ✓
-                      </span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-8 space-y-4">
+                    {activeService.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex items-center gap-4 text-[18px] leading-[1.35] tracking-[-0.005em] text-white xl:text-[19px]"
+                      >
+                        <span className="shrink-0 text-[1.5rem] font-medium leading-none text-tpv-accent">
+                          ✓
+                        </span>
+                        <span className="min-w-0">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <a
                   href={activeService.href}
-                  className="mt-11 inline-flex w-fit max-w-max self-start rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
+                  className="mt-8 inline-flex w-fit max-w-max self-start rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
                   data-track-event={SERVICE_CLICK}
                   data-track-label={activeService.title}
                 >
-                  <span className="rounded-full bg-[#0A0618]/55 px-7 py-3 text-[clamp(1rem,1.05vw,1.375rem)] font-medium leading-none text-white backdrop-blur-sm">
+                  <span className="rounded-full bg-[#0A0618]/55 px-7 py-3 text-[17px] font-medium leading-none text-white backdrop-blur-sm xl:text-[18px]">
                     {activeService.cta}
                   </span>
                 </a>
               </div>
 
-              <div className="relative z-10 flex min-h-[280px] min-w-0 items-end justify-end lg:min-h-[390px] lg:self-end">
-                <div className="relative h-[min(72vw,330px)] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] lg:h-[clamp(320px,24vw,360px)] lg:w-full lg:max-w-[640px]">
+              <div className="relative z-10 flex min-w-0 items-end justify-end">
+                <div className="relative h-[320px] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] xl:h-[340px] 2xl:h-[350px]">
                   <Image
                     src={activeService.image}
                     alt={activeService.imageAlt}
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover object-center saturate-[0.78]"
+                    sizes="(min-width: 1536px) 620px, (min-width: 1024px) 48vw, 100vw"
+                    className="object-contain object-center saturate-[0.78]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[rgba(3,18,35,0.42)]" />
                 </div>

@@ -111,9 +111,9 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
         </div>
       </div>
 
-      <div className="relative mt-10 min-w-0 max-w-full overflow-hidden">
+      <div className="relative mt-10 min-w-0 max-w-full">
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative min-h-[900px] w-full max-w-full overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:min-h-[920px] sm:p-8">
+          <article className="relative min-h-[900px] w-full max-w-full rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-5 shadow-card transition duration-200 sm:min-h-[920px] sm:p-8">
             <div className="flex min-h-[858px] min-w-0 flex-col gap-7 sm:min-h-[854px]">
               <div className="relative z-20 flex min-w-0 max-w-[720px] flex-1 flex-col pt-14">
                 <h3 className="break-words text-[clamp(1.85rem,7.6vw,2.55rem)] font-medium uppercase leading-[1.08] tracking-[-0.015em] text-tpv-accent">
@@ -156,7 +156,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
                     alt={activeService.imageAlt}
                     fill
                     sizes="100vw"
-                    className="object-cover saturate-[0.78] [object-position:center]"
+                    className="object-contain object-center saturate-[0.78]"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-[rgba(3,18,35,0.42)]" />
                 </div>
