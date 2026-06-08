@@ -95,10 +95,7 @@ export function ServicesDesktopPanel({
         />
 
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article
-            key={activeService.number}
-            className="relative min-h-[560px] overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl transition duration-300 sm:p-8 lg:min-h-[590px] lg:p-16"
-          >
+          <article className="relative h-[680px] overflow-hidden rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:p-16 xl:h-[640px] 2xl:h-[620px]">
             <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-16 lg:top-14">
               <button
                 type="button"
@@ -118,7 +115,7 @@ export function ServicesDesktopPanel({
               </button>
             </div>
 
-            <div className="grid min-h-[500px] min-w-0 gap-10 lg:min-h-[462px] lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-stretch">
+            <div className="grid h-full min-w-0 gap-10 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-stretch">
               <div className="relative z-20 min-w-0 max-w-[720px] pt-24 lg:flex lg:flex-col lg:justify-end lg:pt-0">
                 <h3 className="text-[clamp(2.125rem,3vw,4rem)] font-medium uppercase leading-[1.1] tracking-[-0.025em] text-tpv-accent">
                   {activeService.title}

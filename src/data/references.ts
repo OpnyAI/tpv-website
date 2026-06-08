@@ -32,6 +32,7 @@ export type ReferenceCaseStudy = {
   client: string;
   heroLabel: string;
   heroSubtitle: string;
+  heroSubtitleLines?: string[];
   heroImage: string | null;
   heroImagePosition?: string;
   heroImagePositionMobile?: string;
@@ -145,27 +146,27 @@ const futrueHeroImage =
   "/images/case-studies/futrue/01_Titelbild/futrue-hero.png";
 const futrueProcessImages = [
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-01.png",
+    "/images/case-studies/futrue/02_Vorgehensweise/1 Futrue.png",
     "Futura Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-02.jpg",
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-vorgehensweise-02.jpg",
     "Futura Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-03.jpg",
+    "/images/case-studies/futrue/02_Vorgehensweise/3 Futrue.JPG",
     "Futura Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-04.jpg",
+    "/images/case-studies/futrue/02_Vorgehensweise/futrue-vorgehensweise-04.jpg",
     "Futura Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-05.png",
+    "/images/case-studies/futrue/02_Vorgehensweise/5 Futrue.png",
     "Futura Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-process-06.png",
+    "/images/case-studies/futrue/02_Vorgehensweise/6 Futrue.png",
     "Futura Vorgehensweise 6",
   ),
 ];
@@ -174,31 +175,28 @@ const noxxHeroImage =
   "/images/case-studies/noxx/01_Titelseite/noxx-hero.png";
 const noxxProcessImages = [
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-01.png",
+    "/images/case-studies/noxx/02_Vorgehensweise/01.png",
     "Nexx Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-02.png",
+    "/images/case-studies/noxx/02_Vorgehensweise/02.png",
     "Nexx Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-03.png",
+    "/images/case-studies/noxx/02_Vorgehensweise/03.jpg",
     "Nexx Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/noxx-process-04.jpg",
+    "/images/case-studies/noxx/02_Vorgehensweise/04.jpg",
     "Nexx Vorgehensweise 4",
   ),
-];
-const noxxResultImages = [
-  imageSlot("/images/case-studies/noxx/noxx-result-01.jpg", "Nexx Ergebnis 1"),
   imageSlot(
-    "/images/case-studies/noxx/noxx-result-02.jpg",
-    "Nexx Ergebnis 2",
+    "/images/case-studies/noxx/02_Vorgehensweise/05.jpeg",
+    "Nexx Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/noxx/noxx-result-03.jpg",
-    "Nexx Ergebnis 3",
+    "/images/case-studies/noxx/02_Vorgehensweise/06.png",
+    "Nexx Vorgehensweise 6",
   ),
 ];
 
@@ -206,31 +204,31 @@ const huhtamakiHeroImage =
   "/images/case-studies/huhtamaki/01_Titelbild/huhtamaki-hero.png";
 const huhtamakiProcessImages = [
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-01.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-01.jpg",
     "Hutacell Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-02.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-02.jpg",
     "Hutacell Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-03.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-03.jpg",
     "Hutacell Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-04.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-04.jpg",
     "Hutacell Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-05.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-05.jpg",
     "Hutacell Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-06.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-06.jpg",
     "Hutacell Vorgehensweise 6",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-process-07.jpg",
+    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-07.jpg",
     "Hutacell Vorgehensweise 7",
   ),
 ];
@@ -239,24 +237,28 @@ const orionHeroImage =
   "/images/case-studies/orion/01_Titelbild/orion-hero.png";
 const orionProcessImages = [
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-process-01.jpg",
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-01.jpg",
     "Oreon Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-process-02.jpg",
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-02.jpg",
     "Oreon Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-process-03.jpg",
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-03.jpg",
     "Oreon Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-process-04.jpg",
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-04.jpg",
     "Oreon Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-process-05.jpg",
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-05.jpg",
     "Oreon Vorgehensweise 5",
+  ),
+  imageSlot(
+    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-06.jpg",
+    "Oreon Vorgehensweise 6",
   ),
 ];
 const orionResultImages = [
@@ -278,12 +280,12 @@ const relexaHeroImage =
   "/images/case-studies/relexa/01_Titelseite/relexa-hero.png";
 const relexaProcessImages = [
   imageSlot(
-    "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-01.png",
+    "/images/case-studies/relexa/02_Vorgehensweise/1.png",
     "Revita Vorgehensweise 1",
     { objectPosition: "center 22%" },
   ),
   imageSlot(
-    "/images/case-studies/relexa/02_Vorgehensweise/relexa-process-02.png",
+    "/images/case-studies/relexa/02_Vorgehensweise/2.png",
     "Revita Vorgehensweise 2",
   ),
 ];
@@ -345,7 +347,7 @@ export const references: ReferenceItem[] = [
       ],
       visionText:
         "Für das innovative Pharma- und Gesundheitsunternehmen Futura entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich. Kern des Projekts war die Installation von zwei individuell konfigurierten LED-Walls in Mosaik-Form (Abweichung vom Standard-16:9-Format), die bündig in die Wandstruktur integriert wurden. Ziel war es, eine immersive Plattform für das Branding und die Produktpräsentation zu schaffen, bei der die Technik vollständig hinter der Botschaft und dem digitalen Content zurücktritt.",
-      specsTitle: "Technische Spezifikationen",
+      specsTitle: "Projektdaten",
       specs: [
         { label: "Pixelpitch", value: "1,25mm" },
         { label: "Gesamtbreite", value: "12.5m" },
@@ -392,7 +394,6 @@ export const references: ReferenceItem[] = [
     detailImages: [
       noxxHeroImage,
       ...noxxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
-      ...noxxResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/noxx",
     featured: true,
@@ -419,21 +420,28 @@ export const references: ReferenceItem[] = [
       client: "Nexx",
       heroLabel: "Case Study",
       heroSubtitle:
-        "Planung, Installation und Support für ein visuell starkes Gastgewerbe-Konzept.",
+        "Ganzheitliche AV-Infrastruktur für 82 Zimmer und multifunktionale Eventflächen",
+      heroSubtitleLines: [
+        "Ganzheitliche AV-Infrastruktur für 82 Zimmer und",
+        "multifunktionale Eventflächen",
+      ],
       heroImage: noxxHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG / INSTALLATION / SUPPORT" },
         { label: "Sektor", value: "GASTGEWERBE" },
       ],
       visionText:
-        "Die Vision für das Hotel Nexx war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur, die durch präzise Fachplanung nahtlos mit dem minimalistischen Design verschmilzt. Das Ergebnis ist eine Symbiose aus High-End-Funktionalität und architektonischer Ästhetik, die das Gästeerlebnis intuitiv aufwertet.",
-      specsTitle: "Interesting Facts",
+        "Die Vision für das Projekt Nexx war die Schaffung einer unsichtbaren medientechnischen Infrastruktur, die durch präzise Fachplanung nahtlos mit dem minimalistischen Raumdesign verschmilzt. Das Ergebnis ist eine Symbiose aus High-End-Funktionalität und architektonischer Ästhetik, die das Gästeerlebnis intuitiv aufwertet.",
+      specsTitle: "Projektdaten",
       specs: [
-        { label: "Zimmeranzahl", value: "82" },
-        { label: "Gesamtbreite", value: "12.5m" },
-        { label: "Signalfluss", value: "AV Over IP" },
-        { label: "Helligkeit", value: "800 nits" },
-        { label: "Gesamtauflösung", value: "4K ULTRAHD" },
+        { label: "ZIMMERINFRASTRUKTUR", value: "82 Smart TV'S" },
+        { label: "KONFERENZRAUMANZAHL", value: "4 (flexibel koppelbar)" },
+        {
+          label: "SIGNALMANAGEMENT",
+          value: "Wireless & Bodentank Back-Up",
+        },
+        { label: "ZENTRALE STEUERUNG", value: "4 Crestron Touchpanels" },
+        { label: "AUDIO INTEGRATION", value: "Unsichtbarer Deckeneinbau" },
       ],
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
@@ -446,7 +454,6 @@ export const references: ReferenceItem[] = [
         "Das Ergebnis ist eine nahtlose Symbiose aus High-End-Technik und minimalistischem Design, bei der die AV-Infrastruktur durch millimetergenaue Fachplanung optisch vollständig im Interieur verschwindet. Dank eines präzisen Schnittstellenmanagements zwischen Architektur und Möbelbau wurden technische Highlights wie bündige Aufzug-Displays und unsichtbare Audiosysteme realisiert, die den innovativen Charakter des Lifestyle-Hotels unterstreichen. Das Resultat ist ein ganzheitliches, intuitives Gästeerlebnis, das durch maßgeschneiderte User-Interfaces und hochfunktionale Konferenzlösungen langfristig Maßstäbe setzt.",
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/Gl7_PJJTNLU",
-      resultImages: noxxResultImages,
       contactPerson: heinrichObholz,
       faq: [
         ...commonFaq,
@@ -501,6 +508,10 @@ export const references: ReferenceItem[] = [
       heroLabel: "Case Study",
       heroSubtitle:
         "Planung und Installation einer Showroom-Lösung mit starker Markenwirkung.",
+      heroSubtitleLines: [
+        "Planung und Installation einer Showroom-",
+        "Lösung mit starker Markenwirkung",
+      ],
       heroImage: huhtamakiHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG / INSTALLATION" },
@@ -508,13 +519,19 @@ export const references: ReferenceItem[] = [
       ],
       visionText:
         "Die Vision für den Hutacell Flagship-Showroom war die Schaffung einer immersiven Markenwelt, in der High-End-Medientechnik als unsichtbarer Enabler fungiert. Durch eine ganzheitliche Systemintegration tritt die Hardware vollständig in den Hintergrund, um den uneingeschränkten Fokus auf die Inszenierung der Produkte und die Kernbotschaften des Weltmarktführers zu lenken. Das Ergebnis ist ein moderner Ausstellungsraum, der technologische Perfektion mit einem klaren, markenzentrierten Kundenerlebnis verbindet.",
-      specsTitle: "Technische Spezifikationen",
+      specsTitle: "Projektdaten",
       specs: [
-        { label: "Pixelpitch", value: "1,25mm" },
-        { label: "Gesamtbreite", value: "12.5m" },
-        { label: "Signalfluss", value: "AV Over IP" },
-        { label: "Helligkeit", value: "800 nits" },
-        { label: "Gesamtauflösung", value: "4K ULTRAHD" },
+        { label: "INTERAKTIVES GROSSBILDSYSTEM", value: '86" 4K Touchdisplay' },
+        {
+          label: "KOLLABORATIONS-FLÄCHE",
+          value: "Digitales Smart-Whiteboard",
+        },
+        { label: "SIGNAL-ROUTING", value: "Verlustfreies AV-over-IP" },
+        { label: "BEDIENKONZEPT", value: "Intuitive 2-Klick-Logik" },
+        {
+          label: "ARCHITEKTONISCHE INTEGRATION",
+          value: "Unsichtbarer Möbel Einbau",
+        },
       ],
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
@@ -587,13 +604,11 @@ export const references: ReferenceItem[] = [
       ],
       visionText:
         "Die Vision für das Projekt Oreon war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht. Durch ein hochflexibles, mobiles Collaboration-Design wurde ein Meetingraum auf Rädern realisiert, der starre Raumstrukturen aufbricht und spontane Videokonferenzen in jedem Bürobereich ermöglicht. Das Ziel war die perfekte Verschmelzung von Hardware-Exzellenz und maximaler Portabilität, um dem Team eine intuitive, kabellose Zusammenarbeit auf höchstem technologischen Niveau zu bieten.",
-      specsTitle: "Technische Spezifikationen",
+      specsTitle: "Projektdaten",
       specs: [
-        { label: "Pixelpitch", value: "1,25mm" },
-        { label: "Gesamtbreite", value: "12.5m" },
-        { label: "Signalfluss", value: "AV Over IP" },
-        { label: "Helligkeit", value: "800 nits" },
-        { label: "Gesamtauflösung", value: "4K ULTRAHD" },
+        { label: "COLLABORATION-DISPLAY", value: '75" 4K Touch-System' },
+        { label: "AGILE RAUMNUTZUNG", value: "Mobiles 360°-Konferenz-Setup" },
+        { label: "CONTENT-SHARING", value: "Latenzfreies Wireless-Casting" },
       ],
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
@@ -625,7 +640,7 @@ export const references: ReferenceItem[] = [
     description: "Intuitive Besucherlenkung und digitale Gästekommunikation",
     location: "Berlin",
     year: "2025",
-    services: ["Planung", "Installation", "Content Creation"],
+    services: ["Planung", "Installation", "Content-Creation"],
     sector: "Hospitality",
     technology: "Digital Signage",
     cardImage: relexaHeroImage,
@@ -667,20 +682,28 @@ export const references: ReferenceItem[] = [
       meta: [
         {
           label: "Leistungen",
-          value: "PLANUNG / INSTALLATION / CONTENT CREATION",
+          value: "PLANUNG / INSTALLATION / CONTENT-CREATION",
         },
         { label: "Sektor", value: "HOSPITALITY" },
       ],
       visionText:
-        "Die Vision für Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems, das intuitives Wayfinding und dynamische Gästekommunikation im Herzen der Lobby vereint. Ziel war es, starre Leitsysteme durch eine hochflexible Plattform für Infotainment und Medien-Upselling zu ersetzen, die sich dank maßgeschneidertem UI/UX-Design nahtlos in die Markenidentität des Hotels einfügt. Diese Symbiose aus Mobilität und digitaler Besucherlenkung wertet das Gästeerlebnis nachhaltig auf und optimiert gleichzeitig die operativen Prozesse des Hotelmanagements im Alltag.",
-      specsTitle: "Technische Spezifikationen",
+        "Die Vision für das Projekt Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems, das intuitives Wayfinding und dynamische Gästekommunikation im Herzen der Lobby vereint. Ziel war es, starre Leitsysteme durch eine hochflexible Plattform für Infotainment und Medien-Upselling zu ersetzen, die sich dank maßgeschneidertem UI/UX-Design nahtlos in die Markenidentität des Hotels einfügt. Diese Symbiose aus Mobilität und digitaler Besucherlenkung wertet das Gästeerlebnis nachhaltig auf und optimiert gleichzeitig die operativen Prozesse des Hotelmanagements im Alltag.",
+      specsTitle: "Projektdaten",
       specs: [
-        { label: "Pixelpitch", value: "1,25mm" },
-        { label: "Gesamtbreite", value: "12.5m" },
-        { label: "Signalfluss", value: "AV Over IP" },
-        { label: "Helligkeit", value: "800 nits" },
-        { label: "Gesamtauflösung", value: "4K ULTRAHD" },
-        { label: "Artikeliste", value: "Auf Anfrage" },
+        {
+          label: "INTERAKTIVES GROSSBILDSYSTEM",
+          value: "Mobiles Digital-Signage-Setup",
+        },
+        { label: "CONTENT-PLAYER", value: "COS 200 (für 24/7 Dauerbetrieb)" },
+        {
+          label: "CONTENT-MANAGEMENT",
+          value: "Cloudbasiertes Connect Signage",
+        },
+        { label: "INTERFACE-DESIGN", value: "Custom CI-Brand Alignment" },
+        {
+          label: "CONTENT-STRATEGIE",
+          value: "Dynamisches Routing & Infotainment",
+        },
       ],
       processTitle: "Unsere Vorgehensweise",
       processTextTop:

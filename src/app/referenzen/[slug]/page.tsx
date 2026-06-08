@@ -225,8 +225,20 @@ function CaseHero({
           <h1 className="mt-4 text-[clamp(42px,5.2vw,76px)] font-light leading-none tracking-[-0.035em] text-white">
             {caseStudy.client}
           </h1>
-          <p className="mt-5 max-w-[780px] text-[clamp(1.125rem,1.6vw,1.625rem)] font-normal leading-[1.35] text-white">
-            {caseStudy.heroSubtitle}
+          <p
+            className={cn(
+              "mt-5 max-w-[780px] text-[clamp(1.125rem,1.6vw,1.625rem)] font-normal leading-[1.35] text-white",
+              caseStudy.heroSubtitleLines &&
+                "text-[clamp(0.875rem,1.6vw,1.625rem)] tracking-[-0.015em]",
+            )}
+          >
+            {caseStudy.heroSubtitleLines
+              ? caseStudy.heroSubtitleLines.map((line) => (
+                  <span key={line} className="block whitespace-nowrap">
+                    {line}
+                  </span>
+                ))
+              : caseStudy.heroSubtitle}
           </p>
         </div>
       </div>
@@ -385,14 +397,21 @@ function ProcessSection({ caseStudy }: { caseStudy: ReferenceCaseStudy }) {
 }
 
 function ProcessGrid({ images }: { images: ReferenceImageSlot[] }) {
+  const visibleImages = images.filter((image) => Boolean(image.src));
+
+  if (visibleImages.length === 0) {
+    return null;
+  }
+
   return (
     <div
       className={cn(
         "mt-8 grid min-w-0 gap-2",
-        images.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
+        visibleImages.length === 2 && "sm:grid-cols-2",
+        visibleImages.length >= 3 && "sm:grid-cols-2 lg:grid-cols-3",
       )}
     >
-      {images.map((image, index) => {
+      {visibleImages.map((image, index) => {
         const imageObjectPosition =
           image.objectPositionMobile ?? image.objectPosition;
 
@@ -401,24 +420,19 @@ function ProcessGrid({ images }: { images: ReferenceImageSlot[] }) {
             key={`${image.alt}-${index}`}
             className="relative aspect-[4/3] overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.03]"
           >
-            {image.src ? (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(min-width: 1024px) 300px, 90vw"
-              className="object-cover"
-              style={
-                imageObjectPosition
-                  ? { objectPosition: imageObjectPosition }
-                  : undefined
-              }
-            />
-            ) : (
-              <ImagePlaceholder
-                title="Bildmaterial ausstehend"
-                subtitle="Vom Kunden anfordern"
-                compact
+            {image.src && (
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                unoptimized
+                sizes="(min-width: 1024px) 300px, 90vw"
+                className="object-cover"
+                style={
+                  imageObjectPosition
+                    ? { objectPosition: imageObjectPosition }
+                    : undefined
+                }
               />
             )}
           </div>
@@ -468,17 +482,25 @@ function VideoLoop({
 }) {
   if (youtubeEmbedUrl) {
     return (
-      <div className="relative aspect-video w-full overflow-hidden rounded-[22px] border border-white/35 bg-[#101e25]/90 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
-        <iframe
-          className="absolute inset-0 h-full w-full"
-          src={youtubeEmbedUrl}
-          title={title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
+      <>
+        <div className="relative aspect-video w-full overflow-hidden rounded-[22px] border border-white/35 bg-[#101e25]/90 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={youtubeEmbedUrl}
+            title={title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+        <p className="mt-4 text-left text-xs leading-relaxed text-white/60 sm:text-sm">
+          Hinweis: Zum Schutz unserer Kunden wurden Unternehmensnamen und
+          spezifische Standorte in dieser Case Study pseudonymisiert. Für eine
+          optimale und übersichtliche Aufbereitung der Projektergebnisse setzen
+          wir ergänzend KI-Technologien ein.
+        </p>
+      </>
     );
   }
 
