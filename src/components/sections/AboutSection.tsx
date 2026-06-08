@@ -40,7 +40,10 @@ export function AboutSection() {
                 poster="/images/video-posters/tpv-about-poster.jpg"
                 aria-label="TPV Vorstellung Mobile Video"
               >
-                <source src="/videos/about/tpv-about-video.mp4" type="video/mp4" />
+                <source
+                  src="/videos/about/tpv-about-video-optimized.mp4"
+                  type="video/mp4"
+                />
               </video>
               <video
                 className="pointer-events-none absolute left-1/2 top-1/2 hidden h-[128%] w-auto min-w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover md:block"
@@ -53,7 +56,10 @@ export function AboutSection() {
                 poster="/images/video-posters/tpv-about-poster.jpg"
                 aria-label="TPV Vorstellung Video"
               >
-                <source src="/videos/about/tpv-about-video.mp4" type="video/mp4" />
+                <source
+                  src="/videos/about/tpv-about-video-optimized.mp4"
+                  type="video/mp4"
+                />
               </video>
               <div className="pointer-events-none absolute inset-0 bg-tpv-deep/42" />
             </div>

@@ -201,7 +201,7 @@ const noxxProcessImages = [
 ];
 
 const huhtamakiHeroImage =
-  "/images/case-studies/huhtamaki/01_Titelbild/huhtamaki-hero.png";
+  "/images/case-studies/huhtamaki/01_Titelbild/huhtamaki-hero-optimized.jpg";
 const huhtamakiProcessImages = [
   imageSlot(
     "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-01.jpg",
@@ -339,7 +339,11 @@ export const references: ReferenceItem[] = [
       client: "Futura",
       heroLabel: "Case Study",
       heroSubtitle:
-        "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz.",
+        "Planung und Installation zweier LED-Walls für eine starke visuelle Präsenz in München.",
+      heroSubtitleLines: [
+        "Planung und Installation zweier LED-Walls für eine starke",
+        "visuelle Präsenz in München.",
+      ],
       heroImage: futrueHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG & INSTALLATION" },

@@ -425,7 +425,6 @@ function ProcessGrid({ images }: { images: ReferenceImageSlot[] }) {
                 src={image.src}
                 alt={image.alt}
                 fill
-                unoptimized
                 sizes="(min-width: 1024px) 300px, 90vw"
                 className="object-cover"
                 style={
