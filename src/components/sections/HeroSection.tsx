@@ -50,9 +50,9 @@ export function HeroSection() {
                 loop
                 playsInline
                 preload="metadata"
-                poster="/images/video-posters/tpv-hero-poster-mobile.jpg"
+                poster="/images/video-posters/tpv-hero-poster-v2-mobile.jpg"
                 aria-label="TPV Hero Mobile Video"
-                src="/videos/hero/tpv-hero-video-optimized.mp4"
+                src="/videos/hero/tpv-hero-video-v2-optimized.mp4"
               />
               <video
                 className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
@@ -61,9 +61,9 @@ export function HeroSection() {
                 loop
                 playsInline
                 preload="metadata"
-                poster="/images/video-posters/tpv-hero-poster-desktop.jpg"
+                poster="/images/video-posters/tpv-hero-poster-v2-desktop.jpg"
                 aria-label="TPV Hero Video"
-                src="/videos/hero/tpv-hero-video-optimized.mp4"
+                src="/videos/hero/tpv-hero-video-v2-optimized.mp4"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-tpv-deep/16 via-transparent to-[#9C4DFF]/5" />
             </div>
