@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import { createCanonicalUrl } from "@/lib/seo";
+
+const title = "Impressum";
+const description =
+  "Impressum von TPV-AV, Heinrich Obholz, Sulzbacherstraße 48, 90489 Nürnberg.";
+const canonicalUrl = createCanonicalUrl("/impressum");
 
 export const metadata: Metadata = {
-  title: "Impressum",
-  description:
-    "Impressum von TPV-AV, Heinrich Obholz, Sulzbacherstraße 48, 90489 Nürnberg.",
+  title,
+  description,
+  alternates: {
+    canonical: canonicalUrl,
+  },
+  openGraph: {
+    title: `${title} | TPV-AV`,
+    description,
+    url: canonicalUrl,
+  },
 };
 
 export default function ImpressumPage() {

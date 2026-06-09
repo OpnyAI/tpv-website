@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import { createCanonicalUrl } from "@/lib/seo";
+
+const title = "Datenschutz";
+const description =
+  "Datenschutzerklärung von TPV-AV mit Angaben zu Verantwortlichem, Hosting, Kontakt und externen Diensten.";
+const canonicalUrl = createCanonicalUrl("/datenschutz");
 
 export const metadata: Metadata = {
-  title: "Datenschutz",
-  description:
-    "Datenschutzerklärung von TPV-AV mit Angaben zu Verantwortlichem, Hosting, Kontakt und externen Diensten.",
+  title,
+  description,
+  alternates: {
+    canonical: canonicalUrl,
+  },
+  openGraph: {
+    title: `${title} | TPV-AV`,
+    description,
+    url: canonicalUrl,
+  },
 };
 
 const sections = [

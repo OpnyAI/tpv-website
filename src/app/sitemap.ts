@@ -4,8 +4,9 @@ import { caseStudyReferences } from "@/data/references";
 import { siteConfig } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
 
+const lastModified = new Date("2026-06-09");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   const legalPages = ["/impressum", "/datenschutz", "/agb"];
 
   return [

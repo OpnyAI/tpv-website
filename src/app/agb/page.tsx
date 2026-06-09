@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
+import { createCanonicalUrl } from "@/lib/seo";
+
+const title = "AGB";
+const description = "Allgemeine Geschäftsbedingungen von TPV-AV.";
+const canonicalUrl = createCanonicalUrl("/agb");
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: canonicalUrl,
+  },
+  openGraph: {
+    title: `${title} | TPV-AV`,
+    description,
+    url: canonicalUrl,
+  },
+};
 
 type AgbSection = {
   title: string;

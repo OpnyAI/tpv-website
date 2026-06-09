@@ -4,7 +4,13 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/data/site";
+import {
+  organizationJsonLd,
+  professionalServiceJsonLd,
+  websiteJsonLd,
+} from "@/lib/jsonLd";
 import { absoluteUrl } from "@/lib/seo";
 import "./globals.css";
 
@@ -70,6 +76,9 @@ export default function RootLayout({
   return (
     <html lang="de" data-scroll-behavior="smooth">
       <body className={`${inter.className} bg-tpv-dark antialiased`}>
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
+        <JsonLd data={professionalServiceJsonLd} />
         <GoogleAnalytics />
         <Header />
         <div className="relative isolate min-h-screen overflow-hidden bg-tpv-dark pt-24">
