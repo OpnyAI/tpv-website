@@ -1,12 +1,137 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const aboutStats = [
-  { value: 25, label: "Mitarbeiter" },
-  { value: 5, label: "Standorte" },
-  { value: 15, label: "Jahre Erfahrung" },
+  {
+    value: 25,
+    label: "Mitarbeiter",
+    testId: "about-counter-employees",
+  },
+  {
+    value: 5,
+    label: "Standorte",
+    testId: "about-counter-locations",
+  },
+  {
+    value: 15,
+    label: "Jahre Erfahrung",
+    testId: "about-counter-years",
+  },
 ];
 
 export function AboutSection() {
+  const counterTriggerRef = useRef<HTMLDivElement>(null);
+  const [shouldStartCounters, setShouldStartCounters] = useState(false);
+
+  useEffect(() => {
+    const counterTrigger = counterTriggerRef.current;
+
+    if (!counterTrigger || shouldStartCounters) {
+      return;
+    }
+
+    const navigationEntry = performance.getEntriesByType(
+      "navigation",
+    )[0] as PerformanceNavigationTiming | undefined;
+    const blocksRestoredPosition =
+      navigationEntry?.type === "reload" && window.location.hash === "";
+    let restoredPositionReleased = !blocksRestoredPosition;
+    let observer: IntersectionObserver | null = null;
+
+    function startCounters() {
+      setShouldStartCounters(true);
+      observer?.disconnect();
+      removeInteractionListeners();
+    }
+
+    function isTriggerVisible() {
+      if (!counterTrigger) {
+        return false;
+      }
+
+      const rect = counterTrigger.getBoundingClientRect();
+      const viewportHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      return rect.top < viewportHeight && rect.bottom > 0 && rect.height > 0;
+    }
+
+    function handleUserInteraction(event: Event) {
+      if (!event.isTrusted) {
+        return;
+      }
+
+      restoredPositionReleased = true;
+      removeInteractionListeners();
+
+      if (isTriggerVisible()) {
+        startCounters();
+      }
+    }
+
+    function addInteractionListeners() {
+      window.addEventListener("wheel", handleUserInteraction, {
+        passive: true,
+      });
+      window.addEventListener("touchstart", handleUserInteraction, {
+        passive: true,
+      });
+      window.addEventListener("keydown", handleUserInteraction);
+      window.addEventListener("pointerdown", handleUserInteraction);
+    }
+
+    function removeInteractionListeners() {
+      window.removeEventListener("wheel", handleUserInteraction);
+      window.removeEventListener("touchstart", handleUserInteraction);
+      window.removeEventListener("keydown", handleUserInteraction);
+      window.removeEventListener("pointerdown", handleUserInteraction);
+    }
+
+    function startIfVisible() {
+      if (!isTriggerVisible() || !restoredPositionReleased) {
+        return false;
+      }
+
+      startCounters();
+      return true;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      startIfVisible();
+    } else {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (
+            !entry?.isIntersecting ||
+            entry.intersectionRatio <= 0 ||
+            !restoredPositionReleased
+          ) {
+            return;
+          }
+
+          startCounters();
+        },
+        {
+          rootMargin: "0px 0px -15% 0px",
+          threshold: 0.25,
+        },
+      );
+
+      observer.observe(counterTrigger);
+    }
+
+    if (blocksRestoredPosition) {
+      addInteractionListeners();
+    }
+
+    return () => {
+      observer?.disconnect();
+      removeInteractionListeners();
+    };
+  }, [shouldStartCounters]);
+
   return (
     <section
       className="relative min-h-[720px] overflow-hidden px-[5vw] py-[4.5rem] lg:min-h-[800px] lg:py-20"
@@ -83,11 +208,19 @@ export function AboutSection() {
             <span className="block">menschlich vollendet</span>
           </p>
 
-          <div className="mx-auto mt-10 grid max-w-[calc(100vw-2rem)] grid-cols-3 gap-x-3 gap-y-8 lg:mx-0 lg:mt-12 lg:max-w-[640px] lg:gap-x-14">
+          <div
+            ref={counterTriggerRef}
+            className="mx-auto mt-10 grid max-w-[calc(100vw-2rem)] grid-cols-3 gap-x-3 gap-y-8 lg:mx-0 lg:mt-12 lg:max-w-[640px] lg:gap-x-14"
+          >
             {aboutStats.map((stat) => (
               <div key={stat.label} className="min-w-0">
                 <p className="text-[clamp(2.15rem,9vw,2.625rem)] font-medium leading-none text-white lg:text-[clamp(2.625rem,3.4vw,3.25rem)]">
-                  <AnimatedCounter to={stat.value} suffix="+" />
+                  <AnimatedCounter
+                    to={stat.value}
+                    shouldStart={shouldStartCounters}
+                    suffix="+"
+                    dataTestId={stat.testId}
+                  />
                 </p>
                 <p className="mt-2 break-words text-[clamp(0.9rem,3.8vw,1.1rem)] font-normal leading-[1.1] text-white lg:text-[clamp(1.1rem,1.7vw,1.75rem)]">
                   {stat.label}

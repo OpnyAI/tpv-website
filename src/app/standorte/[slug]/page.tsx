@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { FaqList } from "@/components/sections/FaqList";
 import { GradientButton } from "@/components/ui/GradientButton";
@@ -156,26 +157,15 @@ function LocationHero({ location }: { location: LocationItem }) {
           </div>
         </div>
 
-        <div className="relative min-h-[360px] min-w-0 overflow-hidden rounded-[1.35rem] border border-white/12 bg-white/[0.028] p-5 shadow-[0_22px_70px_rgba(0,0,0,0.24)]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(255,54,95,0.12),transparent_42%),radial-gradient(circle_at_78%_74%,rgba(163,0,255,0.10),transparent_44%)]" />
-          <div className="relative flex h-full min-h-[320px] flex-col justify-between rounded-[1rem] border border-white/10 bg-tpv-deep/68 p-6">
-            <p className="text-[0.78rem] font-medium uppercase tracking-[0.22em] text-tpv-accent">
-              TPV Einsatzprofil
-            </p>
-            <div className="space-y-3">
-              {location.regionHighlights.map((item) => (
-                <div
-                  key={item}
-                  className="min-w-0 break-words rounded-[0.75rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-[clamp(1.05rem,1.45vw,1.35rem)] font-medium text-white"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-            <p className="max-w-[320px] text-sm leading-6 text-white/64">
-              Lokal relevant geplant, bundesweit belastbar umgesetzt.
-            </p>
-          </div>
+        <div className="relative aspect-[87/86] min-w-0 overflow-hidden rounded-[1.35rem] border border-white/12 bg-tpv-deep/68 shadow-[0_22px_70px_rgba(0,0,0,0.24)]">
+          <Image
+            src={`/images/standorte/${location.slug}.png`}
+            alt={`TPV Standort ${location.city}`}
+            fill
+            sizes="(min-width: 1024px) 36vw, 100vw"
+            className="object-cover object-center"
+            priority
+          />
         </div>
       </div>
     </header>
@@ -204,29 +194,25 @@ function IntroSection({ location }: { location: LocationItem }) {
 function ServicesGrid({ location }: { location: LocationItem }) {
   return (
     <section className="py-4 lg:py-8">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
         <h2 className="max-w-[720px] text-[clamp(2.15rem,5vw,3.75rem)] font-medium leading-[1.06] tracking-[-0.025em] text-white">
           Leistungsbereiche für AV-Projekte
         </h2>
-        <p className="max-w-[420px] text-base leading-7 text-white/64">
-          Von der ersten Kalkulation bis zum laufenden Betrieb bleibt die
-          technische Verantwortung klar strukturiert.
-        </p>
       </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
+      <div className="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2 lg:auto-rows-auto">
         {location.services.map((service, index) => (
           <article
             key={service.title}
-            className="rounded-[1rem] border border-white/12 bg-white/[0.035] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.2)] lg:p-8"
+            className="rounded-[1rem] border border-white/12 bg-white/[0.035] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.2)] lg:h-[176px] lg:px-6 lg:py-5"
           >
             <p className="text-[0.8rem] font-medium uppercase tracking-[0.22em] text-tpv-accent">
               0{index + 1}
             </p>
-            <h3 className="mt-5 text-[clamp(1.35rem,2vw,1.75rem)] font-medium uppercase leading-[1.15] text-white">
+            <h3 className="mt-4 text-[clamp(1.35rem,2vw,1.75rem)] font-medium uppercase leading-[1.15] text-white lg:mt-3">
               {service.title}
             </h3>
-            <p className="mt-4 text-base leading-7 text-white/68">
+            <p className="mt-3 text-base leading-7 text-white/68 lg:mt-2 lg:leading-6">
               {service.description}
             </p>
           </article>

@@ -10,6 +10,7 @@ export type FigmaService = {
   number: string;
   title: string;
   description: string;
+  descriptionLines?: string[];
   bullets: string[];
   cta: string;
   href: string;
@@ -95,8 +96,8 @@ export function ServicesDesktopPanel({
         />
 
         <div className="relative rounded-[2.4rem] bg-[linear-gradient(120deg,#FF365F_0%,rgba(255,54,95,0.72)_32%,#B84DFF_100%)] p-[2px]">
-          <article className="relative rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:h-[700px] lg:p-14 xl:h-[680px] xl:p-16 2xl:h-[680px]">
-            <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-16 lg:top-20">
+          <article className="relative rounded-[2.3rem] bg-[rgba(3,18,35,0.86)] p-6 shadow-card backdrop-blur-xl sm:p-8 lg:h-[640px] lg:p-14 xl:h-[600px] xl:p-16 2xl:h-[600px]">
+            <div className="absolute right-6 top-6 z-30 flex gap-3 lg:right-14 lg:top-14 xl:right-16 xl:top-16">
               <button
                 type="button"
                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-tpv-accent/70 bg-transparent text-white transition hover:bg-white/[0.04] lg:h-16 lg:w-16"
@@ -122,7 +123,13 @@ export function ServicesDesktopPanel({
                     {activeService.title}
                   </h3>
                   <p className="mt-6 max-w-[540px] text-[21px] font-normal leading-[1.32] tracking-[-0.005em] text-[#F7F4FF] xl:text-[22px]">
-                    {activeService.description}
+                    {activeService.descriptionLines
+                      ? activeService.descriptionLines.map((line) => (
+                          <span key={line} className="block">
+                            {line}
+                          </span>
+                        ))
+                      : activeService.description}
                   </p>
 
                   <ul className="mt-8 space-y-4">
@@ -152,7 +159,7 @@ export function ServicesDesktopPanel({
                 </a>
               </div>
 
-              <div className="relative z-10 flex min-w-0 items-center justify-end">
+              <div className="relative z-10 flex min-w-0 items-end justify-end pb-4">
                 <div className="relative h-[320px] w-full overflow-hidden rounded-[2rem] border border-tpv-accent/32 bg-tpv-deep shadow-[0_28px_80px_rgba(0,0,0,0.36)] xl:h-[340px] 2xl:h-[350px]">
                   <Image
                     src={activeService.image}

@@ -4,33 +4,36 @@ import { useEffect, useRef, useState } from "react";
 
 type AnimatedCounterProps = {
   to: number;
+  shouldStart: boolean;
   suffix?: string;
   duration?: number;
   className?: string;
+  dataTestId?: string;
 };
 
 export function AnimatedCounter({
   to,
+  shouldStart,
   suffix = "",
   duration = 1400,
   className,
+  dataTestId,
 }: AnimatedCounterProps) {
   const [current, setCurrent] = useState(0);
-  const elementRef = useRef<HTMLSpanElement>(null);
   const hasAnimatedRef = useRef(false);
   const animationFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const element = elementRef.current;
-
-    if (!element || hasAnimatedRef.current || to <= 0) {
+    if (
+      !shouldStart ||
+      hasAnimatedRef.current ||
+      animationFrameRef.current !== null ||
+      to <= 0
+    ) {
       return;
     }
 
-    const observedElement =
-      element.closest<HTMLElement>("[data-counter-root]") ?? element;
-    const timeoutIds: number[] = [];
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -62,82 +65,33 @@ export function AnimatedCounter({
       }
 
       setCurrent(to);
+      hasAnimatedRef.current = true;
       animationFrameRef.current = null;
     }
 
-    function startAnimation() {
-      if (hasAnimatedRef.current) {
-        return;
-      }
-
-      hasAnimatedRef.current = true;
-
-      if (reducedMotion) {
+    if (reducedMotion) {
+      animationFrameRef.current = requestAnimationFrame(() => {
         setCurrent(to);
-        return;
-      }
-
+        hasAnimatedRef.current = true;
+        animationFrameRef.current = null;
+      });
+    } else {
       startTimeRef.current = null;
       animationFrameRef.current = requestAnimationFrame(animate);
     }
 
-    function isElementVisible() {
-      const rect = observedElement.getBoundingClientRect();
-      const viewportHeight =
-        window.innerHeight || document.documentElement.clientHeight;
-
-      return rect.top < viewportHeight * 0.95 && rect.bottom > 0;
-    }
-
-    function checkVisibility() {
-      if (hasAnimatedRef.current || !isElementVisible()) {
-        return;
-      }
-
-      observer.disconnect();
-      window.removeEventListener("scroll", checkVisibility);
-      window.removeEventListener("resize", checkVisibility);
-      startAnimation();
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry?.isIntersecting || hasAnimatedRef.current) {
-          return;
-        }
-
-        observer.disconnect();
-        window.removeEventListener("scroll", checkVisibility);
-        window.removeEventListener("resize", checkVisibility);
-        startAnimation();
-      },
-      { rootMargin: "0px 0px -5% 0px", threshold: [0, 0.01, 0.1] },
-    );
-
-    observer.observe(observedElement);
-
-    const visibilityCheckFrame = requestAnimationFrame(checkVisibility);
-    timeoutIds.push(window.setTimeout(checkVisibility, 120));
-    timeoutIds.push(window.setTimeout(checkVisibility, 420));
-    timeoutIds.push(window.setTimeout(checkVisibility, 900));
-    window.addEventListener("scroll", checkVisibility, { passive: true });
-    window.addEventListener("resize", checkVisibility);
-
     return () => {
-      observer.disconnect();
-      cancelAnimationFrame(visibilityCheckFrame);
-      timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
-      window.removeEventListener("scroll", checkVisibility);
-      window.removeEventListener("resize", checkVisibility);
       if (animationFrameRef.current !== null) {
         cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+        startTimeRef.current = null;
       }
     };
-  }, [duration, to]);
+  }, [duration, shouldStart, to]);
 
   return (
-    <span ref={elementRef} className={className}>
-      {current}
+    <span className={className} data-testid={dataTestId}>
+      {shouldStart ? current : 0}
       {suffix}
     </span>
   );

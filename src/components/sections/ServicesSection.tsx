@@ -51,7 +51,13 @@ const figmaServices: FigmaService[] = [
     number: "04",
     title: "PREMIUM SERVICE & SUPPORT",
     description:
-      "Technik braucht Pflege. TPV sichert Ihre Investition durch maßgeschneiderten Support – für dauerhafte Funktion und Werterhalt.",
+      "Technik braucht Pflege. TPV-AV sichert Ihre Investition durch maßgeschneiderten Support – für dauerhafte Funktion und Werterhalt.",
+    descriptionLines: [
+      "Technik braucht Pflege.",
+      "TPV-AV sichert Ihre Investition",
+      "durch maßgeschneiderten Support –",
+      "für dauerhafte Funktion und Werterhalt.",
+    ],
     bullets: [
       "Präventiver Wartungsservice",
       "Reaktionsschneller Support",
