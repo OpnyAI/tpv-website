@@ -50,6 +50,31 @@ const coreServices: LocationService[] = [
   },
 ];
 
+function createLocationFaqs(city: string): LocationFaqItem[] {
+  return [
+    {
+      question: `Bietet TPV-AV Medientechnik in ${city} an?`,
+      answer: `Ja. TPV-AV unterstützt Unternehmen in ${city} bei der Planung, Installation und Betreuung professioneller Medientechnik. Dazu gehören AV-Technik, Konferenzraumtechnik, Digital Signage, LED-Walls und individuelle audiovisuelle Lösungen.`,
+    },
+    {
+      question: `Welche AV-Technik eignet sich für Unternehmen in ${city}?`,
+      answer: `Geeignet sind Lösungen, die zum Raum, zur Nutzung und zum gewünschten Kommunikationsziel passen. Für Unternehmen in ${city} können das Konferenzraumtechnik, Präsentationssysteme, Videokonferenztechnik, Displays, LED-Walls oder Digital-Signage-Systeme sein.`,
+    },
+    {
+      question: `Plant TPV-AV Konferenzraumtechnik in ${city}?`,
+      answer: `Ja. TPV-AV plant Konferenzraumtechnik für Besprechungsräume, Meetingräume, Schulungsräume und hybride Arbeitsumgebungen in ${city}. Entscheidend sind gute Verständlichkeit, zuverlässige Bildübertragung, einfache Bedienung und passende Integration in den Raum.`,
+    },
+    {
+      question: `Sind Digital Signage und LED-Walls in ${city} sinnvoll?`,
+      answer: `Digital Signage und LED-Walls sind in ${city} sinnvoll, wenn Unternehmen Informationen, Markenbotschaften oder Präsentationen sichtbar und flexibel ausspielen möchten. Typische Einsatzorte sind Empfangsbereiche, Showrooms, Hotels, Eventflächen und Unternehmenszentralen.`,
+    },
+    {
+      question: `Übernimmt TPV-AV Installation, Projektleitung und Support in ${city}?`,
+      answer: `Ja. TPV-AV begleitet AV-Projekte in ${city} von der technischen Planung über Installation und Inbetriebnahme bis zum laufenden Support. Dadurch bleibt die Umsetzung klar koordiniert und die Technik langfristig betreut.`,
+    },
+  ];
+}
+
 export const locations: LocationItem[] = [
   {
     slug: "hamburg",
@@ -75,28 +100,7 @@ export const locations: LocationItem[] = [
       "Eventflächen, Hospitality und Digital Signage",
     ],
     regionHighlights: ["Hafen & Handel", "Corporate Offices", "Hospitality", "Events"],
-    faq: [
-      {
-        question: "Welche AV-Lösungen bietet TPV in Hamburg an?",
-        answer:
-          "TPV unterstützt Unternehmen in Hamburg bei Konferenzraumtechnik, LED-Walls, Videowalls, Digital Signage, Präsentationssystemen, Steuerungstechnik und laufendem Support.",
-      },
-      {
-        question: "Plant TPV auch Konferenzraumtechnik in Hamburg?",
-        answer:
-          "Ja. TPV plant Besprechungsräume, Boardrooms und hybride Meetingflächen inklusive Bild, Ton, Kamera, Bedienung und Systemintegration.",
-      },
-      {
-        question: "Sind LED-Walls und Digital Signage in Hamburg möglich?",
-        answer:
-          "Ja. TPV entwickelt LED- und Digital-Signage-Lösungen für Empfang, Showroom, Eventfläche oder interne Kommunikation und stimmt Technik und Content auf die Nutzung ab.",
-      },
-      {
-        question: "Übernimmt TPV auch Installation und Projektleitung?",
-        answer:
-          "Ja. TPV begleitet AV-Projekte von der Planung über Montage und Inbetriebnahme bis zu Einweisung, Wartung und Support.",
-      },
-    ],
+    faq: createLocationFaqs("Hamburg"),
     cta: "AV-Projekt in Hamburg anfragen",
   },
   {
@@ -123,28 +127,7 @@ export const locations: LocationItem[] = [
       "Empfang, Lobby und Digital Signage",
     ],
     regionHighlights: ["Finance", "Messen", "Headquarters", "Konferenzflächen"],
-    faq: [
-      {
-        question: "Welche AV-Lösungen bietet TPV in Frankfurt an?",
-        answer:
-          "TPV plant AV-Lösungen für Konferenzräume, Unternehmenszentralen, Empfangsbereiche, Digital Signage, LED-Walls und Videowalls in Frankfurt und Umgebung.",
-      },
-      {
-        question: "Plant TPV auch Konferenzraumtechnik in Frankfurt?",
-        answer:
-          "Ja. TPV konzipiert Konferenzraumtechnik mit Displays oder LED-Flächen, Kameras, Mikrofonen, Lautsprechern, Steuerung und Videokonferenztechnik.",
-      },
-      {
-        question: "Sind LED-Walls und Digital Signage in Frankfurt möglich?",
-        answer:
-          "Ja. TPV realisiert LED-Walls und Digital-Signage-Systeme für Präsentation, Orientierung, interne Kommunikation und Markeninszenierung.",
-      },
-      {
-        question: "Übernimmt TPV auch Installation und Projektleitung?",
-        answer:
-          "Ja. TPV übernimmt die technische Projektleitung, koordiniert Schnittstellen und begleitet Installation, Inbetriebnahme und Support.",
-      },
-    ],
+    faq: createLocationFaqs("Frankfurt"),
     cta: "AV-Projekt in Frankfurt anfragen",
   },
   {
@@ -171,28 +154,7 @@ export const locations: LocationItem[] = [
       "LED-Walls für Visualisierung und Kommunikation",
     ],
     regionHighlights: ["Industrie", "Automotive", "Engineering", "Corporate-Kommunikation"],
-    faq: [
-      {
-        question: "Welche AV-Lösungen bietet TPV in Stuttgart an?",
-        answer:
-          "TPV bietet in Stuttgart AV-Planung, Konferenzraumtechnik, LED-Walls, Digital Signage, Showroom-Technik, Content und Support für Unternehmen.",
-      },
-      {
-        question: "Plant TPV auch Konferenzraumtechnik in Stuttgart?",
-        answer:
-          "Ja. TPV plant Meetingräume, Projektbereiche und hybride Konferenzlösungen inklusive Bedienung, Signalführung, Ton und Bild.",
-      },
-      {
-        question: "Sind LED-Walls und Digital Signage in Stuttgart möglich?",
-        answer:
-          "Ja. TPV realisiert LED-Walls und Digital Signage für Showrooms, Empfangsbereiche, interne Kommunikation und Produktpräsentationen.",
-      },
-      {
-        question: "Übernimmt TPV auch Installation und Projektleitung?",
-        answer:
-          "Ja. TPV koordiniert Planung, Installation, Systemintegration, Inbetriebnahme und anschließenden Service.",
-      },
-    ],
+    faq: createLocationFaqs("Stuttgart"),
     cta: "AV-Projekt in Stuttgart anfragen",
   },
   {
@@ -219,28 +181,7 @@ export const locations: LocationItem[] = [
       "Digital Signage für Unternehmenskommunikation",
     ],
     regionHighlights: ["Mittelstand", "Messen", "Industrie", "Regionale Unternehmensstandorte"],
-    faq: [
-      {
-        question: "Welche AV-Lösungen bietet TPV in Nürnberg an?",
-        answer:
-          "TPV plant und realisiert in Nürnberg Konferenzraumtechnik, LED-Walls, Videowalls, Digital Signage, Steuerungstechnik, Content und Service.",
-      },
-      {
-        question: "Plant TPV auch Konferenzraumtechnik in Nürnberg?",
-        answer:
-          "Ja. TPV plant Konferenz- und Besprechungsräume mit professioneller Bild-, Ton-, Kamera- und Bedienlogik.",
-      },
-      {
-        question: "Sind LED-Walls und Digital Signage in Nürnberg möglich?",
-        answer:
-          "Ja. TPV setzt LED-Walls, Videowalls und Digital-Signage-Systeme für Empfang, Messe, Showroom und interne Kommunikation um.",
-      },
-      {
-        question: "Übernimmt TPV auch Installation und Projektleitung?",
-        answer:
-          "Ja. TPV begleitet Projekte von der ersten technischen Abstimmung bis zur fertigen Inbetriebnahme und dem laufenden Support.",
-      },
-    ],
+    faq: createLocationFaqs("Nürnberg"),
     cta: "AV-Projekt in Nürnberg anfragen",
   },
   {
@@ -267,28 +208,7 @@ export const locations: LocationItem[] = [
       "Empfangsbereiche, Lobbys und Digital Signage",
     ],
     regionHighlights: ["Corporate", "Healthcare", "Tech", "Showrooms"],
-    faq: [
-      {
-        question: "Welche AV-Lösungen bietet TPV in München an?",
-        answer:
-          "TPV plant und realisiert in München Konferenzraumtechnik, LED-Walls, Digital Signage, Showroom-Technik, Videowalls, Content und Support.",
-      },
-      {
-        question: "Plant TPV auch Konferenzraumtechnik in München?",
-        answer:
-          "Ja. TPV plant hochwertige Meeting- und Boardroom-Lösungen inklusive Displaytechnik, Audio, Kamera, Steuerung und Videokonferenzsystemen.",
-      },
-      {
-        question: "Sind LED-Walls und Digital Signage in München möglich?",
-        answer:
-          "Ja. TPV realisiert LED-Walls und Digital Signage für Showrooms, Empfangsbereiche, Markenräume und interne Kommunikation.",
-      },
-      {
-        question: "Übernimmt TPV auch Installation und Projektleitung?",
-        answer:
-          "Ja. TPV übernimmt Projektierung, technische Koordination, Installation, Inbetriebnahme, Einweisung und langfristige Betreuung.",
-      },
-    ],
+    faq: createLocationFaqs("München"),
     cta: "AV-Projekt in München anfragen",
   },
 ];

@@ -53,7 +53,7 @@ export function FaqList({ items, idPrefix = "faq" }: FaqListProps) {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="px-7 pb-6 text-[0.95rem] font-normal leading-6 text-white/72 md:text-base">
+                  <p className="px-7 pb-6 text-left text-[0.95rem] font-normal leading-6 text-white/72 md:text-base">
                     {faq.answer}
                   </p>
                 </div>

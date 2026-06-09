@@ -135,7 +135,7 @@ export default async function ReferencePage({ params }: ReferencePageProps) {
         item.slug !== reference.slug && item.href.startsWith("/referenzen/"),
     )
     .slice(0, 3);
-  const visibleFaqs = caseStudy.faq.slice(0, 6);
+  const visibleFaqs = caseStudy.faq;
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

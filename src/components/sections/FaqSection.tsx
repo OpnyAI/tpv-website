@@ -1,11 +1,10 @@
 import { FaqList } from "@/components/sections/FaqList";
 import { faqs } from "@/data/faqs";
 
-const visibleFaqs = faqs.slice(0, 5);
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: visibleFaqs.map((faq) => ({
+  mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
     acceptedAnswer: {
@@ -43,7 +42,7 @@ export function FaqSection() {
           FAQ - HÄUFIGE FRAGEN
         </h2>
 
-        <FaqList items={visibleFaqs} />
+        <FaqList items={faqs} />
       </div>
       <script
         type="application/ld+json"

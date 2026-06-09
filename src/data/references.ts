@@ -81,32 +81,143 @@ export type ReferenceItem = {
   caseStudy: ReferenceCaseStudy;
 };
 
-const commonFaq: ReferenceFaqItem[] = [
+const futuraFaq: ReferenceFaqItem[] = [
   {
-    question: "Welche Medientechnik-Lösungen bietet TPV für Unternehmen an?",
+    question: "Wann lohnt sich eine individuelle LED-Wall im Unternehmensgebäude?",
     answer:
-      "TPV plant und realisiert professionelle Medientechnik für Unternehmen, Hotels, Showrooms und Konferenzbereiche. Dazu gehören unter anderem LED-Walls, Videowalls, Digital Signage, AV-over-IP-Systeme, Konferenzraumtechnik, Steuerungslösungen, Content-Systeme und technische Projektbegleitung von der Planung bis zur Installation.",
+      "Eine individuelle LED-Wall lohnt sich, wenn Unternehmen Inhalte großflächig, hochwertig und flexibel präsentieren möchten. Besonders sinnvoll ist sie in Empfangsbereichen, Präsentationsflächen, Showrooms oder Unternehmenszentralen, in denen Technik auch repräsentativ wirken soll.",
   },
   {
-    question: "Was kostet eine professionelle Medientechnik-Installation?",
+    question: "Welche Vorteile bietet eine LED-Wall im Empfangs- oder Präsentationsbereich?",
     answer:
-      "Die Kosten hängen stark von Raumgröße, Technikumfang, baulichen Anforderungen, Display- oder LED-Wall-Größe, Signalführung, Steuerung und gewünschtem Servicelevel ab. Eine belastbare Einschätzung ist erst nach einer Analyse der Anforderungen und der technischen Rahmenbedingungen möglich. TPV erstellt dafür eine projektbezogene Kalkulation.",
+      "Eine LED-Wall schafft hohe Sichtbarkeit, starke Bildwirkung und flexible Bespielbarkeit. Unternehmen können Markeninhalte, Informationen, Präsentationen oder Eventinhalte zentral ausspielen und den Raum dadurch deutlich hochwertiger inszenieren.",
   },
   {
-    question: "Wie läuft die Planung einer AV- oder Medientechnik-Lösung ab?",
+    question: "Worauf kommt es bei der Planung einer LED-Wall an?",
     answer:
-      "Am Anfang stehen Bedarfsermittlung, technische Bestandsaufnahme und Abstimmung mit den baulichen Gegebenheiten. Danach folgen Konzept, Systemplanung, Schnittstellenklärung, Auswahl der passenden Komponenten, Installation, Inbetriebnahme und Einweisung. Ziel ist eine Lösung, die technisch stabil funktioniert und sich optisch sauber in die Umgebung integriert.",
+      "Wichtig sind Pixelpitch, Helligkeit, Betrachtungsabstand, Montagefläche, Wartungszugang, Zuspieltechnik und Content-Format. Eine LED-Wall sollte immer auf Raum, Nutzung und Inhalte abgestimmt werden, damit sie im Alltag zuverlässig und wirkungsvoll funktioniert.",
   },
   {
-    question: "Was ist bei einer LED-Wand oder Videowall wichtig?",
+    question: "Wie wichtig ist Content Design für eine LED-Wall?",
     answer:
-      "Wichtige Faktoren sind Pixelpitch, Betrachtungsabstand, Helligkeit, Auflösung, Kontrast, Signalverarbeitung, Montageart, Wartbarkeit und Content-Anforderungen. Zusätzlich muss die LED-Wand baulich sauber integriert werden, damit Technik, Design und Nutzung im Alltag zusammenpassen.",
+      "Content Design ist entscheidend, weil eine LED-Wall nur so stark wirkt wie die Inhalte, die darauf laufen. Format, Lesbarkeit, Bewegung, Kontrast und Markenwirkung müssen zur Displaygröße und zum Betrachtungsabstand passen.",
   },
   {
-    question:
-      "Welche Medientechnik eignet sich für Konferenzräume und Besprechungsräume?",
+    question: "Wie unterstützt TPV-AV den Betrieb nach der Installation?",
     answer:
-      "Für Konferenzräume eignen sich je nach Nutzung Displays oder LED-Walls, Kameras, Mikrofone, Lautsprecher, drahtlose Präsentationssysteme, Raumsteuerung und Videokonferenztechnik. Entscheidend ist, dass Ton, Bild, Bedienung und Raumakustik zusammen geplant werden, damit Meetings ohne technische Hürden funktionieren.",
+      "TPV-AV kann Unternehmen auch nach der Installation mit technischer Betreuung, Anpassungen und Support unterstützen. So bleibt die LED-Wall langfristig nutzbar, aktuell und zuverlässig im Betrieb.",
+  },
+];
+
+const nexxFaq: ReferenceFaqItem[] = [
+  {
+    question: "Wie kann Medientechnik unauffällig in ein Hotel integriert werden?",
+    answer:
+      "Medientechnik kann unauffällig integriert werden, wenn Geräte, Verkabelung, Steuerung und Lautsprecher frühzeitig in die Raumplanung einbezogen werden. Ziel ist eine Lösung, die technisch zuverlässig funktioniert, aber das Interior Design nicht stört.",
+  },
+  {
+    question: "Welche AV-Technik eignet sich für Hotelbereiche?",
+    answer:
+      "Für Hotels eignen sich je nach Bereich Displays, Digital Signage, Beschallung, Präsentationstechnik, Steuerungssysteme und Konferenztechnik. Wichtig ist, dass Gäste und Mitarbeitende die Technik einfach nutzen können.",
+  },
+  {
+    question: "Wie wichtig ist einfache Bedienung bei Hotel-Medientechnik?",
+    answer:
+      "Einfache Bedienung ist besonders wichtig, weil Hoteltechnik von unterschiedlichen Personen genutzt wird. Eine gute AV-Lösung reduziert Rückfragen, vermeidet Bedienfehler und sorgt für einen professionellen Eindruck bei Gästen und Veranstaltern.",
+  },
+  {
+    question: "Wie lassen sich Bild, Ton und Design im Hotel aufeinander abstimmen?",
+    answer:
+      "Bild, Ton und Design sollten gemeinsam geplant werden. Die Technik muss zur Raumgröße, Akustik, Lichtstimmung und Gestaltung passen, damit sie hochwertig wirkt und zuverlässig genutzt werden kann.",
+  },
+  {
+    question: "Unterstützt TPV-AV auch nach der Installation im Hotelbetrieb?",
+    answer:
+      "Ja. TPV-AV kann Hotels auch nach der Installation mit Support, Anpassungen und technischer Betreuung unterstützen. Das ist besonders wichtig, wenn Räume regelmäßig für Gäste, Meetings oder Veranstaltungen genutzt werden.",
+  },
+];
+
+const revitaFaq: ReferenceFaqItem[] = [
+  {
+    question: "Wie hilft Digital Signage oder Wayfinding in Hotels?",
+    answer:
+      "Digital Signage und Wayfinding helfen Hotels, Gäste besser zu informieren und durch das Gebäude zu führen. Digitale Anzeigen können Wege, Veranstaltungen, Angebote oder Hinweise flexibel darstellen und bei Bedarf schnell aktualisiert werden.",
+  },
+  {
+    question: "Welche Inhalte eignen sich für digitale Informationssysteme im Hotel?",
+    answer:
+      "Geeignet sind Begrüßungen, Veranstaltungsinformationen, Wegführung, Tagesprogramme, Angebote, Markeninhalte und Hinweise für Gäste. Wichtig ist, dass die Inhalte klar gestaltet und schnell verständlich sind.",
+  },
+  {
+    question: "Warum ist zuverlässige Medientechnik im Gästebereich wichtig?",
+    answer:
+      "Zuverlässige Medientechnik ist wichtig, weil sie direkt auf den Eindruck der Gäste einzahlt. Wenn Anzeigen, Ton oder Wegführung nicht funktionieren, wirkt das unprofessionell und kann Abläufe im Hotel stören.",
+  },
+  {
+    question: "Wie kann Digital Signage die Orientierung im Gebäude verbessern?",
+    answer:
+      "Digital Signage kann Orientierung verbessern, indem Informationen an passenden Stellen sichtbar ausgespielt werden. Dazu gehören digitale Wegweiser, Raumhinweise, Veranstaltungsanzeigen und aktuelle Informationen für Gäste oder Besucher.",
+  },
+  {
+    question: "Übernimmt TPV-AV auch Content Creation für Digital Signage?",
+    answer:
+      "Ja. TPV-AV kann nicht nur die Technik planen und installieren, sondern auch Inhalte für digitale Informationssysteme gestalten. Dadurch passen Design, Botschaft und technische Darstellung besser zusammen.",
+  },
+];
+
+const hutacellFaq: ReferenceFaqItem[] = [
+  {
+    question: "Wie unterstützt Medientechnik einen Showroom oder Markenraum?",
+    answer:
+      "Medientechnik unterstützt einen Showroom, indem Produkte, Markenbotschaften und Informationen emotionaler und sichtbarer inszeniert werden. Displays, Ton, Licht, Steuerung und Content können gemeinsam eine starke Raumwirkung erzeugen.",
+  },
+  {
+    question: "Welche AV-Technik eignet sich für Produktpräsentationen?",
+    answer:
+      "Für Produktpräsentationen eignen sich Displays, LED-Walls, Touchpoints, Präsentationstechnik, Beschallung und steuerbare Medienflächen. Welche Lösung sinnvoll ist, hängt von Produkt, Raumgröße, Zielgruppe und gewünschter Wirkung ab.",
+  },
+  {
+    question: "Warum ist die Kombination aus Technik und Content im Showroom wichtig?",
+    answer:
+      "Technik und Content müssen zusammenpassen, damit ein Showroom überzeugt. Hochwertige Displays oder LED-Walls entfalten ihre Wirkung erst dann vollständig, wenn Inhalte, Formate und Gestaltung darauf abgestimmt sind.",
+  },
+  {
+    question: "Worauf kommt es bei Displays, Ton und Licht im Markenraum an?",
+    answer:
+      "Wichtig ist ein stimmiges Zusammenspiel aus Bildqualität, Ton, Licht, Bedienung und Raumgestaltung. Die Technik sollte die Marke unterstützen, ohne den Raum zu überladen oder die Nutzung kompliziert zu machen.",
+  },
+  {
+    question: "Kann TPV-AV Showroom-Technik langfristig betreuen?",
+    answer:
+      "Ja. TPV-AV kann Showroom-Technik auch nach der Installation betreuen, anpassen und technisch unterstützen. Das ist sinnvoll, wenn Inhalte regelmäßig wechseln oder die Technik dauerhaft repräsentativ funktionieren muss.",
+  },
+];
+
+const oreonFaq: ReferenceFaqItem[] = [
+  {
+    question: "Welche Vorteile bietet professionelle Videokonferenztechnik im Unternehmen?",
+    answer:
+      "Professionelle Videokonferenztechnik verbessert Bildqualität, Tonverständlichkeit und Bedienbarkeit in Meetings. Sie ist besonders wichtig, wenn hybride Besprechungen regelmäßig stattfinden und externe Teilnehmende zuverlässig eingebunden werden sollen.",
+  },
+  {
+    question: "Was ist bei der Planung eines Videokonferenzraums wichtig?",
+    answer:
+      "Wichtig sind Raumgröße, Sitzordnung, Kameraausrichtung, Mikrofonierung, Lautsprecher, Beleuchtung, Displaygröße und einfache Bedienung. Nur wenn diese Faktoren zusammenpassen, entsteht ein professioneller Videokonferenzraum.",
+  },
+  {
+    question: "Warum reichen Standard-Webcams für professionelle Meetingräume oft nicht aus?",
+    answer:
+      "Standard-Webcams sind meist für einzelne Personen gedacht. In Meetingräumen braucht es jedoch passende Kameras, Mikrofone und Lautsprecher, damit alle Teilnehmenden gut sichtbar und verständlich sind.",
+  },
+  {
+    question: "Wie verbessert gute Konferenzraumtechnik hybride Meetings?",
+    answer:
+      "Gute Konferenzraumtechnik sorgt dafür, dass Personen vor Ort und remote gleichwertig teilnehmen können. Klare Sprache, stabile Bildübertragung und einfache Bedienung reduzieren Reibung im Meetingalltag.",
+  },
+  {
+    question: "Übernimmt TPV-AV auch Installation und Support für Videokonferenztechnik?",
+    answer:
+      "Ja. TPV-AV übernimmt Planung, Installation, Inbetriebnahme und Support für Videokonferenztechnik. Dadurch können Unternehmen sicherstellen, dass Meetingräume zuverlässig funktionieren und langfristig betreut werden.",
   },
 ];
 
@@ -367,15 +478,7 @@ export const references: ReferenceItem[] = [
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/2HahMntG268",
       contactPerson: heinrichObholz,
-      faq: [
-        ...commonFaq,
-        {
-          question:
-            "Wann lohnt sich eine individuelle LED-Wall im Unternehmensgebäude?",
-          answer:
-            "Eine individuelle LED-Wall lohnt sich, wenn digitale Inhalte dauerhaft sichtbar, hochwertig integriert und architektonisch sauber eingebunden werden sollen. Entscheidend sind Raumwirkung, Betrachtungsabstand, Content-Konzept und technische Wartbarkeit.",
-        },
-      ],
+      faq: futuraFaq,
     },
   },
   {
@@ -455,14 +558,7 @@ export const references: ReferenceItem[] = [
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/Gl7_PJJTNLU",
       contactPerson: heinrichObholz,
-      faq: [
-        ...commonFaq,
-        {
-          question: "Wie kann Medientechnik unsichtbar in ein Hotel integriert werden?",
-          answer:
-            "Unsichtbare Integration gelingt durch frühe Fachplanung, Abstimmung mit Architektur und Möbelbau sowie genaue Definition von Einbauorten, Signalwegen und Bedienlogik. Ziel ist, dass Gäste die Technik nutzen, ohne sie als störendes Element wahrzunehmen.",
-        },
-      ],
+      faq: nexxFaq,
     },
   },
   {
@@ -545,14 +641,7 @@ export const references: ReferenceItem[] = [
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/pbYotQFJX1s",
       contactPerson: fabianDering,
-      faq: [
-        ...commonFaq,
-        {
-          question: "Wie unterstützt Medientechnik einen Showroom oder Markenraum?",
-          answer:
-            "Medientechnik kann Produkte, Inhalte und Raumwirkung verbinden. Wichtig sind eine klare Nutzerführung, passende Displays oder LED-Flächen, zuverlässige Signaltechnik und eine Bedienung, die im Alltag ohne technische Hürden funktioniert.",
-        },
-      ],
+      faq: hutacellFaq,
     },
   },
   {
@@ -622,15 +711,7 @@ export const references: ReferenceItem[] = [
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/usBxs-dl_Go",
       contactPerson: gabrielZidar,
-      faq: [
-        ...commonFaq,
-        {
-          question:
-            "Welche Vorteile bietet professionelle Videokonferenztechnik im Unternehmen?",
-          answer:
-            "Professionelle Videokonferenztechnik verbessert Bild, Ton, Bedienbarkeit und Zuverlässigkeit. Besonders in Unternehmen ist wichtig, dass Kameras, Mikrofone, Displays, Raumakustik und Steuerung als Gesamtsystem geplant werden.",
-        },
-      ],
+      faq: oreonFaq,
     },
   },
   {
@@ -717,14 +798,7 @@ export const references: ReferenceItem[] = [
       resultVideo: null,
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/w2GJ1cus_3E",
       contactPerson: fabianDering,
-      faq: [
-        ...commonFaq,
-        {
-          question: "Wie hilft Digital Signage oder Wayfinding in Hotels?",
-          answer:
-            "Digital Signage und Wayfinding helfen Gästen bei Orientierung, Information und Veranstaltungsnavigation. Für Hotels ist wichtig, dass Inhalte einfach gepflegt werden können und die Anzeigen zuverlässig in den Betriebsablauf passen.",
-        },
-      ],
+      faq: revitaFaq,
     },
   },
 ];
