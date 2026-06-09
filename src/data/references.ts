@@ -142,152 +142,152 @@ const gabrielZidar: ReferenceContactPerson = {
   image: "/images/case-studies/Ansprechpartner/contact-gabriel-zidar.jpg",
 };
 
-const futrueHeroImage =
-  "/images/case-studies/futrue/01_Titelbild/futrue-hero.png";
-const futrueProcessImages = [
+const futuraHeroImage =
+  "/images/case-studies/futura/01_Titelbild/futura-hero.png";
+const futuraProcessImages = [
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/1 Futrue.png",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-01.png",
     "Futura Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-vorgehensweise-02.jpg",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-02.jpg",
     "Futura Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/3 Futrue.JPG",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-03.jpg",
     "Futura Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/futrue-vorgehensweise-04.jpg",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-04.jpg",
     "Futura Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/5 Futrue.png",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-05.png",
     "Futura Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/futrue/02_Vorgehensweise/6 Futrue.png",
+    "/images/case-studies/futura/02_Vorgehensweise/futura-vorgehensweise-06.png",
     "Futura Vorgehensweise 6",
   ),
 ];
 
-const noxxHeroImage =
-  "/images/case-studies/noxx/01_Titelseite/noxx-hero.png";
-const noxxProcessImages = [
+const nexxHeroImage =
+  "/images/case-studies/nexx/01_Titelseite/nexx-hero.png";
+const nexxProcessImages = [
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/01.png",
+    "/images/case-studies/nexx/02_Vorgehensweise/01.png",
     "Nexx Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/02.png",
+    "/images/case-studies/nexx/02_Vorgehensweise/02.png",
     "Nexx Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/03.jpg",
+    "/images/case-studies/nexx/02_Vorgehensweise/03.jpg",
     "Nexx Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/04.jpg",
+    "/images/case-studies/nexx/02_Vorgehensweise/04.jpg",
     "Nexx Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/05.jpeg",
+    "/images/case-studies/nexx/02_Vorgehensweise/05.jpeg",
     "Nexx Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/noxx/02_Vorgehensweise/06.png",
+    "/images/case-studies/nexx/02_Vorgehensweise/06.png",
     "Nexx Vorgehensweise 6",
   ),
 ];
 
-const huhtamakiHeroImage =
-  "/images/case-studies/huhtamaki/01_Titelbild/huhtamaki-hero-optimized.jpg";
-const huhtamakiProcessImages = [
+const hutacellHeroImage =
+  "/images/case-studies/hutacell/01_Titelbild/hutacell-hero-optimized.jpg";
+const hutacellProcessImages = [
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-01.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-01.jpg",
     "Hutacell Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-02.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-02.jpg",
     "Hutacell Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-03.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-03.jpg",
     "Hutacell Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-04.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-04.jpg",
     "Hutacell Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-05.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-05.jpg",
     "Hutacell Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/huhtamaki/02_Vorgehensweise/huhtamaki-vorgehensweise-06.jpg",
+    "/images/case-studies/hutacell/02_Vorgehensweise/hutacell-vorgehensweise-06.jpg",
     "Hutacell Vorgehensweise 6",
   ),
 ];
 
-const orionHeroImage =
-  "/images/case-studies/orion/01_Titelbild/orion-hero.png";
-const orionProcessImages = [
+const oreonHeroImage =
+  "/images/case-studies/oreon/01_Titelbild/oreon-hero.png";
+const oreonProcessImages = [
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-01.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-01.jpg",
     "Oreon Vorgehensweise 1",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-02.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-02.jpg",
     "Oreon Vorgehensweise 2",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-03.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-03.jpg",
     "Oreon Vorgehensweise 3",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-04.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-04.jpg",
     "Oreon Vorgehensweise 4",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-05.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-05.jpg",
     "Oreon Vorgehensweise 5",
   ),
   imageSlot(
-    "/images/case-studies/orion/02_Vorgehensweise/orion-vorgehensweise-06.jpg",
+    "/images/case-studies/oreon/02_Vorgehensweise/oreon-vorgehensweise-06.jpg",
     "Oreon Vorgehensweise 6",
   ),
 ];
-const orionResultImages = [
+const oreonResultImages = [
   imageSlot(
-    "/images/case-studies/orion/03_Ergebnis/orion-result-01.jpg",
+    "/images/case-studies/oreon/03_Ergebnis/oreon-result-01.jpg",
     "Oreon Ergebnis 1",
   ),
   imageSlot(
-    "/images/case-studies/orion/03_Ergebnis/orion-result-02.jpg",
+    "/images/case-studies/oreon/03_Ergebnis/oreon-result-02.jpg",
     "Oreon Ergebnis 2",
   ),
   imageSlot(
-    "/images/case-studies/orion/03_Ergebnis/orion-result-03.jpg",
+    "/images/case-studies/oreon/03_Ergebnis/oreon-result-03.jpg",
     "Oreon Ergebnis 3",
   ),
 ];
 
-const relexaHeroImage =
-  "/images/case-studies/relexa/01_Titelseite/relexa-hero.png";
-const relexaProcessImages = [
+const revitaHeroImage =
+  "/images/case-studies/revita/01_Titelseite/revita-hero.png";
+const revitaProcessImages = [
   imageSlot(
-    "/images/case-studies/relexa/02_Vorgehensweise/1.png",
+    "/images/case-studies/revita/02_Vorgehensweise/1.png",
     "Revita Vorgehensweise 1",
     { objectPosition: "center 22%" },
   ),
   imageSlot(
-    "/images/case-studies/relexa/02_Vorgehensweise/2.png",
+    "/images/case-studies/revita/02_Vorgehensweise/2.png",
     "Revita Vorgehensweise 2",
   ),
 ];
-const relexaResultImages = [
+const revitaResultImages = [
   imageSlot(
-    "/images/case-studies/relexa/01_Titelseite/relexa-result-01.png",
+    "/images/case-studies/revita/01_Titelseite/revita-result-01.png",
     "Revita Titelbild 2",
   ),
 ];
@@ -304,11 +304,11 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "LED-Wall",
-    cardImage: futrueHeroImage,
+    cardImage: futuraHeroImage,
     cardImageAlt: "Futura LED-Wall Referenz",
     detailImages: [
-      futrueHeroImage,
-      ...futrueProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      futuraHeroImage,
+      ...futuraProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/futura",
     featured: true,
@@ -316,7 +316,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "TPV plante und installierte zwei LED-Walls für Futura - mit 4K UltraHD, AV over IP und starker visueller Wirkung.",
     canonicalPath: "/referenzen/futura",
-    ogImage: futrueHeroImage,
+    ogImage: futuraHeroImage,
     vision:
       "Für das innovative Pharma- und Gesundheitsunternehmen Futura entwickelte und installierte TPV ein visuelles Highlight-Konzept für den Eingangs- und Flurbereich.",
     approach:
@@ -340,7 +340,7 @@ export const references: ReferenceItem[] = [
         "Planung und Installation zweier LED-Walls für eine starke",
         "visuelle Präsenz in München.",
       ],
-      heroImage: futrueHeroImage,
+      heroImage: futuraHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG & INSTALLATION" },
         { label: "Technologie", value: "LED-WALL" },
@@ -358,7 +358,7 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Die Umsetzung begann mit einer detaillierten Bedarfsermittlung und einem technischen Audit, um die statischen Voraussetzungen für einen bündigen Wandeinbau zu schaffen. Mittels einer fotorealistischen 3D-Visualisierung in der Unreal Engine wurde die Wirkung der LED-Mosaike bereits vorab simuliert, wobei der Fokus auf einer nahtlosen architektonischen Integration lag. Dies ermöglichte eine präzise Planung, bei der die Technik optisch mit dem Raum verschmilzt und der Content als integraler Bestandteil der Architektur wahrgenommen wird.",
-      processImages: futrueProcessImages,
+      processImages: futuraProcessImages,
       processTextBottom:
         "Technisch kamen zwei hochauflösende Absen-LED-Walls mit COB-Technologie und Novastar-Controllern zum Einsatz, die für exzellente Kontraste und höchste Farbtreue sorgen. Die Steuerung erfolgt über das cloudbasierte CMS Connect Signage, wodurch das Marketing-Team Inhalte ohne IT-Fachwissen flexibel verwalten kann. Den Abschluss bildete die präzise Abstimmung mit den Trockenbau-Gewerken, um durch minimale Spaltmaße einen kantenfreien Übergang zwischen Wand und Displayfläche zu garantieren.",
       resultTitle: "Das Ergebnis",
@@ -389,11 +389,11 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation", "Support"],
     sector: "Gastgewerbe",
     technology: "Medientechnik",
-    cardImage: noxxHeroImage,
+    cardImage: nexxHeroImage,
     cardImageAlt: "Nexx Medientechnik Referenz",
     detailImages: [
-      noxxHeroImage,
-      ...noxxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      nexxHeroImage,
+      ...nexxProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/nexx",
     featured: true,
@@ -401,7 +401,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "High-End Medientechnik für Nexx: TPV verband moderne AV-Technik mit hochwertigem Raumdesign.",
     canonicalPath: "/referenzen/nexx",
-    ogImage: noxxHeroImage,
+    ogImage: nexxHeroImage,
     vision:
       "Die Vision für das Hotel Nexx war die Schaffung einer unsichtbaren technologischen medientechnischen Infrastruktur.",
     approach:
@@ -425,7 +425,7 @@ export const references: ReferenceItem[] = [
         "Ganzheitliche AV-Infrastruktur für 82 Zimmer und",
         "multifunktionale Eventflächen",
       ],
-      heroImage: noxxHeroImage,
+      heroImage: nexxHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG / INSTALLATION / SUPPORT" },
         { label: "Sektor", value: "GASTGEWERBE" },
@@ -446,7 +446,7 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Der Prozess startete mit einer fundierten Rohbau-Analyse, bei der bauliche Störfaktoren wie akustisch anspruchsvolle Materialien und Lichtverhältnisse frühzeitig identifiziert wurden. Durch den Abgleich der Ist-Maße mit den Bauplänen und die Erstellung detaillierter Systemskizzen wurde eine präzise Fachplanung sichergestellt, die die Medientechnik bereits in der Entwurfsphase unsichtbar in das minimalistische Design integrierte.",
-      processImages: noxxProcessImages,
+      processImages: nexxProcessImages,
       processTextBottom:
         "In der Umsetzungsphase lag der Fokus auf einem aktiven Schnittstellenmanagement zwischen Architektur, Möbelbau und Marketing. Dies ermöglichte die technische Maßarbeit an kritischen Punkten - von bündigen Aufzug-Displays bis hin zu maßgeschneiderten User-Interfaces -, während eine enge Verzahnung der Gewerke sicherstellte, dass komplexe Systeme wie die trennbaren Konferenzzonen oder die unsichtbare Audiotechnik im Fitnessbereich perfekt mit der Inneneinrichtung harmonieren.",
       resultTitle: "Das Ergebnis",
@@ -476,11 +476,11 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "Showroom",
-    cardImage: huhtamakiHeroImage,
+    cardImage: hutacellHeroImage,
     cardImageAlt: "Hutacell Showroom Referenz",
     detailImages: [
-      huhtamakiHeroImage,
-      ...huhtamakiProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      hutacellHeroImage,
+      ...hutacellProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/hutacell",
     featured: true,
@@ -488,7 +488,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "TPV realisierte eine Showroom-Lösung für Hutacell - geplant für starke Markenwirkung und professionelle Präsentation.",
     canonicalPath: "/referenzen/hutacell",
-    ogImage: huhtamakiHeroImage,
+    ogImage: hutacellHeroImage,
     vision:
       "Die Vision für den Hutacell Flagship-Showroom war die Schaffung einer immersiven Markenwelt.",
     approach:
@@ -512,7 +512,7 @@ export const references: ReferenceItem[] = [
         "Planung und Installation einer Showroom-",
         "Lösung mit starker Markenwirkung",
       ],
-      heroImage: huhtamakiHeroImage,
+      heroImage: hutacellHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG / INSTALLATION" },
         { label: "Sektor", value: "CORPORATE" },
@@ -536,7 +536,7 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Die Umsetzung startete mit einer detaillierten Analyse im Rohbauzustand, um frühzeitig bauliche Störfaktoren zu identifizieren und die exakten Maße für die spätere Integration zu sichern. Ein wesentlicher Bestandteil dieser Phase war die enge Koordination mit dem Möbelbau, um präzise Aussparungen für eine vollkommen unsichtbare Technikintegration zu definieren und die Nutzerführung (Presenter-Journey) in einem immersiven Konzept festzulegen.",
-      processImages: huhtamakiProcessImages,
+      processImages: hutacellProcessImages,
       processTextBottom:
         "In der Ausführungsphase lag der Fokus auf der Implementierung einer Invisible Tech-Strategie, bei der hochmoderne AV-over-IP-Lösungen und interaktive 4K-Displays formschlüssig in maßgefertigte Möbel integriert wurden. Durch die konsequente Anwendung einer intuitiven 2-Klick-Logik bei der Raumsteuerung und eine engmaschige Verzahnung der Gewerke wurde sichergestellt, dass die komplexe Technologie im Hintergrund bleibt und eine fehlerfreie, emotionalisierende Produktpräsentation ermöglicht.",
       resultTitle: "Das Ergebnis",
@@ -565,12 +565,12 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation"],
     sector: "Corporate",
     technology: "Videokonferenz",
-    cardImage: orionHeroImage,
+    cardImage: oreonHeroImage,
     cardImageAlt: "Oreon Videokonferenz Referenz",
     detailImages: [
-      orionHeroImage,
-      ...orionProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
-      ...orionResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      oreonHeroImage,
+      ...oreonProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      ...oreonResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ].filter((src): src is string => Boolean(src)),
     href: "/referenzen/oreon",
     featured: false,
@@ -578,7 +578,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "TPV integrierte eine Videokonferenzlösung für Oreon - flexibel, schlüsselfertig und für moderne Zusammenarbeit ausgelegt.",
     canonicalPath: "/referenzen/oreon",
-    ogImage: orionHeroImage,
+    ogImage: oreonHeroImage,
     vision:
       "Die Vision für das Projekt Oreon war die Schaffung einer barrierefreien, hybriden Arbeitsumgebung, die Teamarbeit räumlich völlig unabhängig macht.",
     approach:
@@ -597,7 +597,7 @@ export const references: ReferenceItem[] = [
       client: "Oreon",
       heroLabel: "Case Study",
       heroSubtitle: "Mobile Videokonferenzlösung schlüsselfertig integriert",
-      heroImage: orionHeroImage,
+      heroImage: oreonHeroImage,
       meta: [
         { label: "Leistungen", value: "PLANUNG & INSTALLATION" },
         { label: "Sektor", value: "CORPORATE" },
@@ -613,7 +613,7 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "In enger Kooperation mit der NCS GmbH startete das Projekt mit einer partnergestützten Bedarfsanalyse, um die logistischen Abläufe präzise zu koordinieren und die Anforderungen an maximale Flexibilität exakt zu definieren. Auf dieser Basis wurde die physische Fachplanung direkt in ein agiles Installationskonzept übersetzt, das die logistische Bereitstellung und Vorbereitung der Flächen für eine reibungslose Implementierung vor Ort sicherstellte.",
-      processImages: orionProcessImages,
+      processImages: oreonProcessImages,
       processTextBottom:
         "In der Umsetzungsphase lag der Fokus auf der präzisionsgenauen Installation und der schlüsselfertigen Konfiguration des mobilen Trägersystems samt 75-Zoll MeetingBoard. Durch die gezielte Implementierung kabelloser Audio-Komponenten und eines zentralen Touchpanels wurde eine kompromisslose „Plug & Play“-Infrastruktur geschaffen, die alle störenden Kabelwege eliminiert und eine sofortige, intuitive Inbetriebnahme im gesamten Büro ermöglicht.",
       resultTitle: "Das Ergebnis",
@@ -643,12 +643,12 @@ export const references: ReferenceItem[] = [
     services: ["Planung", "Installation", "Content-Creation"],
     sector: "Hospitality",
     technology: "Digital Signage",
-    cardImage: relexaHeroImage,
+    cardImage: revitaHeroImage,
     cardImageAlt: "Revita Digital Signage Referenz",
     detailImages: [
-      relexaHeroImage,
-      ...relexaProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
-      ...relexaResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      revitaHeroImage,
+      ...revitaProcessImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
+      ...revitaResultImages.map((image) => image.src).filter((src): src is string => Boolean(src)),
     ],
     href: "/referenzen/revita",
     featured: false,
@@ -656,7 +656,7 @@ export const references: ReferenceItem[] = [
     seoDescription:
       "TPV plante eine Wayfinding- und Digital-Signage-Lösung für Revita mit Fokus auf Orientierung, Gästekomfort und digitale Kommunikation.",
     canonicalPath: "/referenzen/revita",
-    ogImage: relexaHeroImage,
+    ogImage: revitaHeroImage,
     vision:
       "Die Vision für Revita war die Schaffung eines intelligenten, mobilen Digital-Signage-Ökosystems.",
     approach:
@@ -677,7 +677,7 @@ export const references: ReferenceItem[] = [
       heroLabel: "Case Study",
       heroSubtitle:
         "Intuitives Wayfinding & Digital Guest Communication",
-      heroImage: relexaHeroImage,
+      heroImage: revitaHeroImage,
       heroImagePosition: "center 34%",
       meta: [
         {
@@ -708,7 +708,7 @@ export const references: ReferenceItem[] = [
       processTitle: "Unsere Vorgehensweise",
       processTextTop:
         "Der Prozess begann mit einer umfassenden digitalen Bedarfsanalyse, um die bestehenden Abläufe des Hotel- und Veranstaltungsmanagements tiefgreifend zu verstehen und eine nahtlose Prozessintegration im Arbeitsalltag zu sichern. Darauf aufbauend konzipierte das Digital Media Team ein maßgeschneidertes UI/UX-Design im exakten Einklang mit den Brand Guidelines des Hotels, welches durch eine dynamische Content-Struktur eine intuitive Besucherlenkung und zielgerichtetes Marketing perfekt vereint.",
-      processImages: relexaProcessImages,
+      processImages: revitaProcessImages,
       processTextBottom:
         "In der Umsetzungsphase folgte die technische Installation und Konfiguration einer mobilen Hardware-Einheit, bei welcher der Mediaplayer für einen ausfallsicheren 24/7-Betrieb diskret direkt hinter dem Screen verbaut wurde. Durch die Implementierung einer cloudbasierten, DSGVO-konformen Content-Management-Software wurde das System optimal für eine autarke Bedienung durch das Hotelteam vorbereitet, sodass Aktualisierungen von Eventdaten und Marketing-Slides im laufenden Betrieb flexibel und mit minimalem Aufwand umgesetzt werden können.",
       resultTitle: "Das Ergebnis",
