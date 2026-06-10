@@ -1,7 +1,12 @@
+"use client";
+
+import { Suspense } from "react";
 import Script from "next/script";
-import { GA_TRACKING_ID } from "@/lib/gtag";
+import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
+import { configureGoogleAnalytics, GA_TRACKING_ID } from "@/lib/gtag";
 
 export function GoogleAnalytics() {
+  // GA4 only loads when NEXT_PUBLIC_GA_ID is configured.
   if (!GA_TRACKING_ID) {
     return null;
   }
@@ -11,15 +16,18 @@ export function GoogleAnalytics() {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         strategy="afterInteractive"
+        onReady={configureGoogleAnalytics}
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}', { anonymize_ip: true });
         `}
       </Script>
+      <Suspense fallback={null}>
+        <GoogleAnalyticsPageView />
+      </Suspense>
     </>
   );
 }

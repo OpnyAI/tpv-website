@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { ConsentManager } from "@/components/consent/ConsentManager";
 import { AnimatedBackground } from "@/components/layout/AnimatedBackground";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -79,7 +79,7 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
         <JsonLd data={professionalServiceJsonLd} />
-        <GoogleAnalytics />
+        <ConsentManager />
         <Header />
         <div className="relative isolate min-h-screen overflow-hidden bg-tpv-dark pt-24">
           <AnimatedBackground variant="image" intensity="low" />

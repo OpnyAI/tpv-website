@@ -69,10 +69,13 @@ const sections = [
     ],
   },
   {
-    title: "8. Google Analytics",
+    title: "8. Google Analytics 4",
     paragraphs: [
-      "Diese Website enthält eine optionale Einbindung von Google Analytics. Sie wird nur geladen, wenn eine entsprechende Tracking-ID in der technischen Konfiguration gesetzt ist. Dabei wird die IP-Anonymisierung verwendet.",
-      "Die Verarbeitung dient der Analyse der Website-Nutzung und der Verbesserung des Angebots. Rechtsgrundlage ist, soweit erforderlich, Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.",
+      "Diese Website verwendet Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Google Analytics unterstützt uns dabei, die Nutzung unserer Website besser zu verstehen und Inhalte sowie Nutzererlebnis zu verbessern. Die Einbindung von Google Analytics erfolgt ausschließlich nach Ihrer ausdrücklichen Zustimmung über unser Consent-Banner. Ohne Ihre Zustimmung wird Google Analytics nicht geladen.",
+      "Im Rahmen der Nutzung von Google Analytics können Informationen über Ihre Nutzung dieser Website verarbeitet werden. Dabei kann es auch zu einer Übermittlung personenbezogener Daten an Google LLC in die USA kommen.",
+      "Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen widerrufen oder ändern.",
+      "Weitere Informationen zur Datenverarbeitung durch Google finden Sie in den Datenschutzhinweisen von Google.",
     ],
   },
   {
@@ -120,7 +123,7 @@ export default function DatenschutzPage() {
         </div>
 
         <p className="mt-4 text-sm text-white/60">
-          Stand: Mai 2026. Erstellt auf Basis der bereitgestellten TPV-Daten und
+          Stand: Juni 2026. Erstellt auf Basis der bereitgestellten TPV-Daten und
           der tatsächlich eingebundenen Dienste.
         </p>
       </div>

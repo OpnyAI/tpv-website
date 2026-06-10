@@ -2,6 +2,7 @@ import Link from "next/link";
 import { locations } from "@/data/locations";
 import { siteConfig } from "@/data/site";
 import { CTA_CLICK } from "@/lib/tracking";
+import { CookieSettingsButton } from "@/components/consent/CookieSettingsButton";
 import { Icon, type IconName } from "@/components/ui/Icon";
 
 const legalLinks = [
@@ -91,6 +92,9 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <CookieSettingsButton />
+            </li>
           </ul>
         </div>
       </div>

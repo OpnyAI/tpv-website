@@ -36,6 +36,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 639px) {
+  body:has([data-cookie-consent-banner]) main {
+    padding-bottom: calc(9rem + env(safe-area-inset-bottom));
+  }
+
+  body:has([data-cookie-consent-banner]) [data-home-hero-content] {
+    transform: translateY(-2rem);
+  }
+}
+
 ::selection {
   background: rgba(249, 0, 255, 0.42);
   color: #f8f7ff;

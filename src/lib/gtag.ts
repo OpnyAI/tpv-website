@@ -13,12 +13,37 @@ declare global {
   }
 }
 
+function analyticsDisabledKey(): string | null {
+  return GA_TRACKING_ID ? `ga-disable-${GA_TRACKING_ID}` : null;
+}
+
+export function setAnalyticsEnabled(enabled: boolean): void {
+  const key = analyticsDisabledKey();
+
+  if (typeof window !== "undefined" && key) {
+    (window as unknown as Record<string, boolean>)[key] = !enabled;
+  }
+}
+
 function canTrack(): boolean {
+  const key = analyticsDisabledKey();
+
   return (
     Boolean(GA_TRACKING_ID) &&
     typeof window !== "undefined" &&
-    typeof window.gtag === "function"
+    typeof window.gtag === "function" &&
+    (!key || !(window as unknown as Record<string, boolean>)[key])
   );
+}
+
+export function configureGoogleAnalytics(): void {
+  if (!canTrack() || !GA_TRACKING_ID) {
+    return;
+  }
+
+  window.gtag?.("config", GA_TRACKING_ID, {
+    anonymize_ip: true,
+  });
 }
 
 export function pageview(url: string): void {
