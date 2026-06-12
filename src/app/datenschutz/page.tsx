@@ -73,6 +73,7 @@ const sections = [
     paragraphs: [
       "Diese Website verwendet Google Analytics 4, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
       "Google Analytics unterstützt uns dabei, die Nutzung unserer Website besser zu verstehen und Inhalte sowie Nutzererlebnis zu verbessern. Die Einbindung von Google Analytics erfolgt ausschließlich nach Ihrer ausdrücklichen Zustimmung über unser Consent-Banner. Ohne Ihre Zustimmung wird Google Analytics nicht geladen.",
+      "Nach Ihrer Zustimmung können dabei insbesondere Seitenaufrufe sowie Interaktionen mit Links, Schaltflächen, Scrollbereichen, Downloads, Videos und erfolgreichen Kontaktvorgängen ausgewertet werden. An Google Analytics werden dabei keine Inhalte aus Kontaktfeldern übermittelt.",
       "Im Rahmen der Nutzung von Google Analytics können Informationen über Ihre Nutzung dieser Website verarbeitet werden. Dabei kann es auch zu einer Übermittlung personenbezogener Daten an Google LLC in die USA kommen.",
       "Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen widerrufen oder ändern.",
       "Weitere Informationen zur Datenverarbeitung durch Google finden Sie in den Datenschutzhinweisen von Google.",

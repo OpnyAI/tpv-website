@@ -71,6 +71,9 @@ export function ServicesDesktopPanel({
                   )}
                   onClick={() => setActiveIndex(index)}
                   aria-pressed={index === activeIndex}
+                  data-analytics-event="service_card_click"
+                  data-analytics-label={service.title}
+                  data-analytics-service={service.title}
                 >
                   <span className="block text-[clamp(1rem,1.1vw,1.125rem)] font-medium leading-none">
                     {service.number} {"//"}
@@ -152,6 +155,7 @@ export function ServicesDesktopPanel({
                   className="mt-8 inline-flex w-fit max-w-max self-start rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
                   data-track-event={SERVICE_CLICK}
                   data-track-label={activeService.title}
+                  data-analytics-service={activeService.title}
                 >
                   <span className="rounded-full bg-[#0A0618]/55 px-7 py-3 text-[17px] font-medium leading-none text-white backdrop-blur-sm xl:text-[18px]">
                     {activeService.cta}

@@ -61,6 +61,9 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
               )}
               onClick={() => setActiveService(index)}
               aria-pressed={index === activeIndex}
+              data-analytics-event="service_card_click"
+              data-analytics-label={service.title}
+              data-analytics-service={service.title}
             >
               <span className="block text-[clamp(0.95rem,4vw,1.125rem)] font-medium leading-none">
                 {service.number} {"//"}
@@ -142,6 +145,7 @@ export function ServicesMobilePanel({ services }: ServicesMobilePanelProps) {
                   className="mt-8 inline-flex w-fit touch-manipulation rounded-full bg-[linear-gradient(90deg,#FF5A66_0%,#FF365F_38%,#B84DFF_100%)] p-[2px] transition hover:brightness-110"
                   data-track-event={SERVICE_CLICK}
                   data-track-label={activeService.title}
+                  data-analytics-service={activeService.title}
                 >
                   <span className="rounded-full bg-[#0A0618]/55 px-6 py-3 text-[clamp(0.95rem,4vw,1.125rem)] font-medium leading-none text-white backdrop-blur-sm">
                     {activeService.cta}

@@ -9,6 +9,7 @@ import {
   subscribeToConsent,
   type CookieConsent,
 } from "@/lib/consent";
+import { markCookieAcceptPending } from "@/lib/analytics";
 import { setAnalyticsEnabled } from "@/lib/gtag";
 
 export function ConsentManager() {
@@ -25,6 +26,9 @@ export function ConsentManager() {
   function handleDecision(nextConsent: CookieConsent) {
     setAnalyticsEnabled(nextConsent === "accepted");
     storeConsent(nextConsent);
+    if (nextConsent === "accepted") {
+      markCookieAcceptPending();
+    }
   }
 
   if (consent === "loading") {

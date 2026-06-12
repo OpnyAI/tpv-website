@@ -1,3 +1,7 @@
+import { sanitizePath } from "@/lib/analyticsPageContext";
+import { trackEvent } from "@/lib/analytics";
+import { getStoredConsent } from "@/lib/consent";
+
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 type GtagParams = Record<string, string | number | boolean>;
@@ -31,6 +35,7 @@ function canTrack(): boolean {
   return (
     Boolean(GA_TRACKING_ID) &&
     typeof window !== "undefined" &&
+    getStoredConsent() === "accepted" &&
     typeof window.gtag === "function" &&
     (!key || !(window as unknown as Record<string, boolean>)[key])
   );
@@ -52,7 +57,7 @@ export function pageview(url: string): void {
   }
 
   window.gtag?.("config", GA_TRACKING_ID, {
-    page_path: url,
+    page_path: sanitizePath(url),
   });
 }
 
@@ -60,9 +65,5 @@ export function event(
   action: string,
   params?: Record<string, string | number | boolean>,
 ): void {
-  if (!canTrack()) {
-    return;
-  }
-
-  window.gtag?.("event", action, params);
+  trackEvent(action, params);
 }

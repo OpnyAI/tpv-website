@@ -2,7 +2,11 @@
 
 import { Suspense } from "react";
 import Script from "next/script";
+import { AnalyticsInteractionTracker } from "@/components/analytics/AnalyticsInteractionTracker";
 import { GoogleAnalyticsPageView } from "@/components/analytics/GoogleAnalyticsPageView";
+import { LocationPageTracker } from "@/components/analytics/LocationPageTracker";
+import { ScrollDepthTracker } from "@/components/analytics/ScrollDepthTracker";
+import { trackPendingCookieAccept } from "@/lib/analytics";
 import { configureGoogleAnalytics, GA_TRACKING_ID } from "@/lib/gtag";
 
 export function GoogleAnalytics() {
@@ -16,7 +20,10 @@ export function GoogleAnalytics() {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         strategy="afterInteractive"
-        onReady={configureGoogleAnalytics}
+        onReady={() => {
+          configureGoogleAnalytics();
+          trackPendingCookieAccept();
+        }}
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
@@ -27,7 +34,10 @@ export function GoogleAnalytics() {
       </Script>
       <Suspense fallback={null}>
         <GoogleAnalyticsPageView />
+        <ScrollDepthTracker />
       </Suspense>
+      <AnalyticsInteractionTracker />
+      <LocationPageTracker />
     </>
   );
 }
