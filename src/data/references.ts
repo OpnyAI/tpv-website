@@ -221,6 +221,34 @@ const oreonFaq: ReferenceFaqItem[] = [
   },
 ];
 
+const lumoraFaq: ReferenceFaqItem[] = [
+  {
+    question: "Was macht einen guten Meetingraum für die Geschäftsführung aus?",
+    answer:
+      "Ein Executive-Meetingraum muss technisch zuverlässig und zugleich repräsentativ sein. Entscheidend sind eine einfache Bedienung, hochwertige Bild- und Tonqualität für hybride Meetings und eine Technik, die sich harmonisch in die Raumgestaltung einfügt.",
+  },
+  {
+    question: "Warum ist Raumakustik für Videokonferenzen so wichtig?",
+    answer:
+      "Harte, glatte Flächen erzeugen Nachhall, der Sprache für Remote-Teilnehmende schwer verständlich macht. Akustisch wirksame Elemente wie Lamellenwände reduzieren den Hall und verbessern die Sprachverständlichkeit deutlich - auch bei sehr guter Mikrofontechnik.",
+  },
+  {
+    question: "Kann ein Display direkt an einer Akustik- oder Holzwand montiert werden?",
+    answer:
+      "Ja, wenn die Unterkonstruktion dafür ausgelegt ist. Wir verstärken die Tragkonstruktion gezielt im Bereich der Displayhalterung und planen Kabelwege, Steckdosen und Ausschnitte von Anfang an mit ein.",
+  },
+  {
+    question: "Was ist ein All-in-One MeetingBoard?",
+    answer:
+      "Ein MeetingBoard vereint Touchdisplay, Kamera, Mikrofone und Lautsprecher in einem Gerät. Es unterstützt gängige Plattformen wie Microsoft Teams oder Zoom und eignet sich besonders für kleine und mittlere Besprechungsräume mit wenig Installationsaufwand.",
+  },
+  {
+    question: "Übernimmt TPV-AV auch Gewerke wie Holz- und Innenausbau?",
+    answer:
+      "Ja. Gemeinsam mit erfahrenen Partnern koordinieren wir angrenzende Gewerke wie Akustikwände, Möbelintegration oder Elektroarbeiten. So erhalten Kunden einen Raum aus einer Hand - von der Planung bis zur Abnahme.",
+  },
+];
+
 function imageSlot(
   src: string | null,
   alt: string,
@@ -400,6 +428,39 @@ const revitaResultImages = [
   imageSlot(
     "/images/case-studies/revita/01_Titelseite/revita-result-01.png",
     "Revita Titelbild 2",
+  ),
+];
+
+const lumoraHeroImage =
+  "/images/case-studies/lumora/01_Titelbild/lumora-hero.jpg";
+const lumoraProcessImages = [
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-01.jpg",
+    "Lumora Vorgehensweise 1",
+  ),
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-02.jpg",
+    "Lumora Vorgehensweise 2",
+  ),
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-03.jpg",
+    "Lumora Vorgehensweise 3",
+    { objectPosition: "center 58%" },
+  ),
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-04.jpg",
+    "Lumora Vorgehensweise 4",
+    { objectPosition: "center 44%" },
+  ),
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-05.jpg",
+    "Lumora Vorgehensweise 5",
+    { objectPosition: "center 46%" },
+  ),
+  imageSlot(
+    "/images/case-studies/lumora/02_Vorgehensweise/lumora-vorgehensweise-06.jpg",
+    "Lumora Vorgehensweise 6",
+    { objectPosition: "center 54%" },
   ),
 ];
 
@@ -799,6 +860,95 @@ export const references: ReferenceItem[] = [
       youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/w2GJ1cus_3E",
       contactPerson: fabianDering,
       faq: revitaFaq,
+    },
+  },
+  {
+    slug: "lumora",
+    title: "Lumora",
+    teaserTitle: "Executive-Meetingraum in Echtholz",
+    description:
+      "Planung und Installation eines Executive-Meetingraums mit integrierter Echtholz-Akustikwand.",
+    location: "Stuttgart",
+    year: "2026",
+    services: ["Planung", "Installation"],
+    sector: "Corporate",
+    technology: "Collaboration",
+    cardImage: lumoraHeroImage,
+    cardImageAlt: "Lumora Executive-Meetingraum Referenz",
+    detailImages: [
+      lumoraHeroImage,
+      ...lumoraProcessImages
+        .map((image) => image.src)
+        .filter((src): src is string => Boolean(src)),
+    ],
+    href: "/referenzen/lumora",
+    featured: true,
+    seoTitle:
+      "Lumora Referenz - Executive-Meetingraum mit Echtholz-Akustikwand",
+    seoDescription:
+      'TPV realisierte für Lumora einen Executive-Meetingraum - 65" MeetingBoard, kabelloses Sharing und Echtholz-Akustikwand aus einer Hand.',
+    canonicalPath: "/referenzen/lumora",
+    ogImage: lumoraHeroImage,
+    vision:
+      "Die Vision für Lumora war ein repräsentativer Executive-Meetingraum, in dem hochwertige Videokonferenztechnik und warme Echtholz-Architektur zu einer Einheit verschmelzen.",
+    approach:
+      "Das Projekt startete mit einem detaillierten Aufmaß vor Ort und einem integrierten Wandkonzept für Akustik, Display und verdeckte Leitungswege.",
+    result:
+      "Das Ergebnis ist ein repräsentativer Executive-Meetingraum mit intuitiver Kollaborationstechnik und hochwertiger Echtholz-Akustikwand.",
+    projectMeta: [
+      { label: "Collaboration-Display", value: '65" 4K All-in-One MeetingBoard' },
+      { label: "Kamera & Audio", value: "KI-Triple-Kamera mit 16-Mikrofon-Array" },
+      { label: "Content-Sharing", value: "Kabelloses 4K-Casting per Knopfdruck" },
+      { label: "Tischanschluss", value: "Strom, HDMI & USB-C direkt am Tisch" },
+      { label: "Raumakustik", value: "Echtholz-Akustiklamellenwand" },
+    ],
+    contactPerson: gabrielZidar,
+    caseStudy: {
+      client: "Lumora",
+      heroLabel: "Case Study",
+      heroSubtitle:
+        "Executive-Meetingraum mit integrierter Echtholz-Akustikwand",
+      heroImage: lumoraHeroImage,
+      heroImagePosition: "center 52%",
+      meta: [
+        { label: "Leistungen", value: "PLANUNG / INSTALLATION" },
+        { label: "Sektor", value: "CORPORATE" },
+      ],
+      visionText:
+        "Die Vision für das Projekt Lumora war ein repräsentativer Executive-Meetingraum für die Geschäftsführung, in dem hochwertige Videokonferenztechnik und warme Echtholz-Architektur zu einer Einheit verschmelzen. Eine akustisch wirksame Lamellenwand sollte dabei zugleich als Designelement, als Träger für das Display und als unsichtbarer Kabelweg dienen. Das Ziel: hybride Meetings auf Führungsebene in höchster Qualität, ohne dass die Technik den Raum dominiert.",
+      specsTitle: "Projektdaten",
+      specs: [
+        {
+          label: "COLLABORATION-DISPLAY",
+          value: '65" 4K All-in-One MeetingBoard',
+        },
+        {
+          label: "KAMERA & AUDIO",
+          value: "KI-Triple-Kamera mit 16-Mikrofon-Array",
+        },
+        {
+          label: "CONTENT-SHARING",
+          value: "Kabelloses 4K-Casting per Knopfdruck",
+        },
+        {
+          label: "TISCHANSCHLUSS",
+          value: "Strom, HDMI & USB-C direkt am Tisch",
+        },
+        { label: "RAUMAKUSTIK", value: "Echtholz-Akustiklamellenwand" },
+      ],
+      processTitle: "Unsere Vorgehensweise",
+      processTextTop:
+        "Das Projekt startete mit einem detaillierten Aufmaß vor Ort, um Raumgeometrie, Wandbeschaffenheit und Sitzposition exakt zu erfassen. Gemeinsam mit unserem Partner für Holz- und Innenausbau wurde daraus ein integriertes Wandkonzept entwickelt: Eine verstärkte Holzunterkonstruktion trägt sowohl die Akustiklamellen als auch die Heavy-Duty-Displayhalterung und nimmt alle Leitungen verdeckt auf.",
+      processImages: lumoraProcessImages,
+      processTextBottom:
+        "In der Umsetzungsphase griffen Holzbau und Medientechnik nahtlos ineinander. Nach dem millimetergenauen Zuschnitt und der Montage der Lamellen wurde das 65-Zoll-MeetingBoard mit integrierter KI-Kamera passgenau in die Wand eingebunden, ergänzt um ein Tischanschlussfeld für Strom, HDMI und USB-C sowie einen Wireless-Presentation-Pod. Abschließend folgten Systemkonfiguration, Vollfunktionsprüfung und die protokollierte Abnahme durch unseren Projektleiter.",
+      resultTitle: "Das Ergebnis",
+      resultText:
+        "Das Ergebnis ist ein repräsentativer Executive-Meetingraum, in dem modernste Kollaborationstechnik und natürliche Materialien zu einer ruhigen, hochwertigen Gesamtwirkung verschmelzen. Die Echtholz-Lamellenwand verbessert spürbar die Raumakustik, führt alle Kabel unsichtbar und rahmt das 65-Zoll-MeetingBoard wie ein architektonisches Element. Dank KI-gestütztem Kamera-Tracking, kabellosem Content-Sharing und Anschlüssen direkt am Tisch starten hybride Meetings der Geschäftsführung bei Lumora in Sekunden.",
+      resultVideo: null,
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/0Rh-co3erqs",
+      contactPerson: gabrielZidar,
+      faq: lumoraFaq,
     },
   },
 ];

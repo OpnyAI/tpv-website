@@ -28,6 +28,11 @@ const nextConfig = {
         destination: "/referenzen/oreon",
         permanent: true,
       },
+      {
+        source: "/referenzen/dumora",
+        destination: "/referenzen/lumora",
+        permanent: true,
+      },
     ];
   },
 };
