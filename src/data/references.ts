@@ -464,7 +464,106 @@ const lumoraProcessImages = [
   ),
 ];
 
+const goldysHeroImage = "/images/case-studies/Goldys/01_Titelbild/goldys-hero.jpg";
+const goldysProcessImages = [
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-01.jpg", "Goldys Vorgehensweise 1"),
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-02.jpg", "Goldys Vorgehensweise 2"),
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-03.jpg", "Goldys Vorgehensweise 3"),
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-04.jpg", "Goldys Vorgehensweise 4"),
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-05.jpg", "Goldys Vorgehensweise 5"),
+  imageSlot("/images/case-studies/Goldys/02_Vorgehensweise/goldies-vorgehensweise-06.jpg", "Goldys Vorgehensweise 6"),
+];
+const goldysSpecs: ReferenceSpecItem[] = [
+  {
+    "label": "LED-WALL",
+    "value": "3 × 2 m LEDBRIX Indoor P2.6"
+  },
+  {
+    "label": "AUFLÖSUNG",
+    "value": "1.152 × 768 Pixel aus 96 LED-Panels"
+  },
+  {
+    "label": "STEUERUNG",
+    "value": "NovaStar TB60 Controller"
+  },
+  {
+    "label": "CONTENT",
+    "value": "Einbindung ins bestehende Digital Signage"
+  },
+  {
+    "label": "INTEGRATION",
+    "value": "Technik unsichtbar, wartungsfreundlich"
+  }
+];
+const goldysFaq: ReferenceFaqItem[] = [
+  {
+    "question": "Welche LED-Wall eignet sich für die Gastronomie?",
+    "answer": "Für Gasträume eignen sich Indoor-LED-Walls mit feinem Pixelabstand, die sich von vorne warten lassen. Entscheidend ist der Abstand der Gäste zur Wand: Bei einem Pixelabstand von 2,6 mm wirkt das Bild ab etwa drei Metern gestochen scharf. Wir beraten zu Größe, Auflösung und Helligkeit passend zu Raum und Lichtsituation."
+  },
+  {
+    "question": "Kann eine LED-Wall an einer Trockenbauwand montiert werden?",
+    "answer": "Ja, wenn die Wand dafür ausgelegt ist. Bei einer Beplankung mit OSB-Platten und geprüfter Traglast lassen sich die Rahmen direkt montieren. Vorab gleichen wir Wandaufbau und Elektroplanung ab und orten Leitungen, damit Befestigung und Kabelwege sicher geplant sind."
+  },
+  {
+    "question": "Wie viel Strom verbraucht eine LED-Wall?",
+    "answer": "Der Verbrauch hängt von Größe, Helligkeit und Inhalt ab. Hersteller geben einen Maximal- und einen Durchschnittswert pro Quadratmeter an; im Alltag liegt der Verbrauch meist deutlich unter dem Maximum. Eine angepasste Helligkeit spart Strom, reduziert die Wärmeentwicklung und schont die LEDs. Die Stromkreise planen wir passend zur Spitzenlast."
+  },
+  {
+    "question": "Wie kommen die Inhalte auf die LED-Wall?",
+    "answer": "Die LED-Wall wird über einen Controller angesteuert, der das Bild eines Zuspielers – zum Beispiel aus einem bestehenden Digital-Signage-System – auf die Wall verteilt. Wichtig ist, die Inhalte im passenden Seitenverhältnis und in der Auflösung der Wall zu erstellen, damit nichts verzerrt oder abgeschnitten wird."
+  },
+  {
+    "question": "Was passiert, wenn ein LED-Panel ausfällt?",
+    "answer": "Moderne LED-Walls bestehen aus einzelnen Panels, die sich von vorne mit wenigen Handgriffen tauschen lassen. Wir empfehlen, Reserve-Panels aus derselben Produktionscharge vor Ort zu lagern, damit Farbe und Helligkeit exakt passen. Auf Wunsch übernehmen wir Service und regelmäßige System-Checks."
+  }
+];
+
 export const references: ReferenceItem[] = [
+  {
+    slug: "goldys",
+    title: "Goldys",
+    teaserTitle: "LED-Wall im Gastraum",
+    description: "Installation einer 3 × 2 m LED-Wall als Blickfang im Gastraum.",
+    location: "Nürnberg",
+    year: "2026",
+    services: ["Installation"],
+    sector: "Gastronomie",
+    technology: "LED-Wall",
+    cardImage: goldysHeroImage,
+    cardImageAlt: "Goldys LED-Wall Referenz",
+    detailImages: [goldysHeroImage, ...goldysProcessImages.map(image => image.src).filter((src): src is string => Boolean(src))],
+    href: "/referenzen/goldys",
+    featured: true,
+    seoTitle: "Goldys Referenz - LED-Wall als Blickfang im Gastraum",
+    seoDescription: "TPV realisierte für Goldys eine 3 × 2 m LED-Wall im Gastraum - Montage, NovaStar-Konfiguration und Inbetriebnahme aus einer Hand.",
+    canonicalPath: "/referenzen/goldys",
+    ogImage: goldysHeroImage,
+    vision: "Die Vision für das Projekt Goldys war ein Gastraum, der Gäste schon beim Betreten mit bewegten Bildern empfängt. Eine großformatige LED-Wall sollte zum zentralen Markenelement werden – brillant, nahtlos und präzise in die Architektur eingepasst. Die Technik dahinter sollte für Gäste unsichtbar bleiben, im laufenden Restaurantbetrieb zuverlässig funktionieren und sich ohne Aufwand in das bestehende Digital-Signage-System des Betreibers einfügen.",
+    approach: "Das Projekt startete mit einem genauen Abgleich der Ausführungspläne: Wandaufbau, Elektroplanung und Wandansichten bildeten die Grundlage für Montagehöhe, Befestigung und Kabelwege. Auf dieser Basis planten wir die Montage direkt auf der OSB-beplankten Trockenbauwand, berechneten die Stromlast der Wall und legten Rahmenlayout und Datenführung in zwei Strängen fest. Ein detaillierter Ablaufplan mit klarer Rollenverteilung sorgte dafür, dass jeder Handgriff vor Ort saß.",
+    result: "Das Ergebnis ist eine 6 m² große LED-Wall, die den Gastraum von Goldys prägt und Marke, Produkte und Atmosphäre in brillanter Qualität in Szene setzt. Die Wall fügt sich nahtlos in die Architektur ein, während die Technik für Gäste unsichtbar bleibt. Gekoppelt an die Haustechnik schaltet sich das System automatisch ein und aus, startet nach einem Stromausfall selbstständig neu und spielt die Inhalte direkt aus dem bestehenden Digital-Signage-System aus. Reserve-Panels vor Ort sichern im Servicefall einen schnellen Austausch.",
+    projectMeta: goldysSpecs,
+    contactPerson: gabrielZidar,
+    caseStudy: {
+      client: "Goldys",
+      heroLabel: "Case Study",
+      heroSubtitle: "3 × 2 m LED-Wall als Blickfang im Gastraum",
+      heroImage: goldysHeroImage,
+      heroImagePosition: "center 45%",
+      meta: [{ label: "Leistungen", value: "INSTALLATION" }, { label: "Sektor", value: "GASTRONOMIE" }],
+      visionText: "Die Vision für das Projekt Goldys war ein Gastraum, der Gäste schon beim Betreten mit bewegten Bildern empfängt. Eine großformatige LED-Wall sollte zum zentralen Markenelement werden – brillant, nahtlos und präzise in die Architektur eingepasst. Die Technik dahinter sollte für Gäste unsichtbar bleiben, im laufenden Restaurantbetrieb zuverlässig funktionieren und sich ohne Aufwand in das bestehende Digital-Signage-System des Betreibers einfügen.",
+      specsTitle: "Projektdaten",
+      specs: goldysSpecs,
+      processTitle: "Unsere Vorgehensweise",
+      processTextTop: "Das Projekt startete mit einem genauen Abgleich der Ausführungspläne: Wandaufbau, Elektroplanung und Wandansichten bildeten die Grundlage für Montagehöhe, Befestigung und Kabelwege. Auf dieser Basis planten wir die Montage direkt auf der OSB-beplankten Trockenbauwand, berechneten die Stromlast der Wall und legten Rahmenlayout und Datenführung in zwei Strängen fest. Ein detaillierter Ablaufplan mit klarer Rollenverteilung sorgte dafür, dass jeder Handgriff vor Ort saß.",
+      processImages: goldysProcessImages,
+      processTextBottom: "In der Umsetzungsphase wurden die zwölf Aluminiumrahmen Reihe für Reihe ausgerichtet und montiert, Daten- und Stromleitungen in zwei Strängen verlegt und anschließend die 96 magnetisch gehaltenen LED-Panels eingesetzt. Controller und Zuspieler wurden für Gäste unsichtbar untergebracht und bleiben für Wartung und Service dennoch jederzeit gut erreichbar. Abschließend folgten die Konfiguration des NovaStar-Controllers, die Abstimmung von Helligkeit und Schaltzeiten, eine Funktionsprüfung inklusive Stromausfall-Szenario und die protokollierte Abnahme mit der Filialleitung.",
+      resultTitle: "Das Ergebnis",
+      resultText: "Das Ergebnis ist eine 6 m² große LED-Wall, die den Gastraum von Goldys prägt und Marke, Produkte und Atmosphäre in brillanter Qualität in Szene setzt. Die Wall fügt sich nahtlos in die Architektur ein, während die Technik für Gäste unsichtbar bleibt. Gekoppelt an die Haustechnik schaltet sich das System automatisch ein und aus, startet nach einem Stromausfall selbstständig neu und spielt die Inhalte direkt aus dem bestehenden Digital-Signage-System aus. Reserve-Panels vor Ort sichern im Servicefall einen schnellen Austausch.",
+      youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/jCfxHQbtsKo",
+      contactPerson: gabrielZidar,
+      faq: goldysFaq,
+    },
+  },
   {
     slug: "futura",
     title: "Futura",

@@ -39,3 +39,7 @@ public/images/case-studies/lumora/02_Vorgehensweise/1.png
 public/images/case-studies/lumora/02_Vorgehensweise/2 aufbau.png
 public/images/case-studies/lumora/02_Vorgehensweise/*.HEIC
 public/images/case-studies/lumora/03_Ergebnis/
+
+# Goldys source documents stay local; the website uses the prepared JPEGs.
+public/images/case-studies/Goldys/*.docx
+public/images/case-studies/Goldys/01_Titelbild/Gemini_Generated_Image_qfao48qfao48qfao.jpg

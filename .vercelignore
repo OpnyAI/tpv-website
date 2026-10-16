@@ -6,3 +6,7 @@ public/images/case-studies/lumora/02_Vorgehensweise/1.png
 public/images/case-studies/lumora/02_Vorgehensweise/2 aufbau.png
 public/images/case-studies/lumora/02_Vorgehensweise/*.HEIC
 public/images/case-studies/lumora/03_Ergebnis/
+
+# Goldys internal source documents and original hero image.
+public/images/case-studies/Goldys/*.docx
+public/images/case-studies/Goldys/01_Titelbild/Gemini_Generated_Image_qfao48qfao48qfao.jpg

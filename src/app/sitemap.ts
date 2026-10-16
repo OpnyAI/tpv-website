@@ -12,12 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteConfig.baseUrl,
-      lastModified,
+      lastModified: new Date("2026-10-16"),
       priority: 1,
     },
     ...caseStudyReferences.map((reference) => ({
       url: absoluteUrl(reference.canonicalPath),
-      lastModified,
+      lastModified: reference.slug === "goldys" ? new Date("2026-10-16") : lastModified,
       priority: 0.8,
     })),
     ...locations.map((location) => ({
